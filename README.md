@@ -1,6 +1,6 @@
-# Office GoPlan
+# Office Go Plan
 
-Office GoPlan の公式ウェブサイトです。
+Office Go Plan の公式ウェブサイトです。
 
 ## GitHub Pages での公開方法
 
