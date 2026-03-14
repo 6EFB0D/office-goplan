@@ -15,4 +15,4 @@ Office Go Plan の公式ウェブサイトです。
 
 ## サポート
 
-お問い合わせは support@office.goplan.com までご連絡ください。
+お問い合わせは support@office-gioplan.com までご連絡ください。
