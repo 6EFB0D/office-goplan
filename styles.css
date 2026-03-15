@@ -52,6 +52,16 @@ body {
   color: var(--color-text);
   text-decoration: none;
   letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 48px;
+  width: auto;
+  display: block;
+  /* 暗い背景用: 反転＋色相回転で緑を維持、明るさで若葉の感じに */
+  filter: invert(1) hue-rotate(180deg) brightness(1.15);
 }
 
 .nav {
@@ -239,16 +249,9 @@ h2 {
 
 .product-card h3 {
   font-size: 1.25rem;
-  margin-bottom: 12px;
-}
-
-.product-card h3 a {
+  margin: 0;
   color: var(--color-text);
-  text-decoration: none;
-}
-
-.product-card h3 a:hover {
-  color: var(--color-accent);
+  transition: color 0.2s;
 }
 
 .product-card p {
@@ -280,6 +283,72 @@ h2 {
   font-size: 1rem;
   max-width: 480px;
   margin: 0 auto;
+}
+
+/* Hero product layout: icon left, text right */
+.hero-product-layout {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.hero-product-layout .product-logo {
+  max-width: 120px;
+  height: auto;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.hero-product-text {
+  text-align: left;
+}
+
+.hero-product-text .hero-subtitle {
+  margin-bottom: 0;
+}
+
+/* Product card layout: icon left, text right */
+.product-card-layout {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  margin-bottom: 16px;
+}
+
+.product-card-layout:hover .product-card-logo {
+  opacity: 0.9;
+}
+
+.product-card-layout:hover h3 {
+  color: var(--color-accent);
+}
+
+.product-card-logo {
+  max-width: 80px;
+  height: auto;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+
+.product-card-text {
+  text-align: left;
+}
+
+.product-card-tagline {
+  font-size: 0.95rem;
+  color: var(--color-accent);
+  font-weight: 500;
+  margin: 4px 0 0 0;
+}
+
+.product-card-desc {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
 }
 
 .product-badge {
