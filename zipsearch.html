@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ZipSearch - ZIP/7z 内の CSV/TSV/TXT を展開せずに高速検索するツール">
+  <title>ZipSearch | Office Go Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">Office Go Plan</a>
+      <nav class="nav">
+        <a href="index.html">ホーム</a>
+        <a href="zipsearch.html">ZipSearch</a>
+        <a href="privacy-policy.html">プライバシーポリシー</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. ヒーロー・キャッチ -->
+    <section class="hero hero-product">
+      <div class="container">
+        <h1>ZipSearch</h1>
+        <p class="hero-subtitle">ZIP内を展開せずに検索</p>
+        <p class="hero-desc">ZIP/7z 形式の圧縮ファイル内の CSV/TSV/TXT を、展開せずに高速検索できるツールです。</p>
+      </div>
+    </section>
+
+    <!-- 2. 機能・用途の紹介 -->
+    <section class="section features-section">
+      <div class="container">
+        <h2>機能・特徴</h2>
+        <ul class="feature-list">
+          <li><strong>3つのインターフェース</strong>: CLI / GUI / WebUI</li>
+          <li><strong>複数形式対応</strong>: ZIP, 7z, CSV, TSV, TXT</li>
+          <li><strong>HTTP/HTTPS 検索</strong>: イントラネットの ZIP ファイルも検索可能</li>
+          <li><strong>HTTP ブラウジング</strong>: フォルダ URL から ZIP 一覧を取得・選択（サブフォルダ対応）</li>
+          <li><strong>リアルタイム進捗表示</strong>: 検索の進捗をリアルタイムで表示</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. UI キャプチャ -->
+    <section class="section screenshots-section">
+      <div class="container container-wide">
+        <div class="screenshots-grid">
+          <div class="screenshot-item">
+            <div class="screenshot-caption">
+              <h3 class="screenshot-title">メイン画面（GUI）</h3>
+              <p class="screenshot-desc">検索パス・キーワード・オプションを一画面で設定</p>
+            </div>
+            <img src="assets/zipsearch/gui-main.png" alt="ZipSearch GUI メイン画面" width="800" height="500">
+          </div>
+          <div class="screenshot-item">
+            <div class="screenshot-caption">
+              <h3 class="screenshot-title">検索結果</h3>
+              <p class="screenshot-desc">検索結果を一覧表示、該当行をすぐに確認</p>
+            </div>
+            <img src="assets/zipsearch/gui-results.png" alt="ZipSearch 検索結果一覧" width="800" height="500">
+          </div>
+          <div class="screenshot-item">
+            <div class="screenshot-caption">
+              <h3 class="screenshot-title">Web 版</h3>
+              <p class="screenshot-desc">ブラウザからアクセス、どこからでも検索可能</p>
+            </div>
+            <img src="assets/zipsearch/web-main.png" alt="ZipSearch WebUI メイン画面" width="800" height="500">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ダウンロード -->
+    <section class="section download-section">
+      <div class="container">
+        <h2>ダウンロード</h2>
+        <p class="version-badge">v0.3.0</p>
+        <p class="download-intro">リリースページから、お使いの OS に合わせてダウンロードしてください。</p>
+        <div class="download-buttons">
+          <a href="https://github.com/6EFB0D/ZipSearch/releases" class="cta-button cta-button-primary">リリースページを開く</a>
+        </div>
+        <div class="platform-links">
+          <a href="https://github.com/6EFB0D/ZipSearch/releases" class="platform-button">Windows (setup.exe)</a>
+          <a href="https://github.com/6EFB0D/ZipSearch/releases" class="platform-button">macOS (DMG)</a>
+          <a href="https://github.com/6EFB0D/ZipSearch/releases" class="platform-button">Linux (tar.gz)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. フリー版 vs Pro版 -->
+    <section class="section comparison-section">
+      <div class="container">
+        <h2>フリー版 vs Pro版</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>項目</th>
+                <th>フリー版</th>
+                <th>Pro版（準備中）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ファイルサイズ</td>
+                <td>100MB/ファイルまで</td>
+                <td><strong>無制限</strong></td>
+              </tr>
+              <tr>
+                <td>同時検索</td>
+                <td>最大5ファイル</td>
+                <td><strong>無制限</strong></td>
+              </tr>
+              <tr>
+                <td>検索結果</td>
+                <td>最大100件</td>
+                <td><strong>無制限</strong></td>
+              </tr>
+              <tr>
+                <td>エクスポート機能</td>
+                <td>❌ 使用不可</td>
+                <td>✅ CSV/JSON</td>
+              </tr>
+              <tr>
+                <td>検索速度</td>
+                <td>シングルスレッド</td>
+                <td><strong>マルチスレッド</strong>（指定可能）</td>
+              </tr>
+              <tr>
+                <td>カラム指定検索</td>
+                <td>❌ 使用不可</td>
+                <td>✅ 列番号/列名で指定</td>
+              </tr>
+              <tr>
+                <td>範囲検索</td>
+                <td>❌ 使用不可</td>
+                <td>✅ 日付/数値の範囲指定</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. お問い合わせ -->
+    <section class="section contact-section">
+      <div class="container">
+        <h2>お問い合わせ</h2>
+        <p>ご質問やサポートのご要望は、以下のメールアドレスまでお気軽にご連絡ください。</p>
+        <a href="mailto:support@office-gioplan.com" class="email-link">support@office-gioplan.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <nav class="footer-nav">
+        <a href="zipsearch.html">ZipSearch</a>
+        <a href="privacy-policy.html">プライバシーポリシー</a>
+      </nav>
+      <p class="copyright">&copy; Office Go Plan. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

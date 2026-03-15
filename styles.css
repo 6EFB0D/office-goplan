@@ -228,3 +228,223 @@ h2 {
   font-size: 0.85rem;
   color: var(--color-text-muted);
 }
+
+/* Product card (homepage) */
+.product-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.product-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.product-card h3 a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.product-card h3 a:hover {
+  color: var(--color-accent);
+}
+
+.product-card p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.product-link {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.product-link:hover {
+  text-decoration: underline;
+}
+
+/* ZipSearch product page */
+.hero-product .hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.hero-desc {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.product-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  background: rgba(59, 130, 246, 0.15);
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.section {
+  padding: 60px 0;
+}
+
+.section:nth-child(even) {
+  background: var(--color-surface);
+}
+
+.feature-list {
+  color: var(--color-text-muted);
+  padding-left: 24px;
+  line-height: 2;
+}
+
+.feature-list li {
+  margin-bottom: 8px;
+}
+
+/* Screenshots */
+.container-wide {
+  max-width: 900px;
+}
+
+.screenshots-grid {
+  display: grid;
+  gap: 32px;
+  margin-bottom: 16px;
+}
+
+.screenshot-item {
+  margin: 0;
+}
+
+.screenshot-caption {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.screenshot-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 6px;
+}
+
+.screenshot-desc {
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.screenshot-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.screenshot-note {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  opacity: 0.8;
+}
+
+/* Download section */
+.version-badge {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 16px;
+}
+
+.download-intro {
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+}
+
+.download-buttons {
+  margin-bottom: 24px;
+}
+
+.cta-button-primary {
+  display: inline-block;
+}
+
+.platform-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.platform-button {
+  display: inline-block;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 14px 24px;
+  background: var(--color-surface);
+  border: 2px solid rgba(59, 130, 246, 0.5);
+  border-radius: 8px;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.platform-button:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* Comparison table */
+.comparison-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 24px;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.comparison-table th {
+  color: var(--color-text);
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.comparison-table td {
+  color: var(--color-text-muted);
+}
+
+.comparison-table td strong {
+  color: var(--color-accent);
+}
+
+.pro-note {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.contact-section p {
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
