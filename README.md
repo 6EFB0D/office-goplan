@@ -8,6 +8,7 @@ Office Go Plan の公式ウェブサイトです。
 office-goplan/
 ├── index.html          # ホームページ
 ├── zipsearch.html      # ZipSearch 製品ページ
+├── pictcomp.html      # PictComp 製品ページ
 ├── privacy-policy.html # プライバシーポリシー
 ├── styles.css          # 共通スタイル
 ├── .nojekyll           # Jekyll 無効化（GitHub Pages 用）
@@ -18,13 +19,20 @@ office-goplan/
     │   ├── logo-a.jpg  # ヘッダー用（暗色背景向けフィルター適用）
     │   ├── logo-b.jpg
     │   └── logo-c.jpg
-    └── zipsearch/      # ZipSearch 製品用アセット
-        ├── zipsearch_blue.png   # 製品ロゴ
-        ├── zipsearch_gray.png
-        ├── gui-main.png        # スクリーンショット
-        ├── gui-results.png
-        ├── web-main.png
-        └── README.md           # スクリーンショット撮影手順
+    ├── zipsearch/      # ZipSearch 製品用アセット
+    │   ├── zipsearch_blue.png
+    │   ├── zipsearch_gray.png
+    │   ├── gui-main.png
+    │   ├── gui-results.png
+    │   ├── web-main.png
+    │   └── README.md
+    └── pictcomp/       # PictComp 製品用アセット
+        ├── pictcomp_bright.jpg  # 製品ロゴ
+        ├── gui-main.svg         # スクリーンショット（PNG に差し替え）
+        ├── gui-compressed.svg
+        ├── gui-viewer.svg
+        ├── point-1.svg～point-8.svg  # 推しポイント（PNG に差し替え）
+        └── README.md
 ```
 
 ## GitHub Pages での公開方法

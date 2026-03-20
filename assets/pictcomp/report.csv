@@ -1,0 +1,11 @@
+﻿ファイル名,成功,元のサイズ (bytes),圧縮後サイズ (bytes),削減率 (%),処理時間 (秒),エラー,形式
+HOME-1_compressed.jpg,はい,21549,21523,0.12,0.008,,jpg
+HOME-1_compressed_compressed.jpg,はい,10190,21580,-111.78,0.063,,jpg
+PictComp-1_compressed.jpg,はい,76612,46629,39.14,0.000,,jpg
+products_compressed.jpg,はい,53064,31670,40.32,0.016,,jpg
+ZipSearch-1_compressed.jpg,はい,2021814,51667,97.44,0.016,,jpg
+ZipSearch-2_compressed.jpg,はい,106077,74639,29.64,0.016,,jpg
+ZipSearch-3_compressed.jpg,はい,65916,32800,50.24,0.016,,jpg
+ZipSearch_web_compressed.jpg,はい,74644,57303,23.23,0.052,,jpg
+,,,,,,,
+=== サマリー ===,8/8,2429866,337811,86.10,0.20,平均処理時間: 0.025秒/ファイル,

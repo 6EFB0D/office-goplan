@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PictComp - 画像を一括圧縮。フォルダを選択するだけで複数画像を一括処理">
+  <title>PictComp | Office Go Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo/logo-a.jpg" alt="Office Go Plan" class="logo-img">
+      </a>
+      <nav class="nav">
+        <a href="index.html">ホーム</a>
+        <a href="zipsearch.html">ZipSearch</a>
+        <a href="pictcomp.html">PictComp</a>
+        <a href="privacy-policy.html">プライバシーポリシー</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. ヒーロー・キャッチ -->
+    <section class="hero hero-product">
+      <div class="container">
+        <div class="hero-product-layout">
+          <img src="assets/pictcomp/pictcomp_bright.jpg" alt="PictComp" class="product-logo">
+          <div class="hero-product-text">
+            <h1>PictComp</h1>
+            <p class="hero-subtitle">画像を一括圧縮</p>
+          </div>
+        </div>
+        <p class="hero-desc">フォルダを選択するだけで、複数の画像を一括して圧縮・リサイズできるアプリケーションです。</p>
+      </div>
+    </section>
+
+    <!-- 2. 概要 -->
+    <section class="section overview-section">
+      <div class="container">
+        <h2>概要</h2>
+        <p class="overview-desc">フォルダを選択するだけで、複数の画像を一括して圧縮・リサイズ・形式変換。JPEG、PNG、HEIC、WebP、TIFF、BMPに対応し、用途別プリセットやプレビュー機能で、細かい設定なしに最適な画質・サイズで出力できます。</p>
+        <p class="overview-keywords">多形式対応 / 形式変換 / 一括処理 / プリセット / リサイズ / プレビュー / EXIF対応 / サムネイル表示</p>
+      </div>
+    </section>
+
+    <!-- 3. スクリーンショット -->
+    <section class="section screenshots-section">
+      <div class="container container-wide">
+        <div class="screenshots-grid">
+          <div class="screenshot-item">
+            <div class="screenshot-caption">
+              <h3 class="screenshot-title">メイン画面</h3>
+              <p class="screenshot-desc">プリセット・圧縮設定・フォルダ選択・ファイル一覧を一画面で設定</p>
+            </div>
+            <img src="assets/pictcomp/gui-main.png" alt="PictComp メイン画面" width="800" height="500">
+          </div>
+          <div class="screenshot-item">
+            <div class="screenshot-caption">
+              <h3 class="screenshot-title">画像ビューア</h3>
+              <p class="screenshot-desc">サムネイル一覧で画像を確認・操作</p>
+            </div>
+            <img src="assets/pictcomp/PictComp_Viewer.png" alt="PictComp 画像ビューア" width="800" height="500">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 機能詳細（画像付き） -->
+    <section class="section points-section">
+      <div class="container">
+        <div class="points-grid">
+          <div class="point-item">
+            <img src="assets/pictcomp/preset.png" alt="プリセット" class="point-img">
+            <div class="point-content">
+              <h3 class="point-title">1. プリセットで用途別に最適化</h3>
+              <p class="point-desc">PowerPoint用・ブログ用・SNS用・Web用・メール添付用・PNG透過保持・アーカイブ用など、用途に合わせた設定をワンクリックで適用。Web掲載用ではEXIF削除が固定され、セキュリティ上の配慮がされています。</p>
+            </div>
+          </div>
+          <div class="point-item">
+            <img src="assets/pictcomp/preview.png" alt="プレビュー" class="point-img">
+            <div class="point-content">
+              <h3 class="point-title">2. プレビューで確認してから実行</h3>
+              <p class="point-desc">圧縮前後の画質・サイズを比較してから実行できるので、安心して一括処理できます。</p>
+            </div>
+          </div>
+          <div class="point-item">
+            <img src="assets/pictcomp/Thumbnail.png" alt="サムネイル" class="point-img">
+            <div class="point-content">
+              <h3 class="point-title">3. サムネイル表示で画像を確認・操作</h3>
+              <p class="point-desc">対象フォルダの画像をサムネイル一覧で表示。クリックで選択（青枠・「選択」バッジで表示）、Ctrl+クリックで複数選択。全選択・選択解除で一括操作。画像ビューアでは、ファイル名・撮影日時・ファイル日時でソートし、ファイル日時の一括更新も可能です。</p>
+            </div>
+          </div>
+          <div class="point-item">
+            <img src="assets/pictcomp/EXIF.png" alt="EXIF" class="point-img">
+            <div class="point-content">
+              <h3 class="point-title">4. EXIF情報の閲覧・管理</h3>
+              <p class="point-desc">ダブルクリックで撮影情報を表示。ファイル日時の更新、Pro版では撮影日時に基づくファイル名変更も可能。一括更新・一括変更にも対応。Web公開時はEXIF削除を推奨します。</p>
+            </div>
+          </div>
+          <div class="point-item">
+            <img src="assets/pictcomp/setting.png" alt="フォルダ一括・複数形式" class="point-img">
+            <div class="point-content">
+              <h3 class="point-title">5. フォルダ選択で一括処理・複数形式対応</h3>
+              <p class="point-desc">入力フォルダに圧縮したい画像、出力フォルダに保存先を指定。目標サイズ・最大サイズ・JPEG品質・出力形式を調整。JPEG、PNG、HEIC、WebP、TIFF、BMPに対応し、形式変換も可能（HEIC→JPEG、BMP→PNG、PNG→WebPなど）。形式変換のみ（圧縮・リサイズなし）のオプションで、画質を維持したまま形式だけ変更できます。</p>
+            </div>
+          </div>
+          <div class="point-item">
+            <img src="assets/pictcomp/complete.png" alt="結果表示" class="point-img">
+            <div class="point-content">
+              <h3 class="point-title">6. 圧縮完了の結果表示</h3>
+              <p class="point-desc">処理件数や所要時間を表示。Pro版ではレポートのエクスポート（CSV）も可能です。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ダウンロード -->
+    <section class="section download-section">
+      <div class="container">
+        <h2>ダウンロード</h2>
+        <p class="version-badge">v0.1.0</p>
+        <p class="download-intro">リリースページから、お使いの OS に合わせてダウンロードしてください。</p>
+        <div class="download-buttons">
+          <a href="https://github.com/6EFB0D/PictComp/releases" class="cta-button cta-button-primary">リリースページを開く</a>
+        </div>
+        <div class="platform-links">
+          <a href="https://github.com/6EFB0D/PictComp/releases" class="platform-button">Windows (setup.exe)</a>
+          <a href="https://github.com/6EFB0D/PictComp/releases" class="platform-button">macOS (DMG)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 無料版 vs Pro版（準備中） -->
+    <section class="section comparison-section">
+      <div class="container">
+        <h2>無料版 vs Pro版（準備中）</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>項目</th>
+                <th>無料版</th>
+                <th>Pro版・トライアル（準備中）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1回の処理枚数</td>
+                <td>20枚まで</td>
+                <td><strong>無制限</strong></td>
+              </tr>
+              <tr>
+                <td>EXIF保持</td>
+                <td>❌</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td>レポートエクスポート</td>
+                <td>❌</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td>ファイル名変更（撮影日時）</td>
+                <td>❌</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td>基本圧縮・プリセット・リサイズ</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="pro-note">初回起動から14日間は全機能を無料でお試しいただけます。</p>
+      </div>
+    </section>
+
+    <!-- 7. お問い合わせ -->
+    <section class="section contact-section">
+      <div class="container">
+        <h2>お問い合わせ</h2>
+        <p>ご質問やサポートのご要望は、以下のメールアドレスまでお気軽にご連絡ください。</p>
+        <a href="mailto:support@office-gioplan.com" class="email-link">support@office-gioplan.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <nav class="footer-nav">
+        <a href="index.html">ホーム</a>
+        <a href="zipsearch.html">ZipSearch</a>
+        <a href="pictcomp.html">PictComp</a>
+        <a href="privacy-policy.html">プライバシーポリシー</a>
+      </nav>
+      <p class="copyright">&copy; Office Go Plan. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

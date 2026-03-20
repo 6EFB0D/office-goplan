@@ -428,6 +428,63 @@ h2 {
   opacity: 0.8;
 }
 
+/* PictComp 概要 */
+.overview-desc {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.overview-keywords {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* PictComp 機能詳細 */
+.points-grid {
+  display: grid;
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.point-item {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .point-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+.point-img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.point-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.point-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
 /* Download section */
 .version-badge {
   display: inline-block;
