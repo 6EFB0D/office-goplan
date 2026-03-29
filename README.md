@@ -10,6 +10,8 @@ office-goplan/
 ├── zipsearch.html      # ZipSearch 製品ページ
 ├── pictcomp.html      # PictComp 製品ページ
 ├── privacy-policy.html # プライバシーポリシー
+├── terms-of-service.html # 利用規約
+├── specified-commercial-transactions.html # 特定商取引法に基づく表記
 ├── styles.css          # 共通スタイル
 ├── .nojekyll           # Jekyll 無効化（GitHub Pages 用）
 ├── .gitignore
