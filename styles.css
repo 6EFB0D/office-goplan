@@ -44,6 +44,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: min(1080px, 100%);
 }
 
 .logo {
@@ -66,9 +67,16 @@ body {
 
 .nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px 24px;
+  flex-wrap: nowrap;
+  gap: 12px 16px;
   justify-content: flex-end;
+}
+
+@media (max-width: 720px) {
+  .nav {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
 }
 
 .nav a {
@@ -77,6 +85,13 @@ body {
   font-size: 0.9rem;
   font-weight: 500;
   transition: color 0.2s;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .nav a {
+    white-space: normal;
+  }
 }
 
 .nav a:hover {
@@ -219,14 +234,19 @@ h2 {
   align-items: center;
   gap: 16px;
   text-align: center;
+  max-width: min(1080px, 100%);
 }
 
 .footer-nav {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 20px;
+  row-gap: 10px;
 }
 
 .footer-nav a {
+  white-space: nowrap;
   color: var(--color-text-muted);
   text-decoration: none;
   font-size: 0.9rem;
@@ -239,6 +259,11 @@ h2 {
 .copyright {
   font-size: 0.85rem;
   color: var(--color-text-muted);
+}
+
+/* アンカーリンク時に見出しがヘッダーに隠れないよう余白 */
+#products {
+  scroll-margin-top: 24px;
 }
 
 /* Product card (homepage) */

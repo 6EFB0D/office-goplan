@@ -17,6 +17,8 @@ office-goplan/
 ├── .gitignore
 ├── README.md
 └── assets/
+    ├── js/
+    │   └── ga4.js      # Google アナリティクス GA4（計測 ID を設定）
     ├── logo/           # ブランドロゴ
     │   ├── logo-a.jpg  # ヘッダー用（暗色背景向けフィルター適用）
     │   ├── logo-b.jpg
@@ -37,6 +39,12 @@ office-goplan/
         └── README.md
 ```
 
+## Google アナリティクス（GA4）
+
+1. [Google アナリティクス](https://analytics.google.com/) でプロパティと Web データストリームを作成し、**計測 ID**（`G-` で始まる値）を取得します。
+2. `assets/js/ga4.js` 内の `MEASUREMENT_ID` をその ID に置き換えて保存します（`XXXX` が残っているとタグは無効のままです）。
+3. 変更をデプロイ後、[管理画面のレポート](https://analytics.google.com/)でリアルタイムなどにヒットが出るか確認します。
+
 ## GitHub Pages での公開方法
 
 1. このリポジトリを GitHub にプッシュします
@@ -50,4 +58,4 @@ office-goplan/
 
 ## サポート
 
-お問い合わせは support@office-gioplan.com までご連絡ください。
+お問い合わせは support@office-goplan.com までご連絡ください。
