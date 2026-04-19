@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="assets/logo/logo-tab.jpg">
+  <meta name="description" content="ご購入ありがとうございます | Office Go Plan">
+  <title>ご購入ありがとうございます | Office Go Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg:           #0f1419;
+      --color-surface:      #1a2332;
+      --color-surface2:     #1e2d42;
+      --color-accent:       #3b82f6;
+      --color-accent-hover: #2563eb;
+      --color-success:      #22c55e;
+      --color-text:         #e2e8f0;
+      --color-text-muted:   #94a3b8;
+      --color-border:       #2d3f55;
+      --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-bg);
+      color: var(--color-text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      max-width: 540px;
+      width: 100%;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .logo { margin-bottom: 36px; }
+    .logo img { width: 130px; border-radius: 8px; }
+    .icon { font-size: 52px; margin-bottom: 16px; }
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--color-success);
+      margin-bottom: 14px;
+    }
+    .message {
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--color-text-muted);
+      margin-bottom: 32px;
+    }
+    .message strong { color: var(--color-text); }
+    .info-box {
+      background: var(--color-surface2);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      text-align: left;
+      margin-bottom: 16px;
+      font-size: 13px;
+      line-height: 2;
+      color: var(--color-text-muted);
+    }
+    .info-box .label {
+      color: var(--color-accent);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 4px;
+    }
+    hr { border: none; border-top: 1px solid var(--color-border); margin: 28px 0; }
+    .support {
+      font-size: 13px;
+      color: var(--color-text-muted);
+      line-height: 1.9;
+      margin-bottom: 24px;
+    }
+    .support a { color: var(--color-accent); text-decoration: none; }
+    .support a:hover { text-decoration: underline; }
+    .home-link {
+      display: inline-block;
+      padding: 11px 28px;
+      background: var(--color-accent);
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .home-link:hover { background: var(--color-accent-hover); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <img src="assets/logo/logo-a.jpg" alt="Office Go Plan">
+    </div>
+
+    <div class="icon">✅</div>
+    <h1>ご購入ありがとうございます</h1>
+
+    <p class="message">
+      お支払いが完了しました。<br>
+      <strong>ライセンスキーをご登録のメールアドレスへ送信しました。</strong><br>
+      数分以内にメールをご確認ください。
+    </p>
+
+    <div class="info-box">
+      <span class="label">📧 メールが届かない場合</span>
+      迷惑メールフォルダをご確認ください。<br>
+      数分経ってもメールが届かない場合は、<br>
+      サポートまでご連絡ください。
+    </div>
+
+    <div class="info-box">
+      <span class="label">🔑 アクティベーション手順</span>
+      ① アプリを起動する<br>
+      ② メニュー →「ライセンス認証」を開く<br>
+      ③ メール記載のライセンスキーを入力して「認証」
+    </div>
+
+    <hr>
+
+    <div class="support">
+      ご不明な点はサポートまでお問い合わせください<br>
+      <a href="mailto:support@office-goplan.com">support@office-goplan.com</a>
+    </div>
+
+    <a href="index.html" class="home-link">トップページへ戻る</a>
+  </div>
+</body>
+</html>

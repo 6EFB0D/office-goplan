@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="assets/logo/logo-tab.jpg">
+  <meta name="description" content="お支払いがキャンセルされました | Office Go Plan">
+  <title>お支払いがキャンセルされました | Office Go Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg:           #0f1419;
+      --color-surface:      #1a2332;
+      --color-surface2:     #1e2d42;
+      --color-accent:       #3b82f6;
+      --color-accent-hover: #2563eb;
+      --color-text:         #e2e8f0;
+      --color-text-muted:   #94a3b8;
+      --color-border:       #2d3f55;
+      --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-bg);
+      color: var(--color-text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      max-width: 540px;
+      width: 100%;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .logo { margin-bottom: 36px; }
+    .logo img { width: 130px; border-radius: 8px; }
+    .icon { font-size: 52px; margin-bottom: 16px; }
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      margin-bottom: 14px;
+    }
+    .message {
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--color-text-muted);
+      margin-bottom: 32px;
+    }
+    .actions { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+    .btn-primary {
+      display: block;
+      padding: 12px 24px;
+      background: var(--color-accent);
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .btn-primary:hover { background: var(--color-accent-hover); }
+    .btn-secondary {
+      display: block;
+      padding: 12px 24px;
+      background: transparent;
+      color: var(--color-accent);
+      border: 1px solid var(--color-accent);
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .btn-secondary:hover { background: var(--color-surface2); }
+    hr { border: none; border-top: 1px solid var(--color-border); margin: 28px 0; }
+    .support {
+      font-size: 13px;
+      color: var(--color-text-muted);
+      line-height: 1.9;
+    }
+    .support a { color: var(--color-accent); text-decoration: none; }
+    .support a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <img src="assets/logo/logo-a.jpg" alt="Office Go Plan">
+    </div>
+
+    <div class="icon">🔙</div>
+    <h1>お支払いがキャンセルされました</h1>
+
+    <p class="message">
+      お支払い手続きがキャンセルされました。<br>
+      購入を続ける場合は、下のボタンからお試しください。
+    </p>
+
+    <div class="actions">
+      <a href="index.html" class="btn-primary">購入ページへ戻る</a>
+      <a href="mailto:support@office-goplan.com" class="btn-secondary">サポートへ問い合わせる</a>
+    </div>
+
+    <hr>
+
+    <div class="support">
+      ご不明な点がございましたら<br>
+      <a href="mailto:support@office-goplan.com">support@office-goplan.com</a> までお問い合わせください
+    </div>
+  </div>
+</body>
+</html>
