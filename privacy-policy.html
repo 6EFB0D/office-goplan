@@ -50,10 +50,12 @@
         <ul>
           <li><strong>お問い合わせ</strong>：氏名、メールアドレス、その他ご連絡に必要な情報</li>
           <li><strong>購入、見積、請求、銀行振込に係る取引</strong>：会社名、部署名、担当者名、請求先住所、電話番号、メールアドレス、振込名義、取引履歴、その他取引遂行に必要な情報</li>
-          <li><strong>ライセンスの付与・オンライン検証等</strong>：ライセンスキー、メールアドレス、端末やソフトウェアを識別するための情報（例：ハードウェア識別子、端末ID、アプリケーションが送信するトークン等。製品により異なります）、検証サーバへのアクセスログ</li>
+          <li><strong>ライセンスの付与・オンライン検証等</strong>：ライセンスキー、メールアドレス、端末やソフトウェアを識別するための情報（例：ハードウェア識別子、端末ID、アプリケーションが送信するトークン等。製品により異なります）。オンラインでのライセンス検証にあたり、検証データの保存・通信のために <strong>Supabase</strong> 等の基盤上で当該情報が処理される場合があります。</li>
+          <li><strong>アンケート・ご意見（Google フォーム等）</strong>：当サービスが案内する Google フォームその他のフォームにおいて、ご記入いただいた内容（ニックネーム、メールアドレス、自由記述のご意見・開発要望・不具合報告等）。取得項目はフォームごとに異なります。</li>
           <li><strong>技術情報</strong>：IP アドレス、ブラウザの種類、アクセス日時、その他サービス提供・セキュリティのために自動的に取得される情報</li>
           <li><strong>アクセス解析（Google アナリティクス GA4）</strong>：ページ閲覧や滞在、端末・ブラウザに関する統計的な情報。Cookie 等を用いて計測されます。詳細は <a href="https://policies.google.com/privacy?hl=ja" rel="noopener noreferrer" target="_blank">Google のプライバシーポリシー</a> をご覧ください。</li>
         </ul>
+        <p><strong>ご記入・ご送信にあたってのお願い</strong>：お問い合わせ、Google フォーム、アンケート等に、<strong>クレジットカード番号・有効期限・セキュリティコード、銀行口座番号・キャッシュカード情報、パスワードその他の認証情報、健康・政治・信条等に関する機微な個人情報</strong>を記載しないでください。決済は Stripe が定める画面等でのみ行い、カード情報は当サービスまたは Google フォーム上に入力しないでください。やむを得ず個人情報を送る場合も、必要最小限にとどめてください。</p>
 
         <h2>2. 情報の利用目的</h2>
         <p>収集した情報は、以下の目的で利用します。</p>
@@ -63,6 +65,7 @@
           <li>購入・請求・決済・入金確認およびこれらに関する連絡</li>
           <li>サービスの提供、維持、改善、サポート</li>
           <li>当サイトの利用状況の把握・分析（Google アナリティクス GA4）</li>
+          <li>アンケート結果、ご要望・フィードバックの分析および製品・サービスの改善</li>
           <li>重要な通知やお知らせの送信</li>
           <li>法令に基づく対応</li>
         </ul>
@@ -74,8 +77,8 @@
         <p>当サービスは、次のサービス等を利用する場合があり、利用に伴い個人情報・取引情報が当該事業者が定める範囲で処理されます。各事業者のプライバシーポリシー等もご参照ください。</p>
         <ul>
           <li><strong>Stripe, Inc.</strong>：クレジットカード等の決済処理（カード番号等は当サービスが保持せず、Stripe が処理します）</li>
-          <li><strong>Google LLC</strong>：Google アナリティクス（GA4）によるアクセス解析。詳細は <a href="https://policies.google.com/privacy?hl=ja" rel="noopener noreferrer" target="_blank">Google のプライバシーポリシー</a>、<a href="https://business.safety.google/adscontrollerterms/" rel="noopener noreferrer" target="_blank">Google のサービスに関する情報</a> をご覧ください。ブラウザの設定や <a href="https://tools.google.com/dlpage/gaoptout?hl=ja" rel="noopener noreferrer" target="_blank">オプトアウト アドオン</a>（対象ブラウザに限ります）で解析を制限できる場合があります。</li>
-          <li><strong>Supabase Inc.</strong> 等：データベース、アプリケーション基盤、オンライン検証・バックエンドに関するホスティング等（利用する機能・保持するデータの範囲は製品・サービスにより異なります）</li>
+          <li><strong>Google LLC</strong>：<strong>Google アナリティクス（GA4）</strong>によるアクセス解析、および当サービスが利用する<strong>Google フォーム</strong>における回答の収集・保存（フォームの設定・内容により、Google のプライバシーポリシー等が適用されます）。詳細は <a href="https://policies.google.com/privacy?hl=ja" rel="noopener noreferrer" target="_blank">Google のプライバシーポリシー</a>、<a href="https://business.safety.google/adscontrollerterms/" rel="noopener noreferrer" target="_blank">Google のサービスに関する情報</a> をご覧ください。GA4 についてはブラウザの設定や <a href="https://tools.google.com/dlpage/gaoptout?hl=ja" rel="noopener noreferrer" target="_blank">オプトアウト アドオン</a>（対象ブラウザに限ります）で解析を制限できる場合があります。</li>
+          <li><strong>Supabase Inc.</strong> 等：<strong>ライセンスのオンライン検証</strong>に用いるデータベースや API、ならびにアプリケーションのバックエンド・ホスティング。検証に伴い送信された情報（例：ライセンスキー、端末識別に関する情報、検証時刻等）が Supabase が定める範囲で処理・保存される場合があります（利用する機能・保持するデータの範囲は製品・サービスにより異なります）。</li>
         </ul>
 
         <h2>5. 情報の安全管理</h2>
@@ -93,7 +96,7 @@
         <h2>9. お問い合わせ</h2>
         <p>本プライバシーポリシーに関するお問い合わせは、以下までご連絡ください。</p>
         <p>Support Office Go Plan<br><a href="mailto:support@office-goplan.com">support@office-goplan.com</a></p>
-        <p style="margin-top: 32px; font-size: 0.9rem; color: var(--color-text-muted);">最終更新日：2026年3月30日</p>
+        <p style="margin-top: 32px; font-size: 0.9rem; color: var(--color-text-muted);">最終更新日：2026年4月5日</p>
       </div>
     </article>
   </main>
