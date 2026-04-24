@@ -1,0 +1,6 @@
+# 自動生成物（generate_templates.py の中間物）
+_logo_rendered.png
+
+# 視覚確認用の一時ファイル
+_preview_*.pdf
+_preview_*.png
