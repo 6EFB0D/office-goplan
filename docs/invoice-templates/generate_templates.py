@@ -166,6 +166,81 @@ def _add_paragraph(container, text: str = "", *, size_pt: float | None = None,
 
 
 # ---------------------------------------------------------------------------
+# Word フィールドコード（計算式）ヘルパー
+# ---------------------------------------------------------------------------
+
+def _add_field_code(paragraph, instr: str, display_text: str = "0",
+                    size_pt: float | None = None,
+                    bold: bool = False,
+                    color: RGBColor | None = None) -> None:
+    """Word フィールドコード（= 計算式など）を段落に挿入する。
+    dirty=true により開いた瞬間または F9 で自動更新される。"""
+    p_el = paragraph._p
+
+    def _rpr():
+        rpr = OxmlElement("w:rPr")
+        if size_pt is not None:
+            for tag in ("w:sz", "w:szCs"):
+                el = OxmlElement(tag)
+                el.set(qn("w:val"), str(int(size_pt * 2)))
+                rpr.append(el)
+        if bold:
+            rpr.append(OxmlElement("w:b"))
+        if color is not None:
+            c_el = OxmlElement("w:color")
+            c_el.set(qn("w:val"), f"{color[0]:02X}{color[1]:02X}{color[2]:02X}")
+            rpr.append(c_el)
+        return rpr
+
+    r_begin = OxmlElement("w:r")
+    fc = OxmlElement("w:fldChar")
+    fc.set(qn("w:fldCharType"), "begin")
+    fc.set(qn("w:dirty"), "true")
+    r_begin.append(fc)
+    p_el.append(r_begin)
+
+    r_instr = OxmlElement("w:r")
+    it = OxmlElement("w:instrText")
+    it.set(qn("xml:space"), "preserve")
+    it.text = f" {instr} "
+    r_instr.append(it)
+    p_el.append(r_instr)
+
+    r_sep = OxmlElement("w:r")
+    fc_sep = OxmlElement("w:fldChar")
+    fc_sep.set(qn("w:fldCharType"), "separate")
+    r_sep.append(fc_sep)
+    p_el.append(r_sep)
+
+    r_disp = OxmlElement("w:r")
+    rpr = _rpr()
+    if len(rpr):
+        r_disp.append(rpr)
+    t = OxmlElement("w:t")
+    t.text = display_text
+    r_disp.append(t)
+    p_el.append(r_disp)
+
+    r_end = OxmlElement("w:r")
+    fc_end = OxmlElement("w:fldChar")
+    fc_end.set(qn("w:fldCharType"), "end")
+    r_end.append(fc_end)
+    p_el.append(r_end)
+
+
+def _add_bookmark(paragraph, name: str, bm_id: int) -> None:
+    """段落に Word ブックマークを設定する。フィールド間参照に使用。"""
+    p_el = paragraph._p
+    bm_start = OxmlElement("w:bookmarkStart")
+    bm_start.set(qn("w:id"), str(bm_id))
+    bm_start.set(qn("w:name"), name)
+    bm_end = OxmlElement("w:bookmarkEnd")
+    bm_end.set(qn("w:id"), str(bm_id))
+    p_el.insert(0, bm_start)
+    p_el.append(bm_end)
+
+
+# ---------------------------------------------------------------------------
 # 各ブロック生成
 # ---------------------------------------------------------------------------
 
@@ -336,8 +411,11 @@ def _add_headline_amount(doc: Document, label: str, amount_text: str,
         _apply_font(r, size_pt=9, color=COLOR_MUTED)
 
 
-def _add_line_items_table(doc: Document, rows: list[tuple[str, int, int, int]]) -> None:
-    """明細表。rows は [(説明, 数量, 単価, 金額), ...]。"""
+def _add_line_items_table(doc: Document,
+                          rows: list[tuple[str, int, int, int]]) -> list[str]:
+    """明細表。rows は [(説明, 数量, 単価, 金額), ...]。
+    金額列は Word フィールド式（数量×単価）を使用し、F9 で自動更新される。
+    戻り値: 各行の金額セルに設定したブックマーク名のリスト（合計ブロックで参照）。"""
     _add_paragraph(doc, "", size_pt=2)  # spacer
 
     table = doc.add_table(rows=1 + len(rows), cols=4)
@@ -348,7 +426,7 @@ def _add_line_items_table(doc: Document, rows: list[tuple[str, int, int, int]]) 
         table.columns[i].width = w
 
     # ヘッダ行
-    headers = ["説明", "数量", "単価", "金額"]
+    headers = ["説明", "数量", "単価（円）", "金額（円）"]
     header_cells = table.rows[0].cells
     for i, h in enumerate(headers):
         header_cells[i].width = widths[i]
@@ -369,10 +447,12 @@ def _add_line_items_table(doc: Document, rows: list[tuple[str, int, int, int]]) 
         _apply_font(r, size_pt=9, bold=True, color=COLOR_MUTED)
 
     # 明細行
+    amt_bookmarks: list[str] = []
     for idx, (desc, qty, unit, amount) in enumerate(rows, start=1):
         row = table.rows[idx].cells
-        values = [desc, f"{qty:,}", f"￥{unit:,}", f"￥{amount:,}"]
-        for i, v in enumerate(values):
+        # 説明・数量・単価はテキスト（単価は数値のみ、ヘッダで「円」と明示）
+        static_cols = [desc, f"{qty:,}", f"{unit:,}"]
+        for i, v in enumerate(static_cols):
             row[i].width = widths[i]
             _set_cell_border(
                 row[i],
@@ -389,10 +469,44 @@ def _add_line_items_table(doc: Document, rows: list[tuple[str, int, int, int]]) 
             r = p.add_run(v)
             _apply_font(r, size_pt=10, color=COLOR_TEXT)
 
+        # 金額列: 数量（B列）× 単価（C列）のフィールド式
+        # ヘッダ行が Word 上の行 1 なのでデータ行は idx+1
+        word_row = idx + 1
+        bm_name = f"line_amt_{idx}"
+        amt_bookmarks.append(bm_name)
+
+        amt_cell = row[3]
+        amt_cell.width = widths[3]
+        _set_cell_border(
+            amt_cell,
+            top={"val": "nil"},
+            bottom={"val": "single", "sz": "4", "color": COLOR_DIVIDER},
+            left={"val": "nil"},
+            right={"val": "nil"},
+        )
+        p_amt = amt_cell.paragraphs[0]
+        p_amt.paragraph_format.space_before = Pt(4)
+        p_amt.paragraph_format.space_after = Pt(4)
+        p_amt.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+        # ブックマークを設定して他のフィールドから参照可能にする
+        _add_bookmark(p_amt, bm_name, bm_id=100 + idx)
+        _add_field_code(
+            p_amt,
+            instr=fr'= B{word_row} * C{word_row} \# "#,##0"',
+            display_text=f"{amount:,}",
+            size_pt=10,
+            color=COLOR_TEXT,
+        )
+
+    return amt_bookmarks
+
 
 def _add_totals_block(doc: Document, subtotal: int, total: int,
-                      total_label: str = "請求金額") -> None:
-    """右寄せ合計ブロック。"""
+                      total_label: str = "請求金額",
+                      amt_bookmarks: list[str] | None = None) -> None:
+    """右寄せ合計ブロック。
+    amt_bookmarks が指定された場合、明細の金額ブックマークを参照するフィールド式を使用し、
+    数量変更後に F9 で合計も自動更新される。"""
     _add_paragraph(doc, "", size_pt=2)
 
     table = doc.add_table(rows=3, cols=2)
@@ -401,10 +515,20 @@ def _add_totals_block(doc: Document, subtotal: int, total: int,
     table.columns[0].width = Cm(11.0)
     table.columns[1].width = Cm(6.0)
 
+    # ブックマーク参照式: SUM(bm1, bm2, ...) → 単一行なら = bm_name
+    if amt_bookmarks:
+        if len(amt_bookmarks) == 1:
+            sum_instr = fr'= {amt_bookmarks[0]} \# "#,##0"'
+        else:
+            bm_sum = " + ".join(amt_bookmarks)
+            sum_instr = fr'= {bm_sum} \# "#,##0"'
+    else:
+        sum_instr = None
+
     lines = [
-        ("小計", f"￥{subtotal:,}", False),
-        ("合計", f"￥{total:,}", False),
-        (total_label, f"￥{total:,}", True),
+        ("小計", f"{subtotal:,}", False),
+        ("合計", f"{total:,}", False),
+        (total_label, f"{total:,}", True),
     ]
     for i, (lbl, val, emphasized) in enumerate(lines):
         left = table.rows[i].cells[0]
@@ -412,14 +536,12 @@ def _add_totals_block(doc: Document, subtotal: int, total: int,
         left.width = Cm(11.0)
         right.width = Cm(6.0)
 
-        # 空白セル（罫線なし）
         _set_cell_border(
             left,
             top={"val": "nil"}, bottom={"val": "nil"},
             left={"val": "nil"}, right={"val": "nil"},
         )
 
-        # 値セル
         border_top = {"val": "single", "sz": "6", "color": COLOR_DIVIDER} if emphasized else {"val": "nil"}
         _set_cell_border(
             right,
@@ -429,33 +551,54 @@ def _add_totals_block(doc: Document, subtotal: int, total: int,
             right={"val": "nil"},
         )
 
-        # 2 列表示（ラベル: 値）を 1 セル内で
         p = right.paragraphs[0]
         p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
         p.paragraph_format.space_before = Pt(4)
         p.paragraph_format.space_after = Pt(2)
         r1 = p.add_run(f"{lbl}　")
         _apply_font(r1, size_pt=10, color=COLOR_MUTED, bold=False)
-        r2 = p.add_run(val)
-        _apply_font(
-            r2,
-            size_pt=13 if emphasized else 10,
-            bold=emphasized,
-            color=COLOR_TEXT,
-        )
+
+        if sum_instr:
+            _add_field_code(
+                p,
+                instr=sum_instr,
+                display_text=val,
+                size_pt=13 if emphasized else 10,
+                bold=emphasized,
+                color=COLOR_TEXT,
+            )
+        else:
+            r2 = p.add_run(val)
+            _apply_font(
+                r2,
+                size_pt=13 if emphasized else 10,
+                bold=emphasized,
+                color=COLOR_TEXT,
+            )
 
 
-def _add_bank_block(doc: Document, amount: int, due_date: str) -> None:
+def _add_bank_block(doc: Document, amount: int, due_date: str,
+                    amt_bookmarks: list[str] | None = None) -> None:
     """銀行振込のご案内ブロック。請求書のみ。"""
     _add_paragraph(doc, "", size_pt=4)
-    _add_paragraph(
-        doc,
-        f"銀行振込で ￥{amount:,} をお支払い",
-        size_pt=12,
-        bold=True,
-        color=COLOR_TEXT,
-        space_after_pt=2,
-    )
+    p = doc.add_paragraph()
+    p.paragraph_format.space_after = Pt(2)
+    r_prefix = p.add_run("銀行振込で　")
+    _apply_font(r_prefix, size_pt=12, bold=True, color=COLOR_TEXT)
+    if amt_bookmarks:
+        bm = amt_bookmarks[0] if len(amt_bookmarks) == 1 else " + ".join(amt_bookmarks)
+        _add_field_code(
+            p,
+            instr=fr'= {bm} \# "#,##0"',
+            display_text=f"{amount:,}",
+            size_pt=12,
+            bold=True,
+            color=COLOR_TEXT,
+        )
+        r_suffix = p.add_run(" 円　をお支払い")
+    else:
+        r_suffix = p.add_run(f"¥{amount:,} をお支払い")
+    _apply_font(r_suffix, size_pt=12, bold=True, color=COLOR_TEXT)
     _add_paragraph(
         doc,
         f"お支払期限: {due_date}　※ 振込手数料はお客様ご負担にてお願いいたします。",
@@ -578,20 +721,21 @@ def build_quote() -> Document:
     _add_headline_amount(
         doc,
         label="お見積金額",
-        amount_text="￥0,000（税込・不課税）",
+        amount_text="￥5,000（消費税不課税）",
         sub_note="下記明細のとおり、お見積りいたします。",
     )
 
-    _add_line_items_table(
+    bm = _add_line_items_table(
         doc,
         rows=[
-            ("PDF Handler 買い切り版ライセンス", 1, 3850, 3850),
+            ("PDF Handler 買い切り版ライセンス", 1, 5000, 5000),
             # 複数行の例（削除可）:
             # ("ZipSearch 買い切り版ライセンス", 1, 0, 0),
         ],
     )
 
-    _add_totals_block(doc, subtotal=3850, total=3850, total_label="お見積合計")
+    _add_totals_block(doc, subtotal=5000, total=5000, total_label="お見積合計",
+                      amt_bookmarks=bm)
 
     _add_notes_block(
         doc,
@@ -635,20 +779,21 @@ def build_invoice() -> Document:
     _add_headline_amount(
         doc,
         label="ご請求金額",
-        amount_text="￥0,000（税込・不課税）",
+        amount_text="￥5,000（消費税不課税）",
         sub_note="下記明細のとおり、ご請求申し上げます。",
     )
 
-    _add_line_items_table(
+    bm = _add_line_items_table(
         doc,
         rows=[
-            ("PDF Handler 買い切り版ライセンス", 1, 3850, 3850),
+            ("PDF Handler 買い切り版ライセンス", 1, 5000, 5000),
         ],
     )
 
-    _add_totals_block(doc, subtotal=3850, total=3850, total_label="ご請求金額")
+    _add_totals_block(doc, subtotal=5000, total=5000, total_label="ご請求金額",
+                      amt_bookmarks=bm)
 
-    _add_bank_block(doc, amount=3850, due_date="YYYY年M月D日")
+    _add_bank_block(doc, amount=5000, due_date="YYYY年M月D日", amt_bookmarks=bm)
 
     _add_notes_block(
         doc,
@@ -690,7 +835,7 @@ def build_receipt() -> Document:
     _add_headline_amount(
         doc,
         label="領収金額",
-        amount_text="￥0,000（税込・不課税）",
+        amount_text="￥5,000（消費税不課税）",
         sub_note="上記の金額を、正に領収いたしました。",
     )
 
@@ -703,14 +848,15 @@ def build_receipt() -> Document:
     r = p.add_run("PDF Handler 買い切り版ライセンス 代金として")
     _apply_font(r, size_pt=11, bold=True, color=COLOR_TEXT)
 
-    _add_line_items_table(
+    bm = _add_line_items_table(
         doc,
         rows=[
-            ("PDF Handler 買い切り版ライセンス", 1, 3850, 3850),
+            ("PDF Handler 買い切り版ライセンス", 1, 5000, 5000),
         ],
     )
 
-    _add_totals_block(doc, subtotal=3850, total=3850, total_label="領収合計")
+    _add_totals_block(doc, subtotal=5000, total=5000, total_label="領収合計",
+                      amt_bookmarks=bm)
 
     _add_notes_block(
         doc,
