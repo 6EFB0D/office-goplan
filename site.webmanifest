@@ -4,8 +4,8 @@
   "description": "オフィス業務を効率化するソリューション",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f1419",
-  "theme_color": "#0f1419",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "assets/logo/icon-192.png",
