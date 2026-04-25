@@ -1,0 +1,6 @@
+transactions.xlsx
+output/
+_logo_rendered.png
+__pycache__/
+*.pyc
+*.pyo
