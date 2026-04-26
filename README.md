@@ -7,6 +7,7 @@ Office Go Plan の公式ウェブサイトです。
 ```
 office-goplan/
 ├── index.html          # ホームページ
+├── pdfhandler.html     # pdfHandler 製品ページ
 ├── zipsearch.html      # ZipSearch 製品ページ
 ├── pictcomp.html      # PictComp 製品ページ
 ├── privacy-policy.html # プライバシーポリシー
@@ -30,12 +31,17 @@ office-goplan/
     │   ├── gui-results.png
     │   ├── web-main.png
     │   └── README.md
-    └── pictcomp/       # PictComp 製品用アセット
-        ├── pictcomp_bright.jpg  # 製品ロゴ
-        ├── gui-main.svg         # スクリーンショット（PNG に差し替え）
-        ├── gui-compressed.svg
-        ├── gui-viewer.svg
-        ├── point-1.svg～point-8.svg  # 推しポイント（PNG に差し替え）
+    ├── pictcomp/       # PictComp 製品用アセット
+    │   ├── pictcomp_bright.jpg  # 製品ロゴ
+    │   ├── pictcomp_trimmed.png # Web表示用トリム済みロゴ
+    │   ├── gui-main.svg         # スクリーンショット（PNG に差し替え）
+    │   ├── gui-compressed.svg
+    │   ├── gui-viewer.svg
+    │   ├── point-1.svg～point-8.svg  # 推しポイント（PNG に差し替え）
+    │   └── README.md
+    └── pdfhandler/     # pdfHandler 製品用アセット
+        ├── PdfHandler.ico
+        ├── PdfHandler.png
         └── README.md
 ```
 
