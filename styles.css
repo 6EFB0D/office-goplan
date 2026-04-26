@@ -268,10 +268,47 @@ h2 {
 
 /* Product card (homepage) */
 .product-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+  background: var(--product-card-bg, rgba(255, 255, 255, 0.03));
+  border: 1px solid var(--product-border, rgba(255, 255, 255, 0.08));
   border-radius: 12px;
   padding: 24px;
+}
+
+.product-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 72px 76px, var(--product-glow, rgba(59, 130, 246, 0.2)) 0%, transparent 46%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.product-card > * {
+  position: relative;
+}
+
+.product-card + .product-card {
+  margin-top: 24px;
+}
+
+.product-card-pdfhandler {
+  --product-card-bg: linear-gradient(135deg, rgba(14, 165, 233, 0.22) 0%, rgba(26, 35, 50, 0.92) 54%, rgba(15, 23, 42, 0.94) 100%);
+  --product-glow: rgba(125, 211, 252, 0.36);
+  --product-border: rgba(56, 189, 248, 0.25);
+}
+
+.product-card-zipsearch {
+  --product-card-bg: linear-gradient(135deg, rgba(34, 211, 238, 0.18) 0%, rgba(26, 35, 50, 0.92) 54%, rgba(15, 23, 42, 0.94) 100%);
+  --product-glow: rgba(250, 204, 21, 0.24);
+  --product-border: rgba(34, 211, 238, 0.24);
+}
+
+.product-card-pictcomp {
+  --product-card-bg: linear-gradient(135deg, rgba(56, 189, 248, 0.30) 0%, rgba(30, 64, 90, 0.88) 38%, rgba(15, 23, 42, 0.94) 100%);
+  --product-glow: rgba(186, 230, 253, 0.46);
+  --product-border: rgba(125, 211, 252, 0.34);
 }
 
 .product-card h3 {
@@ -299,6 +336,28 @@ h2 {
 }
 
 /* ZipSearch product page */
+.hero-product {
+  background: var(--product-hero-bg, transparent);
+}
+
+.product-theme-pdfhandler {
+  --product-hero-bg:
+    radial-gradient(circle at 36% 38%, rgba(56, 189, 248, 0.16) 0%, transparent 34%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0) 0%, rgba(14, 165, 233, 0.08) 100%);
+}
+
+.product-theme-zipsearch {
+  --product-hero-bg:
+    radial-gradient(circle at 36% 38%, rgba(250, 204, 21, 0.11) 0%, transparent 34%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0) 0%, rgba(34, 211, 238, 0.08) 100%);
+}
+
+.product-theme-pictcomp {
+  --product-hero-bg:
+    radial-gradient(circle at 36% 38%, rgba(186, 230, 253, 0.18) 0%, transparent 34%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0) 0%, rgba(56, 189, 248, 0.10) 100%);
+}
+
 .hero-product .hero-subtitle {
   font-size: 1.25rem;
   font-weight: 600;
@@ -355,7 +414,7 @@ h2 {
 }
 
 .product-card-logo {
-  max-width: 80px;
+  max-width: 88px;
   height: auto;
   flex-shrink: 0;
   transition: opacity 0.2s;
