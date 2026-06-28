@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon-large.png">
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="ZipSearch - ZIP/7z 内の CSV/TSV/TXT を展開せずに高速検索するツール">
+  <meta name="description" content="ZipSearch - log4net ログを ZIP のまま横断検索。ERROR と時刻で絞り込み、保守・障害調査に特化した Windows 向けツール">
   <title>ZipSearch | Office Go Plan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,69 +32,155 @@
   </header>
 
   <main>
-    <!-- 1. ヒーロー・キャッチ -->
+    <!-- 1. ヒーロー -->
     <section class="hero hero-product product-theme-zipsearch">
       <div class="container">
         <div class="hero-product-layout">
           <img src="assets/zipsearch/zipsearch_blue.png" alt="ZipSearch" class="product-logo">
           <div class="hero-product-text">
             <h1>ZipSearch</h1>
-            <p class="hero-subtitle">ZIP内を展開せずに検索</p>
+            <p class="hero-subtitle">log4net の過去ログを、ZIP のまま、複数ファイル横断で、ERROR と時刻で絞り込む。</p>
           </div>
         </div>
-        <p class="hero-desc">ZIP/7z 形式の圧縮ファイル内の CSV/TSV/TXT を、展開せずに高速検索できるツールです。</p>
+        <p class="hero-desc">ZIP・ローカル・HTTP(S) 上のログや CSV を、<strong>展開せずに横断検索</strong>できる Windows 向けツール。<strong>保守・障害調査・納品ログ確認</strong>に特化しています。</p>
       </div>
     </section>
 
-    <!-- 2. 機能・用途の紹介 -->
+    <!-- 2. ZipSearch が向いていること -->
     <section class="section features-section">
       <div class="container">
-        <h2>機能・特徴</h2>
+        <h2>ZipSearch が向いていること</h2>
         <ul class="feature-list">
-          <li><strong>3つのインターフェース</strong>: CLI / GUI / WebUI</li>
-          <li><strong>複数形式対応</strong>: ZIP, 7z, CSV, TSV, TXT</li>
-          <li><strong>HTTP/HTTPS 検索</strong>: イントラネットの ZIP ファイルも検索可能</li>
-          <li><strong>HTTP ブラウジング</strong>: フォルダ URL から ZIP 一覧を取得・選択（サブフォルダ対応）</li>
-          <li><strong>リアルタイム進捗表示</strong>: 検索の進捗をリアルタイムで表示</li>
+          <li>障害発生の前後を、<strong>ERROR / WARN と日時</strong>で素早く絞り込みたい</li>
+          <li>.NET アプリの <strong>log4net ログ</strong>を、Level / Logger ごとに構造化して探したい</li>
+          <li><strong>RollingFile</strong>（<code>app.log</code> + <code>app.log.1</code> 等）をまとめて追跡したい</li>
+          <li><strong>ZIP に封入されたログ</strong>を、解凍せずに検索したい</li>
+          <li><strong>HTTP(S) 上の ZIP ログ</strong>を、URL 指定で直接調べたい</li>
+          <li>調査結果を <strong>CSV / JSON で共有</strong>し、<strong>CLI で再現</strong>したい</li>
         </ul>
       </div>
     </section>
 
-    <!-- 3. UI キャプチャ -->
+    <!-- 3. 3 つの強み -->
+    <section class="section points-section">
+      <div class="container">
+        <h2>3 つの強み</h2>
+        <div class="points-grid">
+          <div class="point-content">
+            <h3 class="point-title">1. アーカイブ横断 — ZIP / HTTP を非展開で</h3>
+            <p class="point-desc">納品ログ・保管アーカイブ・社内共有フォルダ上の ZIP を、展開作業なしで横断検索。HTTP(S) URL からの ZIP 直接検索にも対応（イントラネット配布ログ向け）。</p>
+          </div>
+          <div class="point-content">
+            <h3 class="point-title">2. log4net 構造化 — Pro 版</h3>
+            <p class="point-desc">PatternLayout を <strong>日時・Level・Logger・メッセージ</strong>の列に分解。ERROR / WARN 絞り込み、スタックトレースを 1 件として検索、Logger ワイルドカードに対応。</p>
+          </div>
+          <div class="point-content">
+            <h3 class="point-title">3. 調査ワークフロー — GUI / CLI / Web</h3>
+            <p class="point-desc">GUI で日常調査、CLI でスクリプト化、Web で軽量ブラウズ。Rolling 兄弟の一括検索、エクスポート、お気に入りパス保存で <strong>再現可能な調査</strong>を支援。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. どんな調査に向いているか -->
+    <section class="section comparison-section">
+      <div class="container">
+        <h2>どんな調査に向いているか</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>やりたいこと</th>
+                <th>ZipSearch</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>過去ログを log4net の Level / Logger で絞る</td>
+                <td><strong>向いています</strong>（Pro）</td>
+              </tr>
+              <tr>
+                <td>ZIP ログを展開せず横断検索</td>
+                <td><strong>向いています</strong></td>
+              </tr>
+              <tr>
+                <td>社内 URL の ZIP ログを直接調べる</td>
+                <td><strong>向いています</strong></td>
+              </tr>
+              <tr>
+                <td>ローテーション済み .log を一括追跡</td>
+                <td><strong>向いています</strong>（Pro）</td>
+              </tr>
+              <tr>
+                <td>調査結果を CSV / JSON で共有・CLI 再現</td>
+                <td><strong>向いています</strong>（Pro）</td>
+              </tr>
+              <tr>
+                <td>稼働中アプリの常時リアルタイム監視</td>
+                <td>対象外（出力済みログの調査向け）</td>
+              </tr>
+              <tr>
+                <td>巨大 1 ファイルの精読・編集</td>
+                <td>対象外（横断・絞り込み調査向け）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 機能一覧 -->
+    <section class="section features-section">
+      <div class="container">
+        <h2>機能一覧</h2>
+        <ul class="feature-list">
+          <li><strong>3 つの UI</strong>: GUI / CLI / Web</li>
+          <li><strong>対応形式</strong>: ZIP, 7z, CSV, TSV, TXT, <code>.log</code>, Excel（.xlsx / .xlsm・Pro）</li>
+          <li><strong>HTTP/HTTPS</strong>: ZIP の直接検索、フォルダ URL からの ZIP 一覧取得</li>
+          <li><strong>log4net 解析</strong>（Pro）: 列化、Level / Logger フィルタ、マルチライン例外</li>
+          <li><strong>Rolling 兄弟横断</strong>（Pro）: <code>app.log</code> と <code>.log.1</code> 等を一括</li>
+          <li><strong>エクスポート</strong>（Pro）: CSV / JSON</li>
+          <li><strong>並列検索</strong>（Pro）: マルチスレッド</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6. スクリーンショット -->
     <section class="section screenshots-section">
       <div class="container container-wide">
         <div class="screenshots-grid">
           <div class="screenshot-item">
             <div class="screenshot-caption">
               <h3 class="screenshot-title">メイン画面（GUI）</h3>
-              <p class="screenshot-desc">検索パス・キーワード・オプションを一画面で設定</p>
+              <p class="screenshot-desc">ZIP パス・HTTP URL・キーワード・オプションを一画面で設定。非展開横断検索の起点。</p>
             </div>
             <img src="assets/zipsearch/gui-main.png" alt="ZipSearch GUI メイン画面" width="800" height="500">
           </div>
           <div class="screenshot-item">
             <div class="screenshot-caption">
-              <h3 class="screenshot-title">検索結果</h3>
-              <p class="screenshot-desc">検索結果を一覧表示、該当行をすぐに確認</p>
+              <h3 class="screenshot-title">log4net 解析 + 検索結果</h3>
+              <p class="screenshot-desc">log4net 解析モード ON、Level を ERROR に絞り込み。timestamp / level / logger / message 列で構造化表示（Pro）。</p>
             </div>
-            <img src="assets/zipsearch/gui-results.png" alt="ZipSearch 検索結果一覧" width="800" height="500">
+            <img src="assets/zipsearch/gui-results.png" alt="ZipSearch log4net 解析の検索結果" width="800" height="500">
           </div>
           <div class="screenshot-item">
             <div class="screenshot-caption">
-              <h3 class="screenshot-title">Web 版</h3>
-              <p class="screenshot-desc">ブラウザからアクセス、どこからでも検索可能</p>
+              <h3 class="screenshot-title">Rolling 兄弟横断</h3>
+              <p class="screenshot-desc">RollingFile 兄弟通知 ON で <code>demo.log</code> と <code>demo.log.1</code> 等を一括検索。ローテーション済みログの追跡に（Pro）。</p>
             </div>
-            <img src="assets/zipsearch/web-main.png" alt="ZipSearch WebUI メイン画面" width="800" height="500">
+            <img src="assets/zipsearch/gui-rolling.png" alt="ZipSearch Rolling 兄弟横断の検索結果" width="800" height="500">
           </div>
         </div>
+        <p class="screenshot-note">※ 1 枚目（検索設定画面）は正式リリース時に ZIP / HTTP URL 設定のキャプチャへ差し替え予定です。</p>
       </div>
     </section>
 
-    <!-- 4. ダウンロード -->
+    <!-- 7. ダウンロード -->
     <section class="section download-section">
       <div class="container">
         <h2>ダウンロード</h2>
-        <p class="version-badge">v0.3.0</p>
-        <p class="download-intro">リリースページから Windows 版をダウンロードしてください。</p>
+        <p class="version-badge">v0.5.0（prerelease 先行評価版）</p>
+        <p class="download-intro">GitHub Releases から Windows 版をダウンロードしてください。v0.5.0 は正式リリース前の先行評価版です。機能・仕様は変更される場合があります。</p>
         <div class="download-buttons">
           <a href="https://github.com/6EFB0D/ZipSearch/releases" class="cta-button cta-button-primary">リリースページを開く</a>
         </div>
@@ -104,67 +190,100 @@
       </div>
     </section>
 
-    <!-- 5. フリー版 vs Pro版 -->
+    <!-- 8. フリー版 vs Pro 版 -->
     <section class="section comparison-section">
       <div class="container">
-        <h2>フリー版 vs Pro版</h2>
+        <h2>フリー版 vs Pro 版（v0.5.0）</h2>
         <div class="comparison-table-wrapper">
           <table class="comparison-table">
             <thead>
               <tr>
                 <th>項目</th>
                 <th>フリー版</th>
-                <th>Pro版（準備中）</th>
+                <th>Pro 版</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>ファイルサイズ</td>
-                <td>100MB/ファイルまで</td>
+                <td><strong>10 MB</strong>/ファイルまで</td>
                 <td><strong>無制限</strong></td>
               </tr>
               <tr>
                 <td>同時検索</td>
-                <td>最大5ファイル</td>
+                <td>最大 5 ファイル</td>
                 <td><strong>無制限</strong></td>
               </tr>
               <tr>
                 <td>検索結果</td>
-                <td>最大100件</td>
+                <td>最大 10 件</td>
                 <td><strong>無制限</strong></td>
               </tr>
               <tr>
-                <td>エクスポート機能</td>
-                <td>❌ 使用不可</td>
+                <td>log4net ログ解析</td>
+                <td>❌（<code>.log</code> 行検索のみ）</td>
+                <td>✅ PatternLayout 列解析</td>
+              </tr>
+              <tr>
+                <td>ZIP / HTTP 横断</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td>エクスポート</td>
+                <td>❌</td>
                 <td>✅ CSV/JSON</td>
               </tr>
               <tr>
-                <td>検索速度</td>
-                <td>シングルスレッド</td>
-                <td><strong>マルチスレッド</strong>（指定可能）</td>
+                <td>並列検索</td>
+                <td>1 スレッド</td>
+                <td>マルチスレッド</td>
               </tr>
               <tr>
-                <td>カラム指定検索</td>
-                <td>❌ 使用不可</td>
-                <td>✅ 列番号/列名で指定</td>
+                <td>端末数</td>
+                <td>—</td>
+                <td><strong>1 ライセンス 1 台</strong></td>
               </tr>
               <tr>
-                <td>範囲検索</td>
-                <td>❌ 使用不可</td>
-                <td>✅ 日付/数値の範囲指定</td>
+                <td>価格</td>
+                <td>無料</td>
+                <td><strong>9,980 円（税込・買い切り）</strong></td>
+              </tr>
+              <tr>
+                <td>購入方法</td>
+                <td>—</td>
+                <td>アプリ内購入またはライセンスキー入力</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <p class="pro-note">Pro 版は <strong>9,980 円（税込・買い切り）</strong>。アプリ内購入またはライセンスキー入力でご利用いただけます。14 日間の Pro 評価版はサポート窓口経由で配布しています（v0.5.0 先行評価版）。</p>
+        <p class="pro-note">※当方は消費税法上の免税事業者のため、表示価格はお支払い総額（税込）であり、消費税を別途請求することはありません。法人向けの複数ライセンスは、サポート窓口へお問い合わせください。</p>
       </div>
     </section>
 
-    <!-- 6. お問い合わせ -->
+    <!-- 9. FAQ -->
+    <section class="section faq-section">
+      <div class="container">
+        <h2>FAQ</h2>
+        <dl class="faq-list">
+          <dt>Q. リアルタイムでログを受信・監視できますか？</dt>
+          <dd>A. できません。ZipSearch はファイル・ZIP・アーカイブ上に出力済みのログを検索するツールです。</dd>
+          <dt>Q. 単純な文字列検索だけなら足りますか？</dt>
+          <dd>A. 場合によっては他の方法でも足ります。log4net の列化、ZIP 内非展開、HTTP ZIP、Rolling 一括、エクスポートなど、構造化されたログ調査に向いています。</dd>
+          <dt>Q. 無料版で何が試せますか？</dt>
+          <dd>A. 10 MB までの ZIP / ログ横断検索（log4net 列解析は Pro）。お試し後、本格的な調査は Pro をご検討ください。</dd>
+        </dl>
+      </div>
+    </section>
+
+    <!-- 10. お問い合わせ -->
     <section class="section contact-section">
       <div class="container">
         <h2>お問い合わせ</h2>
         <p>ご質問やサポートのご要望は、以下のメールアドレスまでお気軽にご連絡ください。</p>
         <a href="mailto:support@office-goplan.com" class="email-link">support@office-goplan.com</a>
+        <p class="contact-extra">ご要望・不具合報告は <a href="https://forms.gle/HJBEr6NSBMb26eR27">Google フォーム</a> からもお送りいただけます。</p>
       </div>
     </section>
   </main>

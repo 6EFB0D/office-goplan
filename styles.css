@@ -654,9 +654,34 @@ h2 {
 .pro-note {
   font-size: 0.9rem;
   color: var(--color-text-muted);
+  margin-top: 12px;
+}
+
+.pro-note:first-of-type {
+  margin-top: 20px;
+}
+
+.faq-list {
+  margin-top: 24px;
+}
+
+.faq-list dt {
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.faq-list dd {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin: 0 0 24px 0;
 }
 
 .contact-section p {
   color: var(--color-text-muted);
   margin-bottom: 16px;
+}
+
+.contact-section .contact-extra {
+  margin-top: 24px;
 }
