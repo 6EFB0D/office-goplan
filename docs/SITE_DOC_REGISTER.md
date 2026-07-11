@@ -18,8 +18,8 @@
 | WEB-PDFH | pdfHandler | `pdfhandler.html` | 2026-07-12 | 法務はサイト全体へリンク |
 | WEB-ZIP | ZipSearch | `zipsearch.html` | — | |
 | WEB-PICT | PictComp | `pictcomp.html` | — | |
-| **WEB-TERMS** | **利用規約（全製品）** | `terms-of-service.html` | **2026-07-12** | 正本 `docs/legal/TERMS_OF_SERVICE.txt` |
-| **WEB-PP** | **プライバシー（全製品）** | `privacy-policy.html` | **2026-07-12** | 正本 `docs/legal/PRIVACY_POLICY.txt` |
+| **WEB-TERMS** | **利用規約（全製品）** | `terms-of-service.html` | **2026-07-12** | 正本 `docs/legal/TERMS_OF_SERVICE.txt`。**Pages 反映** commit `d9da018` |
+| **WEB-PP** | **プライバシー（全製品）** | `privacy-policy.html` | **2026-07-12** | 同上 |
 | WEB-PDFH-TERMS | （廃止・リダイレクト） | `pdfhandler-terms.html` | → WEB-TERMS | |
 | WEB-PDFH-PP | （廃止・リダイレクト） | `pdfhandler-privacy.html` | → WEB-PP | |
 | WEB-TOKUTEI | 特商法 | `specified-commercial-transactions.html` | — | |
