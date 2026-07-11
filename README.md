@@ -2,6 +2,9 @@
 
 Office Go Plan の公式ウェブサイトです。
 
+**文書・公開管理（社内）**: Quality Management System の **QP-DOC-001 §7**（Web／HP）。  
+ページ ID・版は [`docs/SITE_DOC_REGISTER.md`](./docs/SITE_DOC_REGISTER.md)、公開要約は [`CHANGELOG.md`](./CHANGELOG.md)。
+
 ## プロジェクト構成
 
 ```

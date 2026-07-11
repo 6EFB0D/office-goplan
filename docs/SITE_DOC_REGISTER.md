@@ -1,0 +1,36 @@
+# サイト文書台帳（SITE_DOC_REGISTER）
+
+| 項目 | 内容 |
+|---|---|
+| **文書番号** | SITE_DOC_REGISTER |
+| **種別** | 動的台帳 |
+| **上位手順** | QP-DOC-001 §7 / `terms-embedded-vs-website.md` v3 |
+| **サイト** | https://6efb0d.github.io/office-goplan/ |
+| **最終更新** | 2026-07-12 |
+
+---
+
+## 登録一覧
+
+| WEB ID | 名称 | 主ファイル | 版／日付 | 備考 |
+|---|---|---|---|---|
+| WEB-INDEX | トップ | `index.html` | — | |
+| WEB-PDFH | pdfHandler | `pdfhandler.html` | 2026-07-12 | 法務はサイト全体へリンク |
+| WEB-ZIP | ZipSearch | `zipsearch.html` | — | |
+| WEB-PICT | PictComp | `pictcomp.html` | — | |
+| **WEB-TERMS** | **利用規約（全製品）** | `terms-of-service.html` | **2026-07-12** | 正本 `docs/legal/TERMS_OF_SERVICE.txt` |
+| **WEB-PP** | **プライバシー（全製品）** | `privacy-policy.html` | **2026-07-12** | 正本 `docs/legal/PRIVACY_POLICY.txt` |
+| WEB-PDFH-TERMS | （廃止・リダイレクト） | `pdfhandler-terms.html` | → WEB-TERMS | |
+| WEB-PDFH-PP | （廃止・リダイレクト） | `pdfhandler-privacy.html` | → WEB-PP | |
+| WEB-TOKUTEI | 特商法 | `specified-commercial-transactions.html` | — | |
+| WEB-CHECKOUT | success/cancel | — | — | |
+
+再生成: `python scripts/sync-site-legal.py`
+
+---
+
+## 台帳改訂
+
+| 日付 | 内容 |
+|---|---|
+| 2026-07-12 | 法務をサイト全体2本に一本化（処理対象データ）。製品別はリダイレクト |
