@@ -149,7 +149,7 @@
         <ul class="feature-list">
           <li><strong>3 つの UI</strong>: GUI / CLI / WebUI（スタートメニュー「ZipSearch」から起動）</li>
           <li><strong>対応形式</strong>: ZIP, 7z, CSV, TSV, TXT, <code>.log</code>, <code>.ini</code>, <code>.json</code>, Excel（.xlsx / .xlsm・Pro）</li>
-          <li><strong>サブフォルダ再帰</strong>: ローカルフォルダ配下・ZIP 内多層フォルダを一括検索（Free / Pro）</li>
+          <li><strong>サブフォルダ再帰</strong>（Pro）: ローカルフォルダ配下を再帰列挙。ZIP 内の階層ファイルは Free でも検索可</li>
           <li><strong>構造化検索</strong>（Pro）: INI / JSON / <code>key=value</code> を section / key / value 列に展開。全 KV 統合表示</li>
           <li><strong>ドラッグ＆ドロップ</strong>（GUI）: ファイル / フォルダを検索パスへ追加（Free / Pro）</li>
           <li><strong>前回値・検索プロファイル</strong>（v0.5.3）: 条件の自動復元と名前付きプロファイル</li>
@@ -255,7 +255,12 @@
                 <td>✅</td>
               </tr>
               <tr>
-                <td>サブフォルダ再帰・DnD</td>
+                <td>サブフォルダ再帰（ローカル/HTTP）</td>
+                <td>❌（直下のみ。ZIP 内階層は可）</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td>ドラッグ＆ドロップ</td>
                 <td>✅</td>
                 <td>✅</td>
               </tr>
@@ -309,7 +314,7 @@
           <dt>Q. INI や key=value 形式のファイルも検索できますか？</dt>
           <dd>A. v0.5.2 から対応し、v0.5.3 では <strong>Pro 限定</strong>です。<code>.ini</code> / <code>.json</code> に加え、中身が <code>key=value</code> 形式の <code>.txt</code> / <code>.log</code> も自動判定して表形式に展開できます。Free 版では通常の行検索になります。</dd>
           <dt>Q. 無料版で何が試せますか？</dt>
-          <dd>A. 10 MB までの ZIP / ログ横断検索、構造化検索、サブフォルダ再帰（log4net 列解析・エクスポートは Pro）。お試し後、本格的な調査は Pro をご検討ください。</dd>
+          <dd>A. 10 MB までの ZIP / ログ横断検索、ドラッグ＆ドロップ（log4net 列解析・INI/JSON 表形式・サブフォルダ再帰・エクスポートは Pro）。お試し後、本格的な調査は Pro をご検討ください。</dd>
         </dl>
       </div>
     </section>
