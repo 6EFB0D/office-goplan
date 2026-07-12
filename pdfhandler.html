@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon-large.png">
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="pdfHandler - PDFをプレビューしながら、結合・分割・ページ編集・リネームを行えるWindowsデスクトップアプリ">
+  <meta name="description" content="pdfHandler - PDFをプレビューしながら結合・分割・ページ回転・リネームができるWindowsデスクトップアプリ。最新版 v1.2.6。">
   <title>pdfHandler | Office Go Plan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +42,7 @@
             <p class="hero-subtitle">PDFをまとめて管理・編集</p>
           </div>
         </div>
-        <p class="hero-desc">ファイルサーバ上の PDF をプレビューしながら、リネーム・結合・分割・ページ編集を行える Windows デスクトップアプリです。</p>
+        <p class="hero-desc">ファイルサーバ上の PDF をプレビューしながら、リネーム・結合・分割・ページ回転・ページ編集を行える Windows デスクトップアプリです。</p>
       </div>
     </section>
 
@@ -50,8 +50,8 @@
     <section class="section overview-section">
       <div class="container">
         <h2>概要</h2>
-        <p class="overview-desc">フォルダツリー、PDF 一覧、プレビューを 3 ペインで表示。PDF を開き直さずに内容を確認し、F2 キーでのファイル名変更、複数 PDF の結合、ページ範囲指定による分割、ページ削除・挿入、回転、ヘッダ・フッター追加までを一つの画面から操作できます。</p>
-        <p class="overview-keywords">PDFプレビュー / サムネイル表示 / リネーム / 結合 / 分割 / ページ編集 / 回転 / ヘッダ・フッター / お気に入りフォルダ</p>
+        <p class="overview-desc">フォルダツリー、PDF 一覧、プレビューを 3 ペインで表示。PDF を開き直さずに内容を確認し、F2 キーでのファイル名変更、複数 PDF の結合、ページ範囲指定による分割、プレビュー／サムネイル上でのページ回転、ページ削除・挿入、ヘッダ・フッター追加までを一つの画面から操作できます。</p>
+        <p class="overview-keywords">PDFプレビュー / サムネイル表示 / リネーム / 結合 / 分割 / ページ回転 / ページ編集 / ヘッダ・フッター / お気に入りフォルダ</p>
       </div>
     </section>
 
@@ -61,11 +61,12 @@
         <h2>機能・特徴</h2>
         <ul class="feature-list">
           <li><strong>3ペイン構成</strong>: フォルダツリー、PDF 一覧、プレビューを一画面に表示</li>
-          <li><strong>PDFプレビュー</strong>: サムネイル/リスト表示とページ送り、拡大・縮小に対応</li>
+          <li><strong>PDFプレビュー</strong>: サムネイル/リスト表示とページ送り、拡大・縮小に対応。プレビュー上から表示中ページの回転・削除も可能</li>
           <li><strong>ファイル操作</strong>: F2 キーでのリネーム、コピー、ペースト、削除を実行</li>
           <li><strong>PDF結合</strong>: 複数 PDF の順序を調整して 1 つの PDF に結合</li>
           <li><strong>PDF分割</strong>: ページ範囲、1ページずつ、等分割の 3 パターンに対応</li>
-          <li><strong>ページ編集</strong>: ページ削除・挿入、現在ページまたは全ページの回転が可能</li>
+          <li><strong>ページ回転</strong>: プレビュー／サムネイルの表示中ページ、または選択 PDF の全ページを回転（有償機能）</li>
+          <li><strong>ページ編集</strong>: ページ削除・挿入、プレビューへのドロップ挿入に対応</li>
           <li><strong>文書整備</strong>: ヘッダ・フッター、ページ番号、PDF バインダー管理を搭載</li>
           <li><strong>ライセンス管理</strong>: アプリ内購入、ライセンスキー入力、デバイス管理に対応</li>
         </ul>
@@ -87,7 +88,7 @@
           <div class="screenshot-item">
             <div class="screenshot-caption">
               <h3 class="screenshot-title">PDFプレビュー</h3>
-              <p class="screenshot-desc">ページ送り、拡大・縮小を使いながら選択中の PDF を確認</p>
+              <p class="screenshot-desc">ページ送り、拡大・縮小に加え、表示中ページの回転・削除もプレビューから操作</p>
             </div>
             <img src="assets/pdfhandler/gui-preview.png" alt="pdfHandler PDFプレビュー画面" width="576" height="548">
           </div>
@@ -127,13 +128,19 @@
     <section class="section download-section">
       <div class="container">
         <h2>ダウンロード</h2>
-        <p class="download-intro">GitHub の最新リリースから Windows 版インストーラ（setup.exe）をダウンロードしてください。</p>
+        <p class="version-badge">最新版 v1.2.6</p>
+        <p class="download-intro">GitHub Releases の <strong>ページ下部「Assets」</strong> から Windows 版インストーラ（setup.exe）をダウンロードしてください。上部の「Source code (zip)」はインストーラではありません。</p>
+        <div class="pro-note download-trouble-note">
+          <p><strong>うまくいかないとき（セキュリティでブロックされる場合）</strong></p>
+          <p>ブラウザや Windows のセキュリティ警告（SmartScreen 等）で <strong>.exe のダウンロードや実行ができない</strong> 場合は、Assets の <code>PdfHandler-*-prod-setup.zip</code> をダウンロードし、解凍後の setup.exe を実行してください。</p>
+        </div>
         <div class="download-buttons">
-          <a href="https://github.com/6EFB0D/pdf-handler/releases/latest" class="cta-button cta-button-primary">最新リリースを開く</a>
+          <a href="https://github.com/6EFB0D/pdf-handler/releases/latest" class="cta-button cta-button-primary">最新リリースを開く（v1.2.6）</a>
         </div>
         <div class="platform-links">
-          <a href="https://github.com/6EFB0D/pdf-handler/releases/latest" class="platform-button">Windows (setup.exe)</a>
+          <a href="https://github.com/6EFB0D/pdf-handler/releases/tag/v1.2.6" class="platform-button">Windows (setup.exe)</a>
         </div>
+        <p class="pro-note" style="margin-top: 1rem;">v1.2.6 の主な更新: プレビュー／サムネイルからの表示ページ回転、利用規約・プライバシーの更新、取扱説明書の改訂。</p>
       </div>
     </section>
 
@@ -184,7 +191,10 @@
     <section class="section contact-section">
       <div class="container">
         <h2>お問い合わせ</h2>
-        <p>ご質問やサポートのご要望は、以下のメールアドレスまでお気軽にご連絡ください。</p>
+        <p>ご質問やサポートのご要望は、お問い合わせフォームまたはメールまでご連絡ください。</p>
+        <p style="margin: 1rem 0;">
+          <a href="https://docs.google.com/forms/d/1NpXzk1kyUn2LhUzQhhMHq_tnT1oOGAsv561L-7nMfos/viewform" class="cta-button cta-button-primary">お問い合わせフォーム</a>
+        </p>
         <a href="mailto:support@office-goplan.com" class="email-link">support@office-goplan.com</a>
       </div>
     </section>

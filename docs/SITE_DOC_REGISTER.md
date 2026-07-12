@@ -15,7 +15,7 @@
 | WEB ID | 名称 | 主ファイル | 版／日付 | 備考 |
 |---|---|---|---|---|
 | WEB-INDEX | トップ | `index.html` | — | |
-| WEB-PDFH | pdfHandler | `pdfhandler.html` | 2026-07-12 | 法務はサイト全体へリンク |
+| WEB-PDFH | pdfHandler | `pdfhandler.html` | 2026-07-12 | v1.2.6 文言（ページ回転・Assets案内）。画像変更なし。法務はサイト全体へリンク |
 | WEB-ZIP | ZipSearch | `zipsearch.html` | — | |
 | WEB-PICT | PictComp | `pictcomp.html` | — | |
 | **WEB-TERMS** | **利用規約（全製品）** | `terms-of-service.html` | **2026-07-12** | 正本 `docs/legal/TERMS_OF_SERVICE.txt`。**Pages 反映** commit `d9da018` |
