@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon-large.png">
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="ZipSearch v0.5.3 - log4net ログ・ZIP・INI/JSON/key=value を横断検索。サブフォルダ再帰・構造化検索（Pro）対応の Windows 向け保守調査ツール">
+  <meta name="description" content="ZipSearch v0.5.4 - log4net ログ・ZIP・INI/JSON/key=value を横断検索。サブフォルダ再帰・構造化検索（Pro）対応の Windows 向け保守調査ツール">
   <title>ZipSearch | Office Go Plan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +42,7 @@
             <p class="hero-subtitle">log4net の過去ログを、ZIP のまま、複数ファイル横断で、ERROR と時刻で絞り込む。INI / JSON / key=value も表形式に展開して横断検索。</p>
           </div>
         </div>
-        <p class="hero-desc">ZIP・ローカル・HTTP(S) 上のログや CSV、構造化ファイルを、<strong>展開せずに横断検索</strong>できる Windows 向けツール。<strong>保守・障害調査・納品ログ確認</strong>に特化しています。v0.5.3 では日本語検索の改善、検索プロファイル、INI/JSON 構造化の Pro 化などを反映しています。</p>
+        <p class="hero-desc">ZIP・ローカル・HTTP(S) 上のログや CSV、構造化ファイルを、<strong>展開せずに横断検索</strong>できる Windows 向けツール。<strong>保守・障害調査・納品ログ確認</strong>に特化しています。最新評価版では UI の 2 ペイン化・起動安定化に加え、日本語検索の改善、検索プロファイル、INI/JSON 構造化の Pro 化などを反映しています。</p>
       </div>
     </section>
 
@@ -197,20 +197,20 @@
     <section class="section download-section">
       <div class="container">
         <h2>ダウンロード</h2>
-        <p class="version-badge">v0.5.3（評価版・DEV）</p>
-        <p class="download-intro">GitHub Releases の <strong>ページ下部「Assets」</strong> から Windows 版をダウンロードしてください。上部の「Source code (zip)」はインストーラではありません。v0.5.3 は評価版（DEV ビルド）です。購入・決済導線は無効です。</p>
+        <p class="version-badge">v0.5.4（評価版・DEV）</p>
+        <p class="download-intro">GitHub Releases の <strong>ページ下部「Assets」</strong> から Windows 版をダウンロードしてください。上部の「Source code (zip)」はインストーラではありません。本配布は評価版（DEV ビルド）です。購入・決済導線は無効です。</p>
         <div class="pro-note download-trouble-note">
           <p><strong>うまくいかないとき（セキュリティでブロックされる場合）</strong></p>
           <p>ブラウザや Windows のセキュリティ警告（SmartScreen 等）で <strong>.exe のダウンロードや実行ができない</strong> 場合は、ZIP 版をお試しください。</p>
-          <p><strong>方法 A（推奨）</strong>: Assets から <code>ZipSearch-0.5.3-dev-setup.zip</code> をダウンロード → 解凍 → 中の setup.exe を実行</p>
-          <p><strong>方法 B</strong>: Assets から <code>ZipSearch-0.5.3-win-x64.zip</code>（ポータブル版）をダウンロード → 解凍 → <code>ZipSearch-GUI.exe</code> を起動（インストール不要）</p>
+          <p><strong>方法 A（推奨）</strong>: Assets から <code>ZipSearch-0.5.4-dev-setup.zip</code> をダウンロード → 解凍 → 中の setup.exe を実行</p>
+          <p><strong>方法 B</strong>: Assets から <code>ZipSearch-0.5.4-win-x64.zip</code>（ポータブル版）をダウンロード → 解凍 → <code>ZipSearch-GUI.exe</code> を起動（インストール不要）</p>
         </div>
         <div class="download-buttons">
-          <a href="https://github.com/6EFB0D/ZipSearch/releases/tag/v0.5.3" class="cta-button cta-button-primary">v0.5.3 リリースページを開く</a>
+          <a href="https://github.com/6EFB0D/ZipSearch/releases/tag/v0.5.4" class="cta-button cta-button-primary">評価版のリリースページを開く</a>
         </div>
         <div class="platform-links">
-          <a href="https://github.com/6EFB0D/ZipSearch/releases/tag/v0.5.3" class="platform-button">Windows (setup.exe)</a>
-          <a href="https://github.com/6EFB0D/ZipSearch/releases/tag/v0.5.3" class="platform-button">ポータブル版 (zip)</a>
+          <a href="https://github.com/6EFB0D/ZipSearch/releases/tag/v0.5.4" class="platform-button">Windows (setup.exe)</a>
+          <a href="https://github.com/6EFB0D/ZipSearch/releases/tag/v0.5.4" class="platform-button">ポータブル版 (zip)</a>
         </div>
       </div>
     </section>
@@ -218,7 +218,7 @@
     <!-- 8. フリー版 vs Pro 版 -->
     <section class="section comparison-section">
       <div class="container">
-        <h2>フリー版 vs Pro 版（v0.5.3）</h2>
+        <h2>フリー版 vs Pro 版</h2>
         <div class="comparison-table-wrapper">
           <table class="comparison-table">
             <thead>
@@ -297,7 +297,7 @@
             </tbody>
           </table>
         </div>
-        <p class="pro-note">Pro 版は <strong>9,980 円（税込・買い切り）</strong>を予定しています。v0.5.3 は評価版（DEV ビルド）のため購入・決済導線は無効です。14 日間の Pro 評価キーはサポート窓口経由で配布しています。</p>
+        <p class="pro-note">Pro 版は <strong>9,980 円（税込・買い切り）</strong>を予定しています。現行の評価版（DEV ビルド）では購入・決済導線は無効です。14 日間の Pro 評価キーはサポート窓口経由で配布しています。</p>
         <p class="pro-note">※当方は消費税法上の免税事業者のため、表示価格はお支払い総額（税込）であり、消費税を別途請求することはありません。法人向けの複数ライセンスは、サポート窓口へお問い合わせください。</p>
       </div>
     </section>
