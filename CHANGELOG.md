@@ -1,5 +1,9 @@
 # CHANGELOG — Office Go Plan サイト（office-goplan）
 
+## 2026-07-12（pdfHandler v1.2.7）
+
+- **WEB-PDFH** / トップ — 最新版表示を **v1.2.7** に更新（プレビューツールバー見切れ修正）
+
 ## 2026-07-12（製品順・リンク色統一）
 
 - 利用規約・PP の製品例示順を **pdfHandler → ZipSearch → PictComp** に変更
