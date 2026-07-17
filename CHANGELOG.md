@@ -1,5 +1,9 @@
 # CHANGELOG — Office Go Plan サイト（office-goplan）
 
+## 2026-07-17（pdfHandler DL 案内 — 版番号非記載）
+
+- **WEB-PDFH** / トップ — 製品ページから固定版番号・「主な更新」を削除。ダウンロードは常に `/releases/latest` へ誘導（リリースごとの HP メンテを不要化）
+
 ## 2026-07-12（pdfHandler v1.2.7）
 
 - **WEB-PDFH** / トップ — 最新版表示を **v1.2.7** に更新（プレビューツールバー見切れ修正）
