@@ -21,6 +21,7 @@ SHELL = """<!DOCTYPE html>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="assets/js/legacy-redirect.js"></script>
   <script defer src="assets/js/ga4.js"></script>
 </head>
 <body>
@@ -73,12 +74,13 @@ REDIRECT = """<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url={target}">
+  <meta http-equiv="refresh" content="0; url={canonical}">
   <link rel="canonical" href="{canonical}">
+  <script src="assets/js/legacy-redirect.js"></script>
   <title>移動しました | Office Go Plan</title>
 </head>
 <body>
-  <p>利用規約・プライバシーポリシーの掲載場所を整理しました。<a href="{target}">最新の内容はこちら</a>をご覧ください。</p>
+  <p>利用規約・プライバシーポリシーの掲載場所を整理しました。<a href="{canonical}">最新の内容はこちら</a>をご覧ください。</p>
 </body>
 </html>
 """
@@ -178,7 +180,7 @@ def main():
         print("wrote", out_name)
 
     # Product-specific pages → redirect to site-wide
-    base = "https://6efb0d.github.io/office-goplan/"
+    base = "https://office-goplan.com/"
     (ROOT / "pdfhandler-terms.html").write_text(
         REDIRECT.format(
             target="terms-of-service.html",

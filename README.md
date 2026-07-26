@@ -54,16 +54,18 @@ office-goplan/
 2. `assets/js/ga4.js` 内の `MEASUREMENT_ID` をその ID に置き換えて保存します（`XXXX` が残っているとタグは無効のままです）。
 3. 変更をデプロイ後、[管理画面のレポート](https://analytics.google.com/)でリアルタイムなどにヒットが出るか確認します。
 
-## GitHub Pages での公開方法
+## 公開方法
 
-1. このリポジトリを GitHub にプッシュします
-2. リポジトリの **Settings** → **Pages** を開きます
-3. **Source** で「Deploy from a branch」を選択します
-4. **Branch** で `main`（または `master`）を選択し、`/ (root)` を指定します
-5. **Save** をクリックします
+本番は Cloudflare Pages（プロジェクト `office-goplan`）で、`main` への push で自動デプロイされます。
 
-数分後、以下のURLでサイトが公開されます：
-- `https://<ユーザー名>.github.io/office-goplan/`
+- 本番: `https://office-goplan.com/`
+- 確認用: `https://office-goplan.pages.dev/`（Cloudflare Access でログイン必須）
+
+ビルドは不要で、リポジトリのルートをそのまま配信します（Framework preset: None / Build output directory: `.`）。
+
+### 旧 GitHub Pages
+
+旧URL `https://<ユーザー名>.github.io/office-goplan/` は、`assets/js/legacy-redirect.js` により本番ドメインへ転送します。**転送を生かすため GitHub Pages の公開は止めないこと**。
 
 ## サポート
 
