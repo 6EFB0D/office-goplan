@@ -5,7 +5,7 @@
 | **文書番号** | SITE_DOC_REGISTER |
 | **種別** | 動的台帳 |
 | **上位手順** | QP-DOC-001 §7 / `terms-embedded-vs-website.md` v3 |
-| **サイト** | https://6efb0d.github.io/office-goplan/ |
+| **サイト** | https://office-goplan.com/ |
 | **最終更新** | 2026-07-17 |
 
 ---
