@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon-large.png">
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="ZipSearch v0.5.5 - log4net ログ・ZIP・INI/JSON/key=value を横断検索。サブフォルダ再帰・構造化検索（Pro）対応の Windows 向け保守調査ツール">
+  <meta name="description" content="ZipSearch v0.5.6 - log4net ログ・ZIP・INI/JSON/key=value を横断検索。サブフォルダ再帰・構造化検索（Pro）対応の Windows 向け保守調査ツール">
   <title>ZipSearch | Office Go Plan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +43,7 @@
             <p class="hero-subtitle">log4net の過去ログを、ZIP のまま、複数ファイル横断で、ERROR と時刻で絞り込む。INI / JSON / key=value も表形式に展開して横断検索。</p>
           </div>
         </div>
-        <p class="hero-desc">ZIP・ローカル・HTTP(S) 上のログや CSV、構造化ファイルを、<strong>展開せずに横断検索</strong>できる Windows 向けツール。<strong>保守・障害調査・納品ログ確認</strong>に特化しています。最新評価版（v0.5.5）では日本語ログ検索の改善、検索条件の見え方・停止操作、サポートログなど、評価フィードバックへの是正を反映しています。</p>
+        <p class="hero-desc">ZIP・ローカル・HTTP(S) 上のログや CSV、構造化ファイルを、<strong>展開せずに横断検索</strong>できる Windows 向けツール。<strong>保守・障害調査・納品ログ確認</strong>に特化しています。最新評価版（v0.5.6）では、狭いウィンドウでのボタン欠落是正、結果・パスの横スクロール、JSON エクスポートの妥当性、log4net の LEVEL 先頭形式対応など、評価フィードバックへの UI／出力是正を反映しています。</p>
       </div>
     </section>
 
@@ -74,7 +74,7 @@
           </div>
           <div class="point-content">
             <h3 class="point-title">2. log4net 構造化 — Pro 版</h3>
-            <p class="point-desc">PatternLayout を <strong>日時・Level・Logger・メッセージ</strong>の列に分解。ERROR / WARN 絞り込み、スタックトレースを 1 件として検索、Logger ワイルドカードに対応。</p>
+            <p class="point-desc">PatternLayout を <strong>日時・Level・Logger・メッセージ</strong>の列に分解。ERROR / WARN 絞り込み、スタックトレースを 1 件として検索、Logger ワイルドカードに対応。v0.5.6 では <strong>LEVEL 先頭</strong>のログ形式や継続行（印字データ付き）も正しく 1 イベントにまとめます。</p>
           </div>
           <div class="point-content">
             <h3 class="point-title">3. 構造化ファイル検索 — INI / JSON / KV</h3>
@@ -82,7 +82,7 @@
           </div>
           <div class="point-content">
             <h3 class="point-title">4. 調査ワークフロー — GUI / CLI / Web</h3>
-            <p class="point-desc">GUI で日常調査（ドラッグ＆ドロップでパス追加）、CLI でスクリプト化、Web で軽量ブラウズ。Rolling 兄弟の一括検索、エクスポート、お気に入りパス保存で <strong>再現可能な調査</strong>を支援。</p>
+            <p class="point-desc">GUI で日常調査（ドラッグ＆ドロップでパス追加）、CLI でスクリプト化、Web で軽量ブラウズ。Rolling 兄弟の一括検索、エクスポート、お気に入りパス保存で <strong>再現可能な調査</strong>を支援。v0.5.6 ではお気に入り・「先頭行をヘッダ」の配置を見直し、結果／詳細の右クリックコピーにも対応しています。</p>
           </div>
         </div>
       </div>
@@ -155,9 +155,10 @@
           <li><strong>ドラッグ＆ドロップ</strong>（GUI）: ファイル / フォルダを検索パスへ追加（Free / Pro）</li>
           <li><strong>前回値・検索プロファイル</strong>（v0.5.3）: 条件の自動復元と名前付きプロファイル</li>
           <li><strong>HTTP/HTTPS</strong>: ZIP の直接検索、フォルダ URL からの ZIP 一覧取得</li>
-          <li><strong>log4net 解析</strong>（Pro）: 列化、Level / Logger フィルタ、マルチライン例外</li>
+          <li><strong>log4net 解析</strong>（Pro）: 列化、Level / Logger フィルタ、マルチライン例外。LEVEL 先頭 PatternLayout・継続行結合（v0.5.6）</li>
           <li><strong>Rolling 兄弟横断</strong>（Pro）: <code>app.log</code> と <code>.log.1</code> 等を一括</li>
-          <li><strong>エクスポート</strong>（Pro）: CSV / JSON</li>
+          <li><strong>エクスポート</strong>（Pro）: CSV / JSON（JSON は一般的な形式で開けるよう是正・v0.5.6）</li>
+          <li><strong>結果表示 UX</strong>（v0.5.6）: 結果・パス一覧の横スクロール、「先頭行をヘッダ」ON 時の実列名表示、狭いウィンドウでも主要ボタンが欠けにくい</li>
           <li><strong>並列検索</strong>（Pro）: マルチスレッド</li>
           <li><strong>サンプル同梱</strong>: log4net デモログ、多層フォルダ + KV ログ（インストーラ同梱）</li>
         </ul>
@@ -198,19 +199,19 @@
     <section class="section download-section">
       <div class="container">
         <h2>ダウンロード</h2>
-        <p class="version-badge">v0.5.5（評価版・DEV）</p>
-        <p class="download-intro">GitHub Releases の <strong>ページ下部「Assets」</strong> から Windows 版をダウンロードしてください。上部の「Source code (zip)」はインストーラではありません。本配布は評価版（DEV ビルド）です。購入・決済導線は無効です。</p>
+        <p class="version-badge">v0.5.6（評価版・DEV）</p>
+        <p class="download-intro">GitHub Releases の <strong>ページ下部「Assets」</strong> から Windows 版をダウンロードしてください。上部の「Source code (zip)」はインストーラではありません。本配布は評価版（DEV ビルド・prerelease）です。購入・決済導線は無効です。配布形態は <strong>インストーラのみ</strong>です。</p>
         <div class="pro-note download-trouble-note">
           <p><strong>うまくいかないとき（セキュリティでブロックされる場合）</strong></p>
           <p>ブラウザや Windows のセキュリティ警告（SmartScreen 等）で <strong>.exe のダウンロードや実行ができない</strong> 場合は、ZIP 版をお試しください。</p>
-          <p><strong>推奨</strong>: Assets から <code>ZipSearch-0.5.5-dev-setup.zip</code> をダウンロード → 解凍 → 中の setup.exe を実行</p>
+          <p><strong>推奨</strong>: Assets から <code>ZipSearch-0.5.6-dev-setup.zip</code> をダウンロード → 解凍 → 中の setup.exe を実行</p>
         </div>
         <div class="download-buttons">
-          <a href="https://github.com/6EFB0D/ZipSearch/releases/tag/v0.5.5" class="cta-button cta-button-primary">評価版のリリースページを開く</a>
+          <a href="https://github.com/6EFB0D/ZipSearch/releases/tag/v0.5.6" class="cta-button cta-button-primary">評価版のリリースページを開く</a>
         </div>
         <div class="platform-links">
-          <a href="https://github.com/6EFB0D/ZipSearch/releases/download/v0.5.5/ZipSearch-0.5.5-dev-setup.exe" class="platform-button">Windows (setup.exe)</a>
-          <a href="https://github.com/6EFB0D/ZipSearch/releases/download/v0.5.5/ZipSearch-0.5.5-dev-setup.zip" class="platform-button">setup.zip（推奨・回避用）</a>
+          <a href="https://github.com/6EFB0D/ZipSearch/releases/download/v0.5.6/ZipSearch-0.5.6-dev-setup.exe" class="platform-button">Windows (setup.exe)</a>
+          <a href="https://github.com/6EFB0D/ZipSearch/releases/download/v0.5.6/ZipSearch-0.5.6-dev-setup.zip" class="platform-button">setup.zip（推奨・回避用）</a>
         </div>
       </div>
     </section>
@@ -272,7 +273,7 @@
               <tr>
                 <td>エクスポート</td>
                 <td>❌</td>
-                <td>✅ CSV/JSON</td>
+                <td>✅ CSV/JSON（妥当な JSON・v0.5.6）</td>
               </tr>
               <tr>
                 <td>並列検索</td>
@@ -313,6 +314,8 @@
           <dd>A. 場合によっては他の方法でも足ります。log4net の列化、ZIP 内非展開、HTTP ZIP、Rolling 一括、エクスポートなど、構造化されたログ調査に向いています。</dd>
           <dt>Q. INI や key=value 形式のファイルも検索できますか？</dt>
           <dd>A. v0.5.2 から対応し、v0.5.3 では <strong>Pro 限定</strong>です。<code>.ini</code> / <code>.json</code> に加え、中身が <code>key=value</code> 形式の <code>.txt</code> / <code>.log</code> も自動判定して表形式に展開できます。Free 版では通常の行検索になります。</dd>
+          <dt>Q. LEVEL が先頭の log4net ログにも対応していますか？</dt>
+          <dd>A. v0.5.6 の Pro（log4net 解析モード）で対応しています。LEVEL → 日時 → [thread] → logger 形式や、続く印字データ行も 1 イベントとして扱えます。</dd>
           <dt>Q. 無料版で何が試せますか？</dt>
           <dd>A. 10 MB までの ZIP / ログ横断検索、ドラッグ＆ドロップ（log4net 列解析・INI/JSON 表形式・サブフォルダ再帰・エクスポートは Pro）。お試し後、本格的な調査は Pro をご検討ください。</dd>
         </dl>
