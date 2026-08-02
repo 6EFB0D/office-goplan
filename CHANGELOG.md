@@ -1,5 +1,17 @@
 # CHANGELOG — Office Go Plan サイト（office-goplan）
 
+## 2026-08-02（LeafDesk HP 本番反映・v1.3.9）
+
+- **WEB-PDFH** — 未 push だった LeafDesk 表記（H1／副題／法務）を `main` へ push → Cloudflare Pages 本番デプロイ
+- ZIP 案内を `LeafDesk-*-prod-setup.zip` に更新（旧 `PdfHandler-*` も注記）
+- スクリーンショット alt を LeafDesk 表記に更新
+
+## 2026-08-01（法務 URL 一本化・LeafDesk 表記）
+
+- **法務正本** — `docs/legal/` 最終更新日を 2026-08-01 に更新。附則に「office-goplan.com 一本化／旧 GitHub Pages 移行／LeafDesk 表記」を記録
+- **HP** — `terms-of-service.html` / `privacy-policy.html` を sync 再生成。トップ・製品ページの表示名を **LeafDesk**（副: pdf Handler for Windows）に更新
+- **公開 URL 正本**: https://office-goplan.com/terms-of-service.html ／ https://office-goplan.com/privacy-policy.html
+
 ## 2026-07-17（pdfHandler DL 案内 — 版番号非記載）
 
 - **WEB-PDFH** / トップ — 製品ページから固定版番号・「主な更新」を削除。ダウンロードは常に `/releases/latest` へ誘導（リリースごとの HP メンテを不要化）
