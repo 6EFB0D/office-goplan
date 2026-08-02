@@ -17,7 +17,7 @@ VERIFY = Path(r"d:\Users\admin_mak\project\pdf-handler_DEV\docs\development\mock
 
 SOURCES = {
     "gui-main.png": ASSETS
-    / "c__Users_admin_mak_AppData_Roaming_Cursor_User_workspaceStorage_da820770282a5af9193dc7f909db0d08_images_image-de0b09b6-3eaa-472f-a98c-0068985e2a96.png",
+    / "c__Users_admin_mak_AppData_Roaming_Cursor_User_workspaceStorage_da820770282a5af9193dc7f909db0d08_images_image-baac1277-a57b-414e-9cc1-41194dc6d051.png",
     "gui-po.png": ASSETS
     / "c__Users_admin_mak_AppData_Roaming_Cursor_User_workspaceStorage_da820770282a5af9193dc7f909db0d08_images_image-02d135c2-b258-4bb8-abe7-08d2c62ef530.png",
     "gui-mix.png": ASSETS
