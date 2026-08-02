@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon-large.png">
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="LeafDesk（旧 pdfHandler）- PDFをプレビューしながら結合・分割・ページ回転・リネームができるWindowsデスクトップアプリ。">
+  <meta name="description" content="LeafDesk（旧 pdfHandler）- ファイルサーバ上の図面・注文書 PDF を開かずにサムネイルで見分け、そのまま並べ替え・結合・整理できる Windows デスクトップアプリ。">
   <title>LeafDesk — pdf Handler for Windows | Office Go Plan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +43,7 @@
             <p class="hero-subtitle">pdf Handler for Windows（旧称 pdfHandler）</p>
           </div>
         </div>
-        <p class="hero-desc">ファイルサーバ上の PDF をプレビューしながら、リネーム・結合・分割・ページ回転・ページ編集を行える Windows デスクトップアプリです。</p>
+        <p class="hero-desc">ファイルサーバ上の図面・注文書 PDF を、開かずにサムネイルで見分け、そのまま並べ替え・結合・整理できる Windows デスクトップアプリです。</p>
       </div>
     </section>
 
@@ -51,20 +51,110 @@
     <section class="section overview-section">
       <div class="container">
         <h2>概要</h2>
-        <p class="overview-desc">フォルダツリー、PDF 一覧、プレビューを 3 ペインで表示。PDF を開き直さずに内容を確認し、F2 キーでのファイル名変更、複数 PDF の結合、ページ範囲指定による分割、プレビュー／サムネイル上でのページ回転、ページ削除・挿入、ヘッダ・フッター追加までを一つの画面から操作できます。</p>
-        <p class="overview-keywords">PDFプレビュー / サムネイル表示 / リネーム / 結合 / 分割 / ページ回転 / ページ編集 / ヘッダ・フッター / お気に入りフォルダ</p>
+        <p class="overview-desc">フォルダツリー、PDF 一覧、プレビューを 3 ペインで表示。図面枠・図番・レイアウトの違いをサムネイルとページストリップで確認しながら、目的のファイルをすばやく特定できます。見つかったあとは、リネーム、結合・分割、ページの回転・削除・挿入、ヘッダ・フッターまで、同じ画面から続けて操作できます。</p>
+        <p class="overview-keywords">サムネイル判別 / ページストリップ / 図面・注文書 / リネーム / 結合 / 分割 / ページ編集 / ヘッダ・フッター / お気に入りフォルダ</p>
       </div>
     </section>
 
-    <!-- 3. 機能・特徴 -->
+    <!-- 3. こんな場面で -->
+    <section class="section usecase-section">
+      <div class="container">
+        <h2>こんな場面で</h2>
+        <p class="overview-desc">見た目の差がはっきりしている文書ほど、開かずに探す効果が大きいです。</p>
+        <ul class="usecase-list">
+          <li>
+            <span class="usecase-mark usecase-mark-high" aria-label="効果大">◎</span>
+            <div>
+              <strong>図面管理</strong>
+              <p>図面枠・図番・形状を見て、目的の図面を瞬時に判別できます。</p>
+            </div>
+          </li>
+          <li>
+            <span class="usecase-mark usecase-mark-high" aria-label="効果大">◎</span>
+            <div>
+              <strong>顧客注文書の管理</strong>
+              <p>顧客ごとにレイアウトが異なるため、見た目で識別しやすいです。</p>
+            </div>
+          </li>
+          <li>
+            <span class="usecase-mark usecase-mark-high" aria-label="効果大">◎</span>
+            <div>
+              <strong>注文書の添付図面管理</strong>
+              <p>図面・仕様書・検査基準書などを、いちいち開かずに区別できます。</p>
+            </div>
+          </li>
+          <li>
+            <span class="usecase-mark usecase-mark-high" aria-label="効果大">◎</span>
+            <div>
+              <strong>見積依頼書・要求仕様書の管理</strong>
+              <p>顧客図面や仕様書が添付される案件でも、目的の資料を探しやすくなります。</p>
+            </div>
+          </li>
+          <li>
+            <span class="usecase-mark usecase-mark-mid" aria-label="効果中">〇</span>
+            <div>
+              <strong>契約書管理</strong>
+              <p>表紙で識別できる場合に有効です。</p>
+            </div>
+          </li>
+          <li>
+            <span class="usecase-mark usecase-mark-low" aria-label="効果限定">△</span>
+            <div>
+              <strong>テキスト中心の帳票</strong>
+              <p>サムネイルが似て見えやすく、効果は限定的です。</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4. 画面で見る -->
+    <section class="section screenshots-section">
+      <div class="container container-wide">
+        <h2>画面で見る</h2>
+        <p class="screenshot-note">掲載画像は説明用のダミー PDF です。実在の顧客・図面ではありません。</p>
+        <div class="screenshots-grid">
+          <div class="screenshot-item">
+            <div class="screenshot-caption">
+              <h3 class="screenshot-title">図面管理</h3>
+              <p class="screenshot-desc">形の違う図面をサムネイルで並べ、右側プレビューとページストリップで内容を確認</p>
+            </div>
+            <img src="assets/pdfhandler/gui-main.png" alt="LeafDesk 図面管理画面 — サムネイルとプレビュー" width="1023" height="596">
+          </div>
+          <div class="screenshot-item">
+            <div class="screenshot-caption">
+              <h3 class="screenshot-title">顧客注文書</h3>
+              <p class="screenshot-desc">レイアウトの異なる注文書を一覧し、開かずに見分けながら整理</p>
+            </div>
+            <img src="assets/pdfhandler/gui-po.png" alt="LeafDesk 顧客注文書の一覧とプレビュー" width="1019" height="596">
+          </div>
+          <div class="screenshot-item">
+            <div class="screenshot-caption">
+              <h3 class="screenshot-title">添付の見分け</h3>
+              <p class="screenshot-desc">図面・検査基準書などが混在しても、サムネイルの見た目で種別を判別</p>
+            </div>
+            <img src="assets/pdfhandler/gui-mix.png" alt="LeafDesk 添付混在フォルダの一覧とプレビュー" width="1022" height="596">
+          </div>
+          <div class="screenshot-item">
+            <div class="screenshot-caption">
+              <h3 class="screenshot-title">見積依頼・要求仕様</h3>
+              <p class="screenshot-desc">見積依頼書と添付図面を同じフォルダで扱い、目的資料へすばやく到達</p>
+            </div>
+            <img src="assets/pdfhandler/gui-rfq.png" alt="LeafDesk 見積依頼フォルダの一覧とプレビュー" width="1024" height="597">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 機能・特徴 -->
     <section class="section features-section">
       <div class="container">
         <h2>機能・特徴</h2>
         <ul class="feature-list">
-          <li><strong>3ペイン構成</strong>: フォルダツリー、PDF 一覧、プレビューを一画面に表示</li>
-          <li><strong>PDFプレビュー</strong>: サムネイル/リスト表示とページ送り、拡大・縮小に対応。プレビュー上から表示中ページの回転・削除も可能</li>
+          <li><strong>視覚検索</strong>: 3 ペイン構成とサムネイル／ページストリップで、開かずに目的 PDF を特定</li>
+          <li><strong>PDFプレビュー</strong>: ページ送り、拡大・縮小。プレビュー上から表示中ページの回転・削除も可能</li>
           <li><strong>ファイル操作</strong>: F2 キーでのリネーム、コピー、ペースト、削除を実行</li>
-          <li><strong>PDF結合</strong>: 複数 PDF の順序を調整して 1 つの PDF に結合</li>
+          <li><strong>PDF結合</strong>: 複数 PDF の順序を調整して 1 つの PDF に結合（しおりの引き継ぎにも対応）</li>
           <li><strong>PDF分割</strong>: ページ範囲、1ページずつ、等分割の 3 パターンに対応</li>
           <li><strong>ページ回転</strong>: プレビュー／サムネイルの表示中ページ、または選択 PDF の全ページを回転（有償機能）</li>
           <li><strong>ページ編集</strong>: ページ削除・挿入、プレビューへのドロップ挿入に対応</li>
@@ -74,58 +164,7 @@
       </div>
     </section>
 
-    <!-- 4. スクリーンショット -->
-    <section class="section screenshots-section">
-      <div class="container container-wide">
-        <h2>スクリーンショット</h2>
-        <div class="screenshots-grid">
-          <div class="screenshot-item">
-            <div class="screenshot-caption">
-              <h3 class="screenshot-title">メイン画面</h3>
-              <p class="screenshot-desc">フォルダツリー、PDF 一覧、右側プレビュー、上部ツールバーを一画面で確認</p>
-            </div>
-            <img src="assets/pdfhandler/gui-main.png" alt="LeafDesk メイン画面" width="1191" height="692">
-          </div>
-          <div class="screenshot-item">
-            <div class="screenshot-caption">
-              <h3 class="screenshot-title">PDFプレビュー</h3>
-              <p class="screenshot-desc">ページ送り、拡大・縮小に加え、表示中ページの回転・削除もプレビューから操作</p>
-            </div>
-            <img src="assets/pdfhandler/gui-preview.png" alt="LeafDesk PDFプレビュー画面" width="576" height="548">
-          </div>
-          <div class="screenshot-item">
-            <div class="screenshot-caption">
-              <h3 class="screenshot-title">PDF結合</h3>
-              <p class="screenshot-desc">結合する PDF の順序を調整し、保存先とファイル名を指定</p>
-            </div>
-            <img src="assets/pdfhandler/merge-dialog.png" alt="LeafDesk PDF結合ダイアログ" width="577" height="487">
-          </div>
-          <div class="screenshot-item">
-            <div class="screenshot-caption">
-              <h3 class="screenshot-title">PDF分割</h3>
-              <p class="screenshot-desc">ページ範囲、1ページずつ、等分割の方法を選択して出力</p>
-            </div>
-            <img src="assets/pdfhandler/split-dialog.png" alt="LeafDesk PDF分割ダイアログ" width="530" height="531">
-          </div>
-          <div class="screenshot-item">
-            <div class="screenshot-caption">
-              <h3 class="screenshot-title">ページ編集</h3>
-              <p class="screenshot-desc">ページ削除・挿入、挿入元 PDF、出力先を指定</p>
-            </div>
-            <img src="assets/pdfhandler/page-operations.png" alt="LeafDesk ページ編集ダイアログ" width="504" height="466">
-          </div>
-          <div class="screenshot-item">
-            <div class="screenshot-caption">
-              <h3 class="screenshot-title">ヘッダ・フッター</h3>
-              <p class="screenshot-desc">文書タイトル、ページ番号形式、フォント設定を指定</p>
-            </div>
-            <img src="assets/pdfhandler/header-footer.png" alt="LeafDesk ヘッダ・フッターダイアログ" width="459" height="591">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. ダウンロード -->
+    <!-- 6. ダウンロード -->
     <section class="section download-section">
       <div class="container">
         <h2>ダウンロード</h2>
@@ -144,7 +183,7 @@
       </div>
     </section>
 
-    <!-- 6. ライセンス -->
+    <!-- 7. ライセンス -->
     <section class="section comparison-section">
       <div class="container">
         <h2>ライセンス</h2>
@@ -187,7 +226,7 @@
       </div>
     </section>
 
-    <!-- 7. お問い合わせ -->
+    <!-- 8. お問い合わせ -->
     <section class="section contact-section">
       <div class="container">
         <h2>お問い合わせ</h2>

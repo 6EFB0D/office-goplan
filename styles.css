@@ -517,6 +517,58 @@ h2 {
   margin-bottom: 8px;
 }
 
+/* LeafDesk use cases */
+.usecase-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: grid;
+  gap: 16px;
+}
+
+.usecase-list > li {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+}
+
+.usecase-list strong {
+  display: block;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.usecase-list p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.usecase-mark {
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.usecase-mark-high {
+  color: var(--color-accent);
+}
+
+.usecase-mark-mid {
+  color: #86efac;
+}
+
+.usecase-mark-low {
+  color: var(--color-text-muted);
+}
+
 /* Screenshots */
 .container-wide {
   max-width: 900px;
@@ -563,6 +615,7 @@ h2 {
   font-size: 0.85rem;
   color: var(--color-text-muted);
   opacity: 0.8;
+  margin: 0 0 24px;
 }
 
 /* PictComp 概要 */

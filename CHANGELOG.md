@@ -1,5 +1,11 @@
 # CHANGELOG — Office Go Plan サイト（office-goplan）
 
+## 2026-08-03（LeafDesk 商品ページ — ユースケース訴求）
+
+- **WEB-PDFH** — ヒーロー／概要を「開かずに見分ける」訴求に更新。「こんな場面で」を追加（図面・注文書・添付・見積 ◎）
+- スクリーンショットをダミー図面／注文書／添付混在／見積依頼の 4 枚に差し替え（ツリーの実ドライブはマスク済み）
+- **WEB-INDEX** — LeafDesk カード説明文を同趣旨に同期
+
 ## 2026-08-02（LeafDesk HP 本番反映・v1.3.9）
 
 - **WEB-PDFH** — 未 push だった LeafDesk 表記（H1／副題／法務）を `main` へ push → Cloudflare Pages 本番デプロイ
