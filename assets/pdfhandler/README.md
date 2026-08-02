@@ -11,7 +11,7 @@
 
 撮影元は `%USERPROFILE%\Documents\LeafDesk-HP-Demo\`。ツリーの実ドライブ等は `scripts/fix-leafdesk-hp-screenshots.py` でマスク済み。
 
-- `gui-main.png`: 図面管理（サムネ＋ページストリップ）
+- `gui-drawings.png`: 図面管理（サムネ＋ページストリップ）※旧 `gui-main.png` はキャッシュ残りのため参照しない
 - `gui-po.png`: 顧客注文書（レイアウト差）
 - `gui-mix.png`: 添付混在（図面／検査基準など）
 - `gui-rfq.png`: 見積依頼・要求仕様
