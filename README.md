@@ -67,6 +67,17 @@ office-goplan/
 
 旧URL `https://<ユーザー名>.github.io/office-goplan/` は、`assets/js/legacy-redirect.js` により本番ドメインへ転送します。**転送を生かすため GitHub Pages の公開は止めないこと**。
 
+### Search Console（インデックス）
+
+Cloudflare Pages は `*.html` を拡張子なし URL へ **308** します。サイト内リンクと `sitemap.xml`・`rel=canonical` は拡張子なし（例: `/zipsearch`）に揃えています。
+
+Search Console の「ページにリダイレクトがあります」は、旧 `.html` URL や GitHub Pages URL が **転送先を正とする除外**として出ることが多いです。次を確認してください。
+
+1. プロパティが **https://office-goplan.com/**（ドメインプロパティ推奨）であること
+2. [sitemap.xml](https://office-goplan.com/sitemap.xml) を送信済みであること
+3. 除外理由の URL が `.html` や `github.io` なら、正規 URL（拡張子なし）が「インデックス登録済み」になっているか確認
+4. 旧 GitHub Pages プロパティがある場合は、Search Console の「アドレス変更」で `office-goplan.com` へ移行
+
 ## サポート
 
 お問い合わせは support@office-goplan.com までご連絡ください。

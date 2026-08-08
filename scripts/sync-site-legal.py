@@ -17,6 +17,7 @@ SHELL = """<!DOCTYPE html>
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="{desc}">
   <title>{title} | Office Go Plan</title>
+  <link rel="canonical" href="{canonical}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,15 +28,15 @@ SHELL = """<!DOCTYPE html>
 <body>
   <header class="header">
     <div class="container">
-      <a href="index.html" class="logo">
+      <a href="/" class="logo">
         <img src="assets/logo/logo-a.jpg" alt="Office Go Plan" class="logo-img">
       </a>
       <nav class="nav">
-        <a href="index.html">ホーム</a>
-        <a href="index.html#products">製品</a>
-        <a href="privacy-policy.html">プライバシーポリシー</a>
-        <a href="terms-of-service.html">利用規約</a>
-        <a href="specified-commercial-transactions.html">特定商取引法に基づく表記</a>
+        <a href="/">ホーム</a>
+        <a href="/#products">製品</a>
+        <a href="/privacy-policy">プライバシーポリシー</a>
+        <a href="/terms-of-service">利用規約</a>
+        <a href="/specified-commercial-transactions">特定商取引法に基づく表記</a>
       </nav>
     </div>
   </header>
@@ -57,11 +58,11 @@ SHELL = """<!DOCTYPE html>
   <footer class="footer">
     <div class="container">
       <nav class="footer-nav">
-        <a href="index.html">ホーム</a>
-        <a href="index.html#products">製品</a>
-        <a href="privacy-policy.html">プライバシーポリシー</a>
-        <a href="terms-of-service.html">利用規約</a>
-        <a href="specified-commercial-transactions.html">特定商取引法に基づく表記</a>
+        <a href="/">ホーム</a>
+        <a href="/#products">製品</a>
+        <a href="/privacy-policy">プライバシーポリシー</a>
+        <a href="/terms-of-service">利用規約</a>
+        <a href="/specified-commercial-transactions">特定商取引法に基づく表記</a>
       </nav>
       <p class="copyright">&copy; Office Go Plan. All rights reserved.</p>
     </div>
@@ -161,6 +162,7 @@ def main():
             "利用規約",
             "Office Go Plan 利用規約（全製品共通）",
             "利用規約",
+            "https://office-goplan.com/terms-of-service",
         ),
         (
             LEGAL / "PRIVACY_POLICY.txt",
@@ -169,12 +171,19 @@ def main():
             "プライバシーポリシー",
             "Office Go Plan プライバシーポリシー（全製品共通）",
             "プライバシーポリシー",
+            "https://office-goplan.com/privacy-policy",
         ),
     ]
-    for src, out_name, title, h1, desc, page_kind in jobs:
+    for src, out_name, title, h1, desc, page_kind, canonical in jobs:
         body, date = txt_to_body(src)
         html = SHELL.format(
-            desc=desc, title=title, h1=h1, body=body, date=date, page_kind=page_kind
+            desc=desc,
+            title=title,
+            h1=h1,
+            body=body,
+            date=date,
+            page_kind=page_kind,
+            canonical=canonical,
         )
         (ROOT / out_name).write_text(html, encoding="utf-8")
         print("wrote", out_name)
@@ -182,17 +191,11 @@ def main():
     # Product-specific pages → redirect to site-wide
     base = "https://office-goplan.com/"
     (ROOT / "pdfhandler-terms.html").write_text(
-        REDIRECT.format(
-            target="terms-of-service.html",
-            canonical=base + "terms-of-service.html",
-        ),
+        REDIRECT.format(canonical=base + "terms-of-service"),
         encoding="utf-8",
     )
     (ROOT / "pdfhandler-privacy.html").write_text(
-        REDIRECT.format(
-            target="privacy-policy.html",
-            canonical=base + "privacy-policy.html",
-        ),
+        REDIRECT.format(canonical=base + "privacy-policy"),
         encoding="utf-8",
     )
     print("wrote redirects pdfhandler-terms/privacy.html")

@@ -18,7 +18,7 @@
 
 - **法務正本** — `docs/legal/` 最終更新日を 2026-08-01 に更新。附則に「office-goplan.com 一本化／旧 GitHub Pages 移行／LeafDesk 表記」を記録
 - **HP** — `terms-of-service.html` / `privacy-policy.html` を sync 再生成。トップ・製品ページの表示名を **LeafDesk**（副: pdf Handler for Windows）に更新
-- **公開 URL 正本**: https://office-goplan.com/terms-of-service.html ／ https://office-goplan.com/privacy-policy.html
+- **公開 URL 正本**: https://office-goplan.com/terms-of-service ／ https://office-goplan.com/privacy-policy
 
 ## 2026-07-17（pdfHandler DL 案内 — 版番号非記載）
 
