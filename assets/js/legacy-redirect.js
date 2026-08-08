@@ -26,6 +26,9 @@
   if (path === '/index') {
     path = '/';
   }
+  if (path === '/pdfhandler') {
+    path = '/leafdesk';
+  }
 
   location.replace(
     'https://office-goplan.com' + path + location.search + location.hash

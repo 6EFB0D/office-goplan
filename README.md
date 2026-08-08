@@ -10,7 +10,8 @@ Office Go Plan の公式ウェブサイトです。
 ```
 office-goplan/
 ├── index.html          # ホームページ
-├── pdfhandler.html     # pdfHandler 製品ページ
+├── leafdesk.html       # LeafDesk 製品ページ（旧 pdfhandler.html）
+├── pdfhandler.html     # /pdfhandler → /leafdesk リダイレクト
 ├── zipsearch.html      # ZipSearch 製品ページ
 ├── pictcomp.html      # PictComp 製品ページ
 ├── privacy-policy.html # プライバシーポリシー

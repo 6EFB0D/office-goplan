@@ -1,0 +1,4 @@
+# Cloudflare Pages only. Keep rules specific — broad paths previously broke /success and /cancel.
+/pdfhandler /leafdesk 301
+/pdfhandler/ /leafdesk 301
+/pdfhandler.html /leafdesk 301

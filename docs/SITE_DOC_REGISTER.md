@@ -6,7 +6,7 @@
 | **種別** | 動的台帳 |
 | **上位手順** | QP-DOC-001 §7 / `terms-embedded-vs-website.md` v3 |
 | **サイト** | https://office-goplan.com/ |
-| **最終更新** | 2026-08-03 |
+| **最終更新** | 2026-08-08 |
 
 ---
 
@@ -15,7 +15,7 @@
 | WEB ID | 名称 | 主ファイル | 版／日付 | 備考 |
 |---|---|---|---|---|
 | WEB-INDEX | トップ | `index.html` | — | |
-| WEB-PDFH | LeafDesk（旧 pdfHandler） | `pdfhandler.html` | 2026-08-03 | ユースケース訴求＋スクショ 4 枚。URL パス当面維持。DL は `/releases/latest`。ZIP=`LeafDesk-*-prod-setup.zip` |
+| WEB-PDFH | LeafDesk（旧 pdfHandler） | `leafdesk.html` | **2026-08-08** | 正規 URL `/leafdesk`。旧 `/pdfhandler` は 301／スタブで転送。DL は `/releases/latest`。ZIP=`LeafDesk-*-prod-setup.zip` |
 | WEB-ZIP | ZipSearch | `zipsearch.html` | — | |
 | WEB-PICT | PictComp | `pictcomp.html` | — | |
 | **WEB-TERMS** | **利用規約（全製品）** | `terms-of-service.html` | **2026-08-01** | 正本 `docs/legal/TERMS_OF_SERVICE.txt`（LeafDesk 表記） |

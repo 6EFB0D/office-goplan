@@ -1,5 +1,11 @@
 # CHANGELOG — Office Go Plan サイト（office-goplan）
 
+## 2026-08-08（LeafDesk URL `/leafdesk`）
+
+- **WEB-PDFH** — 正規 URL を `/pdfhandler` から **`/leafdesk`** へ変更（`leafdesk.html`）
+- 旧 `/pdfhandler` は Cloudflare `_redirects`（301）と `pdfhandler.html` スタブで転送
+- `sitemap.xml` / トップカード / canonical を同期
+
 ## 2026-08-03（LeafDesk 商品ページ — ユースケース訴求）
 
 - **WEB-PDFH** — ヒーロー／概要を「開かずに見分ける」訴求に更新。「こんな場面で」を追加（図面・注文書・添付・見積）
