@@ -943,3 +943,100 @@ h2 {
 .contact-section .contact-extra {
   margin-top: 24px;
 }
+
+/* 製品ページ — 紹介チラシ */
+.flyer-promo-section {
+  padding-top: 8px;
+}
+
+.flyer-promo-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 42%);
+  gap: 28px;
+  align-items: center;
+  padding: 28px 32px;
+  border: 2px solid #93c5fd;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 55%, #ffffff 100%);
+  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.08);
+}
+
+.flyer-promo-kicker {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #1d4ed8;
+  margin-bottom: 8px;
+}
+
+.flyer-promo-copy h2 {
+  font-size: 1.55rem;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  color: var(--color-text);
+}
+
+.flyer-promo-lead {
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.flyer-promo-points {
+  margin: 0 0 20px 1.1em;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.flyer-promo-points li + li {
+  margin-top: 4px;
+}
+
+.flyer-promo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.flyer-promo-preview {
+  display: block;
+  position: relative;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.flyer-promo-preview:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.16);
+}
+
+.flyer-promo-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.flyer-promo-badge {
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1e40af;
+  background: #dbeafe;
+  padding: 8px 10px;
+}
+
+@media (max-width: 860px) {
+  .flyer-promo-card {
+    grid-template-columns: 1fr;
+    padding: 22px 20px;
+  }
+
+  .flyer-promo-preview {
+    order: -1;
+  }
+}
