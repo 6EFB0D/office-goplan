@@ -1,5 +1,11 @@
 # CHANGELOG — Office Go Plan サイト（office-goplan）
 
+## 2026-08-23（お問い合わせ — 購入相談テンプレ）
+
+- 法人 CTA: Google フォーム事前入力（製品 LeafDesk＋本文テンプレ）／ mailto 本文テンプレ
+- 宛先は **support@office-goplan.com**
+- 人手手順: `docs/contact-form-purchase-options.md`（ご連絡の種類に購入系を追加）
+
 ## 2026-08-23（LeafDesk P0 SEO・法人導線）
 
 - **WEB-PDFH** — OGP / Twitter Card / JSON-LD（SoftwareApplication・旧称 alternateName）
