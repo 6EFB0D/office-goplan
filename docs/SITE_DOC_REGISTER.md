@@ -6,7 +6,7 @@
 | **種別** | 動的台帳 |
 | **上位手順** | QP-DOC-001 §7 / `terms-embedded-vs-website.md` v3 |
 | **サイト** | https://office-goplan.com/ |
-| **最終更新** | 2026-08-08 |
+| **最終更新** | 2026-08-23 |
 
 ---
 
@@ -15,7 +15,7 @@
 | WEB ID | 名称 | 主ファイル | 版／日付 | 備考 |
 |---|---|---|---|---|
 | WEB-INDEX | トップ | `index.html` | — | |
-| WEB-PDFH | LeafDesk（旧 pdfHandler） | `leafdesk.html` | **2026-08-08** | 正規 URL `/leafdesk`。旧 `/pdfhandler` は 301／スタブで転送。DL は `/releases/latest`。ZIP=`LeafDesk-*-prod-setup.zip` |
+| WEB-PDFH | LeafDesk（旧 pdfHandler） | `leafdesk.html` | **2026-08-23** | 正規 URL `/leafdesk`。スクショ 5 枚（複数選択含む）。DL は `/releases/latest` |
 | WEB-ZIP | ZipSearch | `zipsearch.html` | — | |
 | WEB-PICT | PictComp | `pictcomp.html` | — | |
 | **WEB-TERMS** | **利用規約（全製品）** | `terms-of-service.html` | **2026-08-01** | 正本 `docs/legal/TERMS_OF_SERVICE.txt`（LeafDesk 表記） |
@@ -33,6 +33,7 @@
 
 | 日付 | 内容 |
 |---|---|
+| 2026-08-23 | **WEB-PDFH** — 複数ページ選択スクショ追加・機能文言更新（v1.3.10） |
 | 2026-08-03 | **WEB-PDFH** — ユースケース（図面・注文書等）＋ダミー PDF スクショ差し替え |
 | 2026-07-17 | **WEB-PDFH** / トップ — 固定版番号・主な更新を廃止（`/releases/latest` 誘導） |
 | 2026-07-12 | **WEB-PDFH** / トップ — 最新版 **v1.2.7**（ツールバー見切れ修正） |

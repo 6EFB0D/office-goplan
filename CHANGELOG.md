@@ -1,5 +1,10 @@
 # CHANGELOG — Office Go Plan サイト（office-goplan）
 
+## 2026-08-23（LeafDesk — 複数ページ選択スクショ）
+
+- **WEB-PDFH** — 「画面で見る」に **複数ページの操作**（`gui-multiselect.png`）を追加（既存 4 枚は維持）
+- 概要キーワード・機能リストのページ編集説明を v1.3.10（複数選択・複製・別ファイル出力）に合わせて更新
+
 ## 2026-08-08（LeafDesk URL `/leafdesk`）
 
 - **WEB-PDFH** — 正規 URL を `/pdfhandler` から **`/leafdesk`** へ変更（`leafdesk.html`）
