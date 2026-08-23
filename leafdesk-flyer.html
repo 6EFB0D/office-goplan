@@ -3,446 +3,1026 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LeafDesk 紹介チラシ（A4両面）｜Office Go Plan</title>
-  <meta name="description" content="LeafDesk 紹介用 A4 両面チラシ。印刷または PDF 保存してご利用ください。">
+  <title>LeafDesk 紹介｜Office Go Plan</title>
+  <meta name="description" content="LeafDesk 紹介ブローシュア（A4両面）。判別・リネーム・結合・分割・回転・ページ差し替えの作業簡略化を Before/After で比較。">
   <link rel="canonical" href="https://office-goplan.com/leafdesk-flyer">
   <link rel="icon" type="image/jpeg" href="assets/logo/logo-tab.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #1e293b;
-      --muted: #475569;
-      --line: #cbd5e1;
-      --blue: #2563eb;
-      --blue-soft: #eff6ff;
+      --ink: #0f172a;
+      --muted: #334155;
+      --soft: #64748b;
+      --line: #e2e8f0;
+      --blue: #1d4ed8;
+      --blue-deep: #1e3a8a;
+      --tint: #eff6ff;
       --paper: #ffffff;
+      --warm-deep: #7c2d12;
+      --warm: #c2410c;
+      --warm-solid: #c2410c;
+      --warm-tint: #fff7ed;
+      --warm-border: #fdba74;
+      --warm-muted: #78716c;
+      --flyer-min: 0.7rem;
+      --flyer-sm: 0.75rem;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic UI", Meiryo, sans-serif;
-      background: #e2e8f0;
+      background: #cbd5e1;
       color: var(--ink);
       line-height: 1.55;
-    }
-
-    .screen-bar {
-      max-width: 210mm;
-      margin: 16px auto;
-      padding: 12px 16px;
-      background: #0f172a;
-      color: #e2e8f0;
-      border-radius: 8px;
-      font-size: 0.9rem;
-    }
-    .screen-bar a { color: #93c5fd; }
-    .screen-bar .actions { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 8px; }
-    .screen-bar button, .screen-bar .btn {
-      display: inline-block;
-      border: none;
-      background: var(--blue);
-      color: #fff;
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      font-size: 0.9rem;
     }
 
     .sheet {
       width: 210mm;
       min-height: 297mm;
-      margin: 12px auto;
-      padding: 14mm 16mm;
+      margin: 16px auto;
       background: var(--paper);
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
       display: flex;
       flex-direction: column;
       page-break-after: always;
+      overflow: hidden;
     }
     .sheet:last-of-type { page-break-after: auto; }
 
-    .top {
+    /* —— 表面 —— */
+    .front-hero {
+      background: linear-gradient(145deg, #1e3a8a 0%, #1d4ed8 55%, #3b82f6 100%);
+      color: #fff;
+      padding: 10mm 14mm 11mm;
+    }
+    .front-hero .row {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       gap: 12px;
-      border-bottom: 3px solid var(--blue);
-      padding-bottom: 10px;
       margin-bottom: 14px;
     }
-    .brand {
+    .front-hero .product {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
-    .brand img.app {
-      width: 40px;
-      height: 40px;
+    .front-hero .product img {
+      width: 52px;
+      height: 52px;
+      background: #fff;
+      border-radius: 10px;
+      padding: 4px;
     }
-    .brand h1 {
-      font-size: 1.55rem;
-      line-height: 1.2;
-      letter-spacing: 0.02em;
+    .front-hero h1 {
+      font-size: 2rem;
+      letter-spacing: 0.04em;
+      line-height: 1.15;
     }
-    .brand .sub {
-      font-size: 0.78rem;
-      color: var(--muted);
+    .front-hero .alias {
+      font-size: 0.82rem;
+      opacity: 0.92;
+      margin-top: 3px;
+    }
+    .org-badge {
+      background: rgba(255,255,255,0.95);
+      border-radius: 8px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .org-badge img {
+      height: 42px;
+      width: auto;
+      display: block;
+    }
+    .front-hero .catch {
+      font-size: 1.65rem;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: 0.01em;
+      max-width: 20em;
+    }
+    .front-hero .hook {
+      margin-top: 12px;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      opacity: 0.95;
+      max-width: 36em;
+      padding-left: 12px;
+      border-left: 3px solid rgba(255,255,255,0.55);
+    }
+
+    .front-body {
+      padding: 8mm 14mm 7mm;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .front-shot {
+      margin: 0;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+    }
+    .front-shot img.shot {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .front-shot figcaption {
+      font-size: var(--flyer-sm);
+      color: var(--soft);
+      padding: 6px 10px;
+      background: #f8fafc;
+    }
+
+    .flow-lead {
+      text-align: center;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.45;
+      margin: 0;
+    }
+    .flow-lead strong {
+      color: var(--blue-deep);
+      font-weight: 700;
+    }
+    .flow-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    .flow-step {
+      text-align: center;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--blue-deep);
+      background: var(--tint);
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 8px 5px 7px;
+      line-height: 1.3;
+    }
+    .flow-step .n {
+      display: block;
+      font-size: var(--flyer-sm);
+      color: var(--blue);
+      margin-bottom: 2px;
+      font-weight: 700;
+    }
+    .flow-step .title {
+      display: block;
+    }
+    .flow-step .hint {
+      display: block;
+      margin-top: 5px;
+      font-size: var(--flyer-min);
       font-weight: 500;
+      color: var(--muted);
+      line-height: 1.35;
     }
-    .org-logo {
+    .flow-step .hint em {
+      font-style: normal;
+      color: var(--soft);
+    }
+    .flow-note {
+      text-align: center;
+      font-size: var(--flyer-sm);
+      color: var(--soft);
+      margin-top: -4px;
+      line-height: 1.45;
+    }
+
+    .front-cta {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+      margin-top: auto;
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border: 2px solid #93c5fd;
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .front-cta .offer-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px 16px;
+      margin-bottom: 6px;
+    }
+    .front-cta .price {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--blue);
+      line-height: 1.1;
+    }
+    .front-cta .price-label {
+      font-size: var(--flyer-sm);
+      color: var(--soft);
+      font-weight: 600;
+    }
+    .front-cta .trial {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .front-cta .cta-main {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--blue-deep);
+      margin-top: 2px;
+    }
+    .front-cta .url {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .front-cta .fine {
+      font-size: var(--flyer-min);
+      color: var(--soft);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+    .qr-block {
+      text-align: center;
+    }
+    .qr-block img {
+      width: 78px;
+      height: 78px;
+      display: block;
+      margin: 0 auto 4px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #fff;
+      padding: 3px;
+    }
+    .qr-block span {
+      font-size: var(--flyer-min);
+      color: var(--soft);
+      font-weight: 600;
+    }
+
+    .sheet-foot {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 6mm 14mm 8mm;
+      border-top: 1px solid var(--line);
+    }
+    .sheet-foot .org {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sheet-foot .org img {
       height: 36px;
       width: auto;
     }
 
-    .headline {
-      font-size: 1.35rem;
-      font-weight: 700;
-      line-height: 1.35;
-      margin-bottom: 8px;
-    }
-    .lead {
-      color: var(--muted);
-      font-size: 0.92rem;
-      margin-bottom: 14px;
-    }
-
-    .cols {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 14px;
-      flex: 1;
-    }
-
-    .points {
-      list-style: none;
-    }
-    .points li {
-      position: relative;
-      padding: 8px 0 8px 18px;
-      border-bottom: 1px solid var(--line);
-      font-size: 0.88rem;
-    }
-    .points li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 14px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--blue);
-    }
-    .points strong { color: var(--ink); }
-
-    .shot {
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      overflow: hidden;
-      background: #f8fafc;
-    }
-    .shot img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-    .shot figcaption {
-      font-size: 0.72rem;
-      color: var(--muted);
-      padding: 6px 8px;
-    }
-
-    .price-box {
-      margin-top: 14px;
-      background: var(--blue-soft);
-      border: 1px solid #bfdbfe;
-      border-radius: 8px;
-      padding: 12px 14px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px 16px;
-    }
-    .price-box .label {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-    .price-box .value {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--blue);
-    }
-    .price-box .note {
-      grid-column: 1 / -1;
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    .urls {
-      margin-top: 12px;
-      border-top: 1px solid var(--line);
-      padding-top: 10px;
-      font-size: 0.82rem;
-    }
-    .urls dt {
-      font-weight: 700;
-      color: var(--blue);
-      margin-top: 6px;
-    }
-    .urls dd {
-      word-break: break-all;
-      color: var(--ink);
-    }
-
-    .footer-line {
-      margin-top: auto;
-      padding-top: 10px;
-      font-size: 0.72rem;
-      color: var(--muted);
+    /* —— 裏面 —— */
+    .back-head {
+      padding: 10mm 14mm 6mm;
       display: flex;
       justify-content: space-between;
-      gap: 8px;
-      border-top: 1px solid var(--line);
+      align-items: center;
+      border-bottom: 3px solid var(--blue);
+    }
+    .back-head h1 {
+      font-size: 1.35rem;
+      color: var(--blue-deep);
+    }
+    .back-head .sub {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 2px;
     }
 
-    h2 {
-      font-size: 1.05rem;
-      color: var(--blue);
-      border-left: 4px solid var(--blue);
-      padding-left: 8px;
-      margin: 0 0 10px;
+    .back-body {
+      padding: 8mm 14mm;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
     }
 
-    .flow {
+    .compare-matrix {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1fr 22px 0.78fr;
+      gap: 0 8px;
+      flex: 1;
+      align-items: stretch;
+    }
+
+    .before-bundle,
+    .after-bundle {
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      overflow: hidden;
+      min-height: 100%;
+    }
+
+    .before-bundle {
+      border: 2px solid var(--warm-solid);
+      background: var(--warm-tint);
+    }
+
+    .before-bundle-head,
+    .after-bundle-head {
+      display: flex;
+      align-items: center;
       gap: 8px;
-      margin-bottom: 14px;
+      padding: 8px 10px;
+      min-height: 52px;
+      flex-shrink: 0;
     }
-    .flow .step {
-      background: #f8fafc;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      padding: 8px;
-      font-size: 0.78rem;
-    }
-    .flow .n {
-      display: inline-block;
-      background: var(--blue);
+
+    .before-bundle-head {
+      background: linear-gradient(145deg, #7c2d12 0%, #c2410c 100%);
       color: #fff;
-      font-size: 0.7rem;
+      padding-left: 14px;
+    }
+
+    .before-bundle-head .name {
+      font-size: 0.88rem;
       font-weight: 700;
-      border-radius: 999px;
-      padding: 1px 7px;
+      line-height: 1.2;
+    }
+
+    .before-bundle-head .tagline {
+      font-size: var(--flyer-min);
+      opacity: 0.92;
+      margin-top: 1px;
+    }
+
+    .before-bundle-rows,
+    .after-bundle-rows {
+      flex: 1;
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .before-row,
+    .after-row {
+      padding: 6px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 0;
+    }
+
+    .before-row {
+      border-bottom: 1px solid var(--warm-border);
+    }
+
+    .before-row:last-child {
+      border-bottom: none;
+    }
+
+    .row-label-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
       margin-bottom: 4px;
     }
 
-    .guides {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.8rem;
-      margin-bottom: 14px;
-    }
-    .guides th, .guides td {
-      border: 1px solid var(--line);
-      padding: 6px 8px;
-      text-align: left;
-      vertical-align: top;
-    }
-    .guides th {
-      background: var(--blue-soft);
-      width: 38%;
+    .before-row .row-label-row .label {
+      font-size: var(--flyer-min);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--warm);
     }
 
-    .two {
+    .before-row .row-label-row .step-ref {
+      font-size: var(--flyer-min);
+      font-weight: 700;
+      color: var(--warm-deep);
+    }
+
+    .before-note {
+      font-size: var(--flyer-min);
+      font-weight: 600;
+      color: var(--warm-deep);
+      background: #ffedd5;
+      border-radius: 999px;
+      padding: 1px 7px;
+    }
+
+    .before-row .action-pill {
+      background: var(--warm-solid);
+      color: #fff;
+      font-size: var(--flyer-min);
+      font-weight: 600;
+      padding: 3px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .before-row .chain-arrow {
+      font-size: var(--flyer-min);
+      color: #fb923c;
+      margin: 0 1px;
+      flex-shrink: 0;
+    }
+
+    .before-bundle-foot {
+      font-size: var(--flyer-min);
+      color: var(--warm-muted);
+      line-height: 1.4;
+      padding: 6px 10px 8px;
+      border-top: 1px solid var(--warm-border);
+      background: #fff;
+      flex-shrink: 0;
+      min-height: 40px;
+    }
+
+    .compare-arrows {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .compare-arrows-head {
+      min-height: 52px;
+      flex-shrink: 0;
+    }
+
+    .compare-arrows-body {
+      flex: 1;
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+    }
+
+    .compare-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--blue);
+    }
+
+    .compare-arrows-foot {
+      min-height: 40px;
+      flex-shrink: 0;
+    }
+
+    .action-chain {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2px 0;
+    }
+
+    .action-pill {
+      font-size: var(--flyer-min);
+      line-height: 1.25;
+      padding: 3px 5px;
+      border-radius: 4px;
+      background: #e2e8f0;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .chain-arrow {
+      font-size: var(--flyer-min);
+      color: #94a3b8;
+      margin: 0 1px;
+      flex-shrink: 0;
+    }
+
+    .after-bundle {
+      border: 2px solid var(--blue);
+      background: var(--tint);
+    }
+
+    .after-bundle-head {
+      background: linear-gradient(145deg, #1e3a8a 0%, #1d4ed8 100%);
+      color: #fff;
+    }
+
+    .after-bundle-head img {
+      width: 32px;
+      height: 32px;
+      background: #fff;
+      border-radius: 7px;
+      padding: 3px;
+      flex-shrink: 0;
+    }
+
+    .after-bundle-head .name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .after-bundle-head .tagline {
+      font-size: var(--flyer-min);
+      opacity: 0.92;
+      margin-top: 1px;
+    }
+
+    .after-row {
+      padding: 6px 10px;
+      border-bottom: 1px solid #bfdbfe;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 0;
+    }
+
+    .after-row:last-child {
+      border-bottom: none;
+    }
+
+    .after-label-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    .after-label-row .label {
+      font-size: var(--flyer-min);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--blue);
+    }
+
+    .after-label-row .step-ref {
+      font-size: var(--flyer-min);
+      font-weight: 700;
+      color: var(--blue-deep);
+    }
+
+    .action-pill.after {
+      background: var(--blue);
+      color: #fff;
+      font-size: var(--flyer-min);
+      font-weight: 600;
+      padding: 3px 6px;
+    }
+
+    .action-chain.after-chain {
+      gap: 2px 0;
+    }
+
+    .after-bundle .chain-arrow {
+      color: #93c5fd;
+    }
+
+    .after-bundle-foot {
+      font-size: var(--flyer-min);
+      color: var(--muted);
+      line-height: 1.4;
+      padding: 6px 10px 8px;
+      border-top: 1px solid #bfdbfe;
+      background: #fff;
+      flex-shrink: 0;
+      min-height: 40px;
+    }
+
+    .compare-note {
+      font-size: var(--flyer-min);
+      color: var(--soft);
+      line-height: 1.45;
+    }
+
+    .summary-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .summary-item {
+      border: 1px solid #bfdbfe;
+      background: var(--tint);
+      border-radius: 8px;
+      padding: 8px 10px;
+      text-align: center;
+    }
+
+    .summary-item .val {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--blue);
+      line-height: 1.2;
+    }
+
+    .summary-item .lbl {
+      font-size: var(--flyer-min);
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    h2 {
+      font-size: 0.95rem;
+      color: var(--blue-deep);
+      margin-bottom: 8px;
+    }
+
+    .biz {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 12px;
+      gap: 8px;
     }
-    .card {
+    .biz .card {
       border: 1px solid var(--line);
       border-radius: 8px;
-      padding: 10px 12px;
+      padding: 9px 10px;
+      font-size: 0.76rem;
+    }
+    .biz .card h3 {
       font-size: 0.82rem;
+      margin-bottom: 4px;
+      color: var(--blue-deep);
     }
-    .card h3 {
-      font-size: 0.9rem;
-      margin-bottom: 6px;
-    }
-    .card ul {
+    .biz ul {
       margin-left: 1.1rem;
       color: var(--muted);
     }
 
-    .contact {
-      background: #0f172a;
+    .qr-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 8px 10px;
+    }
+    .qr-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .qr-item img {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #fff;
+      padding: 2px;
+    }
+    .qr-item .label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .qr-item .hint {
+      font-size: var(--flyer-min);
+      color: var(--soft);
+      margin-top: 2px;
+      line-height: 1.35;
+    }
+
+    .contact-bar {
+      background: var(--ink);
       color: #e2e8f0;
       border-radius: 8px;
-      padding: 12px 14px;
+      padding: 10px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
       font-size: 0.85rem;
     }
-    .contact a { color: #93c5fd; }
-    .contact .big {
-      font-size: 1rem;
-      font-weight: 700;
-      margin: 4px 0 8px;
+    .contact-bar strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-top: 2px;
+      color: #fff;
+    }
+    .contact-bar .side {
+      text-align: right;
+      font-size: 0.75rem;
+      opacity: 0.9;
     }
 
     @media print {
       body { background: #fff; }
-      .screen-bar { display: none !important; }
       .sheet {
         margin: 0;
         box-shadow: none;
         width: 210mm;
         min-height: 297mm;
         height: 297mm;
-        overflow: hidden;
       }
-      @page {
-        size: A4 portrait;
-        margin: 0;
-      }
+      @page { size: A4 portrait; margin: 0; }
     }
 
     @media screen and (max-width: 900px) {
-      .sheet { width: auto; min-height: auto; margin: 12px; padding: 20px; }
-      .cols, .flow, .two, .price-box { grid-template-columns: 1fr; }
+      .sheet { width: auto; min-height: auto; margin: 12px; }
+      .benefit-grid, .visual, .flow-strip, .compare-matrix, .summary-bar, .biz, .qr-row { grid-template-columns: 1fr; }
+      .compare-matrix { grid-template-columns: 1fr; }
+      .compare-arrows { display: none; }
+      .front-cta, .contact-bar { grid-template-columns: 1fr; display: block; }
+      .contact-bar .side { text-align: left; margin-top: 8px; }
     }
   </style>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="screen-bar">
-    <strong>LeafDesk 紹介チラシ（A4 両面）</strong>
-    — ブラウザの印刷から「PDFに保存」または両面印刷してください（余白なし／背景グラフィック ON 推奨）。
-    <div class="actions">
-      <button type="button" onclick="window.print()">印刷 / PDF 保存</button>
-      <a class="btn" href="/leafdesk">製品ページへ</a>
-      <a class="btn" href="/guides">用途ガイドへ</a>
-    </div>
-  </div>
 
-  <!-- ===== 表面 ===== -->
+  <!-- ========== 表面：つかみ → 試用 ========== -->
   <section class="sheet" aria-label="表面">
-    <header class="top">
-      <div class="brand">
-        <img class="app" src="assets/pdfhandler/PdfHandler.png" alt="">
-        <div>
-          <h1>LeafDesk</h1>
-          <p class="sub">pdf Handler for Windows（旧称 pdfHandler）</p>
+    <div class="front-hero">
+      <div class="row">
+        <div class="product">
+          <img src="assets/pdfhandler/PdfHandler.png" alt="">
+          <div>
+            <h1>LeafDesk</h1>
+            <p class="alias">図面・帳票 PDF の判別・整理（Windows）</p>
+          </div>
+        </div>
+        <div class="org-badge">
+          <img src="assets/logo/logo-a.jpg" alt="Office Go Plan">
         </div>
       </div>
-      <img class="org-logo" src="assets/logo/logo-a.jpg" alt="Office Go Plan">
-    </header>
+      <p class="catch">フォルダ内の PDF を、<br>直接開かず識別し、そのまま操作。</p>
+      <p class="hook">共有フォルダにスキャン PDF が溜まる。<br>中身は開かないと分からない——その往復を、やめられます。</p>
+    </div>
 
-    <p class="headline">図面・注文書 PDF を、開かずに見分け、<br>そのまま整理する Windows アプリ</p>
-    <p class="lead">ファイルサーバ上の PDF をサムネイルで判別し、プレビューを見ながらリネーム・結合・ページ整理まで同じ画面で行えます。紹介・社内展開用の1枚です。</p>
+    <div class="front-body">
+      <p class="flow-lead">今まで<strong>複数のアプリと操作</strong>に分かれていた工程を、<strong>LeafDesk だけ</strong>で。</p>
 
-    <div class="cols">
-      <div>
-        <ul class="points">
-          <li><strong>開かずに見分ける</strong><br>図面枠・レイアウトの違いをサムネイルとページストリップで把握</li>
-          <li><strong>見ながら F2 リネーム</strong><br>プレビュー中もファイルをロックせず、その場で名前変更</li>
-          <li><strong>見つけたあとすぐ整理</strong><br>結合・分割、複数ページの抜き出し・並べ替え、差し替え（挿入）</li>
-          <li><strong>共有フォルダ向き</strong><br>ネットワークドライブ上の図面・注文書・添付の仕分けに</li>
-        </ul>
-        <div class="price-box">
-          <div>
-            <div class="label">試用</div>
-            <div class="value">14日間・全機能</div>
-          </div>
-          <div>
-            <div class="label">Standard（買い切り）</div>
-            <div class="value">4,980円（税込）</div>
-          </div>
-          <p class="note">日本国内向け。法人のまとめ購入・請求書払い（可能な場合）はご相談ください。免税事業者のため表示価格がお支払い総額です。</p>
+      <div class="flow-strip" aria-label="できること">
+        <div class="flow-step">
+          <span class="n">1</span>
+          <span class="title">判別</span>
+          <span class="hint"><em>開く・閉じる</em> → 一覧で識別</span>
+        </div>
+        <div class="flow-step">
+          <span class="n">2</span>
+          <span class="title">リネーム</span>
+          <span class="hint"><em>ビューア ↔ エクスプローラー</em> → F2 で命名</span>
+        </div>
+        <div class="flow-step">
+          <span class="n">3</span>
+          <span class="title">結合・分割・回転</span>
+          <span class="hint"><em>別ツール</em> → 同じ画面で操作</span>
+        </div>
+        <div class="flow-step">
+          <span class="n">4</span>
+          <span class="title">ページ差し替え</span>
+          <span class="hint"><em>手作業・再取得</em> → 指定して実行</span>
         </div>
       </div>
-      <figure class="shot">
-        <img src="assets/pdfhandler/gui-drawings.png" alt="LeafDesk 画面：図面 PDF のサムネイルとプレビュー">
-        <figcaption>図面フォルダの一覧例（説明用ダミー PDF）</figcaption>
+      <p class="flow-note">画面の往復が減り、作業効率が上がります。詳細な Before / After は裏面へ</p>
+
+      <figure class="front-shot">
+        <img class="shot" src="assets/pdfhandler/gui-drawings.png" alt="LeafDesk の画面例">
+        <figcaption>サムネイル一覧とプレビューで内容を識別（説明用イメージ）</figcaption>
       </figure>
-    </div>
 
-    <dl class="urls">
-      <dt>製品ページ（詳細・ダウンロード）</dt>
-      <dd>https://office-goplan.com/leafdesk</dd>
-      <dt>用途ガイド（見分け／リネーム／差し替えなど）</dt>
-      <dd>https://office-goplan.com/guides</dd>
-    </dl>
-
-    <div class="footer-line">
-      <span>表面 · 紹介用（無断転載・改変での再配布はご遠慮ください）</span>
-      <span>Office Go Plan</span>
-    </div>
-  </section>
-
-  <!-- ===== 裏面 ===== -->
-  <section class="sheet" aria-label="裏面">
-    <header class="top">
-      <div class="brand">
-        <img class="app" src="assets/pdfhandler/PdfHandler.png" alt="">
+      <div class="front-cta">
         <div>
-          <h1>LeafDesk</h1>
-          <p class="sub">使い方の要点 · 法人展開 · お問い合わせ</p>
+          <div class="offer-row">
+            <span class="price">4,980円</span>
+            <span class="price-label">Standard・買い切り・税込</span>
+          </div>
+          <div class="trial">14日間・全機能を無料で試用</div>
+          <div class="cta-main">製品ページからすぐ始められます</div>
+          <div class="url">office-goplan.com/leafdesk</div>
+          <p class="fine">日本国内の個人・法人向け。法人の複数台は見積対応。</p>
+        </div>
+        <div class="qr-block">
+          <img src="assets/pdfhandler/qr/leafdesk.png" alt="製品ページの QR コード">
+          <span>試用はこちら</span>
         </div>
       </div>
-      <img class="org-logo" src="assets/logo/logo-a.jpg" alt="Office Go Plan">
-    </header>
-
-    <h2>基本の流れ</h2>
-    <div class="flow">
-      <div class="step"><span class="n">1</span><br>共有フォルダを開く</div>
-      <div class="step"><span class="n">2</span><br>サムネイルで見分ける</div>
-      <div class="step"><span class="n">3</span><br>プレビューで確認・F2</div>
-      <div class="step"><span class="n">4</span><br>結合・ページ整理へ</div>
     </div>
 
-    <h2>用途ガイド（Web）</h2>
-    <table class="guides">
-      <tr><th>図面PDFを開かずに見分ける</th><td>https://office-goplan.com/guides/pdf-drawings-without-opening</td></tr>
-      <tr><th>プレビューを見ながら F2 リネーム</th><td>https://office-goplan.com/guides/pdf-rename-while-preview</td></tr>
-      <tr><th>ページ挿入で差し替え</th><td>https://office-goplan.com/guides/pdf-page-replace-by-insert</td></tr>
-      <tr><th>複数ページの抜き出し・並べ替え</th><td>https://office-goplan.com/guides/pdf-multiselect-pages</td></tr>
-      <tr><th>ファイルサーバ上で結合・分割</th><td>https://office-goplan.com/guides/pdf-merge-split-on-server</td></tr>
-      <tr><th>ヘッダ・フッター</th><td>https://office-goplan.com/guides/pdf-header-footer</td></tr>
-    </table>
-
-    <div class="two">
-      <div class="card">
-        <h3>向いている場面</h3>
-        <ul>
-          <li>図面・注文書・検査資料がフォルダに多い</li>
-          <li>開いて探す／名前を付け直す往復が多い</li>
-          <li>部署で同じ整理の仕方を揃えたい</li>
-        </ul>
+    <div class="sheet-foot">
+      <div class="org">
+        <img src="assets/logo/logo-a.jpg" alt="Office Go Plan">
       </div>
-      <div class="card">
-        <h3>法人・まとめ購入</h3>
-        <ul>
-          <li>複数ライセンスの見積・一括発行</li>
-          <li>請求書払い（可能な場合）</li>
-          <li>試用手順・社内説明の支援</li>
-        </ul>
-        <p style="margin-top:8px;font-size:0.78rem;color:var(--muted);">詳細は製品ページ内「法人・まとめ購入」へ</p>
-      </div>
-    </div>
-
-    <div class="contact">
-      <div>お問い合わせ・ご紹介のご連絡</div>
-      <div class="big">support@office-goplan.com</div>
-      <div>フォーム: https://office-goplan.com/leafdesk （ページ内の相談ボタン）</div>
-      <div style="margin-top:8px;font-size:0.8rem;opacity:0.9;">製品ページ https://office-goplan.com/leafdesk ／ ガイド一覧 https://office-goplan.com/guides</div>
-    </div>
-
-    <div class="footer-line">
-      <span>裏面 · Windows 10/11（64bit）· 最新版は GitHub Releases</span>
-      <span>© Office Go Plan</span>
     </div>
   </section>
+
+  <!-- ========== 裏面：作業簡略化（Before / After） ========== -->
+  <section class="sheet" aria-label="裏面">
+    <header class="back-head">
+      <div>
+        <h1>作業の簡略化</h1>
+        <p class="sub">操作が短くなる — 判別・リネーム・結合・回転・ページ差し替えを LeafDesk 1 アプリで</p>
+      </div>
+      <div class="org-badge">
+        <img src="assets/logo/logo-a.jpg" alt="Office Go Plan">
+      </div>
+    </header>
+
+    <div class="back-body">
+      <div class="compare-matrix">
+        <div class="before-bundle">
+          <div class="before-bundle-head">
+            <div>
+              <div class="name">現状</div>
+              <div class="tagline">従来 — 別ツール・画面の往復</div>
+            </div>
+          </div>
+          <div class="before-bundle-rows">
+            <div class="before-row">
+              <div class="row-label-row">
+                <span class="label">BEFORE</span>
+                <span class="step-ref">① 判別</span>
+                <span class="before-note">1 件ごとに開いて確認</span>
+              </div>
+              <div class="action-chain">
+                <span class="action-pill">開く</span><span class="chain-arrow">→</span>
+                <span class="action-pill">起動待ち</span><span class="chain-arrow">→</span>
+                <span class="action-pill">内容確認</span><span class="chain-arrow">→</span>
+                <span class="action-pill">閉じる</span>
+              </div>
+            </div>
+            <div class="before-row">
+              <div class="row-label-row">
+                <span class="label">BEFORE</span>
+                <span class="step-ref">② リネーム</span>
+                <span class="before-note">ビューア ↔ エクスプローラー</span>
+              </div>
+              <div class="action-chain">
+                <span class="action-pill">PDF を開く</span><span class="chain-arrow">→</span>
+                <span class="action-pill">内容確認</span><span class="chain-arrow">→</span>
+                <span class="action-pill">ビューア終了</span><span class="chain-arrow">→</span>
+                <span class="action-pill">エクスプローラー</span><span class="chain-arrow">→</span>
+                <span class="action-pill">名称変更</span>
+              </div>
+            </div>
+            <div class="before-row">
+              <div class="row-label-row">
+                <span class="label">BEFORE</span>
+                <span class="step-ref">③ 結合・分割・回転</span>
+                <span class="before-note">別ツール・別工程</span>
+              </div>
+              <div class="action-chain">
+                <span class="action-pill">個別に確認</span><span class="chain-arrow">→</span>
+                <span class="action-pill">別ツール起動</span><span class="chain-arrow">→</span>
+                <span class="action-pill">並べ替え・回転</span><span class="chain-arrow">→</span>
+                <span class="action-pill">保存</span>
+              </div>
+            </div>
+            <div class="before-row">
+              <div class="row-label-row">
+                <span class="label">BEFORE</span>
+                <span class="step-ref">④ ページ差し替え</span>
+                <span class="before-note">再取得〜手作業</span>
+              </div>
+              <div class="action-chain">
+                <span class="action-pill">新版を探索</span><span class="chain-arrow">→</span>
+                <span class="action-pill">再取得</span><span class="chain-arrow">→</span>
+                <span class="action-pill">該当ページ差込</span><span class="chain-arrow">→</span>
+                <span class="action-pill">保存</span>
+              </div>
+            </div>
+          </div>
+          <p class="before-bundle-foot">工程ごとにツールや画面が分かれる運用</p>
+        </div>
+
+        <div class="compare-arrows" aria-hidden="true">
+          <div class="compare-arrows-head"></div>
+          <div class="compare-arrows-body">
+            <div class="compare-arrow">⇒</div>
+            <div class="compare-arrow">⇒</div>
+            <div class="compare-arrow">⇒</div>
+            <div class="compare-arrow">⇒</div>
+          </div>
+          <div class="compare-arrows-foot"></div>
+        </div>
+
+        <div class="after-bundle">
+          <div class="after-bundle-head">
+            <img src="assets/pdfhandler/PdfHandler.png" alt="">
+            <div>
+              <div class="name">LeafDesk</div>
+              <div class="tagline">1 アプリ · 同一画面 — 4 機能をここに集約</div>
+            </div>
+          </div>
+          <div class="after-bundle-rows">
+            <div class="after-row">
+              <div class="after-label-row">
+                <span class="label">AFTER</span>
+                <span class="step-ref">① 判別</span>
+              </div>
+              <div class="action-chain after-chain">
+                <span class="action-pill after">サムネイル一覧で識別</span>
+              </div>
+            </div>
+            <div class="after-row">
+              <div class="after-label-row">
+                <span class="label">AFTER</span>
+                <span class="step-ref">② リネーム</span>
+              </div>
+              <div class="action-chain after-chain">
+                <span class="action-pill after">プレビュー確認</span><span class="chain-arrow">→</span>
+                <span class="action-pill after">F2 で命名</span>
+              </div>
+            </div>
+            <div class="after-row">
+              <div class="after-label-row">
+                <span class="label">AFTER</span>
+                <span class="step-ref">③ 結合・分割・回転</span>
+              </div>
+              <div class="action-chain after-chain">
+                <span class="action-pill after">一覧で選択</span><span class="chain-arrow">→</span>
+                <span class="action-pill after">結合 / 分割 / 回転</span>
+              </div>
+            </div>
+            <div class="after-row">
+              <div class="after-label-row">
+                <span class="label">AFTER</span>
+                <span class="step-ref">④ ページ差し替え</span>
+              </div>
+              <div class="action-chain after-chain">
+                <span class="action-pill after">差し替えページ指定</span><span class="chain-arrow">→</span>
+                <span class="action-pill after">実行</span>
+              </div>
+            </div>
+          </div>
+          <p class="after-bundle-foot">左の 4 工程を、別ツールに分けず LeafDesk 内で一連の整理として行えます。</p>
+        </div>
+      </div>
+
+      <p class="compare-note">※ Before の操作数・内容は環境により異なります。</p>
+
+      <div class="summary-bar">
+        <div class="summary-item">
+          <div class="val">画面切替なし</div>
+          <div class="lbl">エクスプローラー ↔ ビューアの往復を削減</div>
+        </div>
+        <div class="summary-item">
+          <div class="val">ツール統合</div>
+          <div class="lbl">判別・編集を別アプリに分けない</div>
+        </div>
+        <div class="summary-item">
+          <div class="val">一連作業を1つのアプリで</div>
+          <div class="lbl">判別→命名→結合・回転→ページ差し替えを同じ画面で</div>
+        </div>
+      </div>
+
+      <div class="biz">
+        <div class="card">
+          <h3>法人・まとめ購入</h3>
+          <ul>
+            <li>複数ライセンスの見積・キー一括発行</li>
+            <li>請求書払い（可能な場合）</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>操作手順・試用</h3>
+          <p style="color:var(--muted);line-height:1.45;">各工程の詳細手順は、用途ガイドをご覧ください。製品ページから 14 日間の全機能試用が可能です。</p>
+        </div>
+      </div>
+
+      <div class="qr-row">
+        <div class="qr-item">
+          <img src="assets/pdfhandler/qr/leafdesk.png" alt="">
+          <div>
+            <div class="label">製品・試用</div>
+            <div class="hint">詳細・ダウンロード<br>office-goplan.com/leafdesk</div>
+          </div>
+        </div>
+        <div class="qr-item">
+          <img src="assets/pdfhandler/qr/guides.png" alt="">
+          <div>
+            <div class="label">用途ガイド</div>
+            <div class="hint">使い方の短い解説<br>office-goplan.com/leafdesk/guides</div>
+          </div>
+        </div>
+        <div class="qr-item">
+          <img src="assets/pdfhandler/qr/home.png" alt="">
+          <div>
+            <div class="label">公式サイト</div>
+            <div class="hint">公式サイト<br>office-goplan.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-bar">
+        <div>
+          お問い合わせ・ご紹介
+          <strong>support@office-goplan.com</strong>
+        </div>
+        <div class="side">ご相談は製品ページのフォームからも<br>受け付けています</div>
+      </div>
+    </div>
+
+    <div class="sheet-foot">
+      <div class="org">
+        <img src="assets/logo/logo-a.jpg" alt="Office Go Plan">
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>

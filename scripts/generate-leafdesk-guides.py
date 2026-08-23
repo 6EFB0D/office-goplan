@@ -1,27 +1,28 @@
 # -*- coding: utf-8 -*-
-"""Generate LeafDesk guide pages under /guides/ (run once from repo root)."""
+"""Generate LeafDesk guide pages under /leafdesk/guides/ (run once from repo root)."""
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-GUIDES = ROOT / "guides"
+GUIDE_URL = "/leafdesk/guides"
+GUIDES = ROOT / "leafdesk" / "guides"
 
 HEADER = """<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/jpeg" href="../assets/logo/logo-tab.jpg">
-  <link rel="apple-touch-icon" sizes="180x180" href="../assets/logo/apple-touch-icon-large.png">
-  <link rel="manifest" href="../site.webmanifest">
+  <link rel="icon" type="image/jpeg" href="../../assets/logo/logo-tab.jpg">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/logo/apple-touch-icon-large.png">
+  <link rel="manifest" href="../../site.webmanifest">
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="{description}">
   <title>{title}｜LeafDesk</title>
-  <link rel="canonical" href="https://office-goplan.com/guides/{slug}">
+  <link rel="canonical" href="https://office-goplan.com/leafdesk/guides/{slug}">
 
   <meta property="og:type" content="article">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="Office Go Plan">
-  <meta property="og:url" content="https://office-goplan.com/guides/{slug}">
+  <meta property="og:url" content="https://office-goplan.com/leafdesk/guides/{slug}">
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{og_description}">
   <meta property="og:image" content="https://office-goplan.com/assets/pdfhandler/{og_image}">
@@ -50,7 +51,7 @@ HEADER = """<!DOCTYPE html>
       "name": "Office Go Plan",
       "url": "https://office-goplan.com/"
     }},
-    "mainEntityOfPage": "https://office-goplan.com/guides/{slug}",
+    "mainEntityOfPage": "https://office-goplan.com/leafdesk/guides/{slug}",
     "about": {{
       "@type": "SoftwareApplication",
       "name": "LeafDesk",
@@ -61,20 +62,20 @@ HEADER = """<!DOCTYPE html>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
-  <script src="../assets/js/legacy-redirect.js"></script>
-  <script defer src="../assets/js/ga4.js"></script>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../assets/js/legacy-redirect.js"></script>
+  <script defer src="../../assets/js/ga4.js"></script>
 </head>
 <body>
   <header class="header">
     <div class="container">
       <a href="/" class="logo">
-        <img src="../assets/logo/logo-a.jpg" alt="Office Go Plan" class="logo-img">
+        <img src="../../assets/logo/logo-a.jpg" alt="Office Go Plan" class="logo-img">
       </a>
       <nav class="nav">
         <a href="/">ホーム</a>
         <a href="/leafdesk">LeafDesk</a>
-        <a href="/guides">ガイド</a>
+        <a href="/leafdesk/guides">ガイド</a>
         <a href="/#products">製品</a>
       </nav>
     </div>
@@ -83,7 +84,7 @@ HEADER = """<!DOCTYPE html>
   <main>
     <article class="guide-article">
       <div class="container">
-        <p class="guide-kicker"><a href="/leafdesk">LeafDesk</a> · <a href="/guides">用途ガイド</a></p>
+        <p class="guide-kicker"><a href="/leafdesk">LeafDesk</a> · <a href="/leafdesk/guides">用途ガイド</a></p>
         <h1>{title}</h1>
         <p class="guide-lead">{lead}</p>
 """
@@ -95,7 +96,7 @@ FOOTER = """
           <a href="https://github.com/6EFB0D/pdf-handler/releases/latest" class="cta-button cta-button-primary">14日試用をはじめる（無料DL）</a>
           <a href="/leafdesk" class="cta-button cta-button-secondary">製品ページへ</a>
         </p>
-        <p class="pro-note">ほかの用途: <a href="/guides">ガイド一覧</a> · <a href="/leafdesk#faq">FAQ</a> · <a href="/leafdesk#enterprise">法人・まとめ購入</a></p>
+        <p class="pro-note">ほかの用途: <a href="/leafdesk/guides">ガイド一覧</a> · <a href="/leafdesk#faq">FAQ</a> · <a href="/leafdesk#enterprise">法人・まとめ購入</a></p>
       </div>
     </article>
   </main>
@@ -105,7 +106,7 @@ FOOTER = """
       <nav class="footer-nav">
         <a href="/">ホーム</a>
         <a href="/leafdesk">LeafDesk</a>
-        <a href="/guides">ガイド</a>
+        <a href="/leafdesk/guides">ガイド</a>
         <a href="/privacy-policy">プライバシーポリシー</a>
         <a href="/terms-of-service">利用規約</a>
         <a href="/specified-commercial-transactions">特定商取引法に基づく表記</a>
@@ -128,7 +129,7 @@ GUIDES_META = [
         "lead": "ファイルサーバに並んだ図面・注文書・検査資料。目的の1枚を探すたびに PDF を開いて閉じる作業は、思った以上に時間を食います。ここでは「開かずに見分ける」考え方と、Windows アプリ <strong>LeafDesk</strong>（旧称 pdfHandler）での整理の仕方をまとめます。",
         "body": """
         <figure class="guide-figure">
-          <img src="../assets/pdfhandler/gui-drawings.png" alt="LeafDesk で図面 PDF をサムネイル一覧とプレビューで確認している画面" width="1024" height="596">
+          <img src="../../assets/pdfhandler/gui-drawings.png" alt="LeafDesk で図面 PDF をサムネイル一覧とプレビューで確認している画面" width="1024" height="596">
           <figcaption>図面フォルダを一覧し、右側プレビューとページストリップで内容を確認（説明用のダミー PDF）</figcaption>
         </figure>
 
@@ -169,7 +170,7 @@ GUIDES_META = [
         "lead": "図面や注文書は「見てから正しいファイル名にする」ことが多いです。いったん閉じてエクスプローラーで改名、また開く、という往復を減らすのがこのガイドの目的です。",
         "body": """
         <figure class="guide-figure">
-          <img src="../assets/pdfhandler/gui-rename-f2.png" alt="LeafDesk でプレビュー表示中に F2 でファイル名を編集している画面" width="1024" height="596">
+          <img src="../../assets/pdfhandler/gui-rename-f2.png" alt="LeafDesk でプレビュー表示中に F2 でファイル名を編集している画面" width="1024" height="596">
           <figcaption>右側プレビューを確認しながら、一覧側で F2 編集（説明用のダミー PDF）</figcaption>
         </figure>
 
@@ -237,7 +238,7 @@ GUIDES_META = [
         "lead": "長い PDF から必要なページだけ抜き出す、順序を組み替える、といった作業はストリップ上の<strong>複数選択</strong>が中心になります。",
         "body": """
         <figure class="guide-figure">
-          <img src="../assets/pdfhandler/gui-multiselect.png" alt="LeafDesk のページストリップで複数ページを選択した画面" width="1024" height="596">
+          <img src="../../assets/pdfhandler/gui-multiselect.png" alt="LeafDesk のページストリップで複数ページを選択した画面" width="1024" height="596">
           <figcaption>ページストリップで複数ページを選択（説明用のダミー PDF）</figcaption>
         </figure>
 
@@ -268,7 +269,7 @@ GUIDES_META = [
         "lead": "客先提出用に複数図面を1つにまとめる、逆に巨大なセットを用途別に分ける——いずれもファイルサーバ上で完結できると手間が減ります。",
         "body": """
         <figure class="guide-figure">
-          <img src="../assets/pdfhandler/merge-dialog.png" alt="LeafDesk の PDF 結合ダイアログ" width="1024" height="596">
+          <img src="../../assets/pdfhandler/merge-dialog.png" alt="LeafDesk の PDF 結合ダイアログ" width="1024" height="596">
           <figcaption>結合ダイアログの例（画面は製品バージョンにより異なる場合があります）</figcaption>
         </figure>
 
@@ -305,7 +306,7 @@ GUIDES_META = [
         "lead": "提出用にページ番号や文書タイトルを揃えたいとき、PDF ごとに別ツールを開かず、整理と同じ画面でヘッダ・フッターを付けられます。",
         "body": """
         <figure class="guide-figure">
-          <img src="../assets/pdfhandler/header-footer.png" alt="LeafDesk のヘッダ・フッター設定画面の例" width="1024" height="596">
+          <img src="../../assets/pdfhandler/header-footer.png" alt="LeafDesk のヘッダ・フッター設定画面の例" width="1024" height="596">
           <figcaption>ヘッダ・フッター設定の例（画面は製品バージョンにより異なる場合があります）</figcaption>
         </figure>
 
@@ -355,17 +356,17 @@ INDEX = """<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/jpeg" href="../assets/logo/logo-tab.jpg">
-  <link rel="apple-touch-icon" sizes="180x180" href="../assets/logo/apple-touch-icon-large.png">
-  <link rel="manifest" href="../site.webmanifest">
+  <link rel="icon" type="image/jpeg" href="../../assets/logo/logo-tab.jpg">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/logo/apple-touch-icon-large.png">
+  <link rel="manifest" href="../../site.webmanifest">
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="LeafDesk（旧 pdfHandler）の用途ガイド一覧。図面 PDF の見分け、リネーム、ページ差し替え、結合・分割など。">
   <title>LeafDesk 用途ガイド｜Office Go Plan</title>
-  <link rel="canonical" href="https://office-goplan.com/guides">
+  <link rel="canonical" href="https://office-goplan.com/leafdesk/guides">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="Office Go Plan">
-  <meta property="og:url" content="https://office-goplan.com/guides">
+  <meta property="og:url" content="https://office-goplan.com/leafdesk/guides">
   <meta property="og:title" content="LeafDesk 用途ガイド">
   <meta property="og:description" content="図面・注文書 PDF の見分け、リネーム、差し替え、結合など用途別ガイド。">
   <meta property="og:image" content="https://office-goplan.com/assets/pdfhandler/gui-drawings.png">
@@ -374,7 +375,7 @@ INDEX = """<!DOCTYPE html>
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "LeafDesk 用途ガイド",
-    "url": "https://office-goplan.com/guides",
+    "url": "https://office-goplan.com/leafdesk/guides",
     "isPartOf": {{
       "@type": "WebSite",
       "name": "Office Go Plan",
@@ -390,20 +391,20 @@ INDEX = """<!DOCTYPE html>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
-  <script src="../assets/js/legacy-redirect.js"></script>
-  <script defer src="../assets/js/ga4.js"></script>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../assets/js/legacy-redirect.js"></script>
+  <script defer src="../../assets/js/ga4.js"></script>
 </head>
 <body>
   <header class="header">
     <div class="container">
       <a href="/" class="logo">
-        <img src="../assets/logo/logo-a.jpg" alt="Office Go Plan" class="logo-img">
+        <img src="../../assets/logo/logo-a.jpg" alt="Office Go Plan" class="logo-img">
       </a>
       <nav class="nav">
         <a href="/">ホーム</a>
         <a href="/leafdesk">LeafDesk</a>
-        <a href="/guides">ガイド</a>
+        <a href="/leafdesk/guides">ガイド</a>
         <a href="/#products">製品</a>
       </nav>
     </div>
@@ -414,7 +415,7 @@ INDEX = """<!DOCTYPE html>
       <div class="container">
         <p class="guide-kicker"><a href="/leafdesk">LeafDesk</a> · 用途ガイド</p>
         <h1>LeafDesk 用途ガイド</h1>
-        <p class="guide-lead">ファイルサーバ上の図面・注文書 PDF を「開かずに見分け、そのまま整理する」ための短いガイドです。正規 URL はすべて <code>/guides/…</code> 配下に統一しています。</p>
+        <p class="guide-lead">ファイルサーバ上の図面・注文書 PDF を「開かずに見分け、そのまま整理する」ための短いガイドです。正規 URL はすべて <code>/leafdesk/guides/…</code> 配下に統一しています。</p>
         <ul class="guide-index-list">
 {items}
         </ul>
@@ -432,7 +433,7 @@ INDEX = """<!DOCTYPE html>
       <nav class="footer-nav">
         <a href="/">ホーム</a>
         <a href="/leafdesk">LeafDesk</a>
-        <a href="/guides">ガイド</a>
+        <a href="/leafdesk/guides">ガイド</a>
         <a href="/privacy-policy">プライバシーポリシー</a>
         <a href="/terms-of-service">利用規約</a>
       </nav>
@@ -445,18 +446,18 @@ INDEX = """<!DOCTYPE html>
 
 
 def main() -> None:
-    GUIDES.mkdir(exist_ok=True)
+    GUIDES.mkdir(parents=True, exist_ok=True)
     for g in GUIDES_META:
         write_guide(g)
     items = "\n".join(
-        f'          <li><a href="/guides/{g["slug"]}">{g["title"]}</a>'
+        f'          <li><a href="/leafdesk/guides/{g["slug"]}">{g["title"]}</a>'
         f'<span class="guide-index-tags">{" / ".join(tags_for(g["slug"]))}</span></li>'
         for g in GUIDES_META
     )
     (GUIDES / "index.html").write_text(
         INDEX.format(items=items), encoding="utf-8", newline="\n"
     )
-    print("wrote guides/index.html")
+    print("wrote leafdesk/guides/index.html")
 
 
 def tags_for(slug: str) -> list[str]:

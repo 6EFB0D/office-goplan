@@ -15,14 +15,14 @@
 | WEB ID | 名称 | 主ファイル | 版／日付 | 備考 |
 |---|---|---|---|---|
 | WEB-INDEX | トップ | `index.html` | — | |
-| WEB-PDFH | LeafDesk（旧 pdfHandler） | `leafdesk.html` | **2026-08-23** | 正規 URL `/leafdesk`。FAQ・`/guides` 導線 |
-| WEB-GUIDES | LeafDesk 用途ガイド一覧 | `guides/index.html` | **2026-08-23** | `/guides` |
-| WEB-PDFH-G1 | 図面を開かずに見分ける | `guides/pdf-drawings-without-opening.html` | **2026-08-23** | 旧 `/pdf-drawings-without-opening` は 301 |
-| WEB-PDFH-G2 | F2 リネーム | `guides/pdf-rename-while-preview.html` | **2026-08-23** | |
-| WEB-PDFH-G3 | ページ挿入で差し替え | `guides/pdf-page-replace-by-insert.html` | **2026-08-23** | |
-| WEB-PDFH-G4 | 複数ページ選択 | `guides/pdf-multiselect-pages.html` | **2026-08-23** | |
-| WEB-PDFH-G5 | 結合・分割 | `guides/pdf-merge-split-on-server.html` | **2026-08-23** | |
-| WEB-PDFH-G6 | ヘッダ・フッター | `guides/pdf-header-footer.html` | **2026-08-23** | |
+| WEB-PDFH | LeafDesk（旧 pdfHandler） | `leafdesk.html` | **2026-08-23** | 正規 URL `/leafdesk`。FAQ・`/leafdesk/guides` 導線 |
+| WEB-GUIDES | LeafDesk 用途ガイド一覧 | `leafdesk/guides/index.html` | **2026-08-23** | `/leafdesk/guides` |
+| WEB-PDFH-G1 | 図面を開かずに見分ける | `leafdesk/guides/pdf-drawings-without-opening.html` | **2026-08-23** | 旧 `/guides/…`・`/pdf-drawings-without-opening` は 301 |
+| WEB-PDFH-G2 | F2 リネーム | `leafdesk/guides/pdf-rename-while-preview.html` | **2026-08-23** | |
+| WEB-PDFH-G3 | ページ挿入で差し替え | `leafdesk/guides/pdf-page-replace-by-insert.html` | **2026-08-23** | |
+| WEB-PDFH-G4 | 複数ページ選択 | `leafdesk/guides/pdf-multiselect-pages.html` | **2026-08-23** | |
+| WEB-PDFH-G5 | 結合・分割 | `leafdesk/guides/pdf-merge-split-on-server.html` | **2026-08-23** | |
+| WEB-PDFH-G6 | ヘッダ・フッター | `leafdesk/guides/pdf-header-footer.html` | **2026-08-23** | |
 | WEB-PDFH-FLYER | 紹介チラシ A4両面 | `leafdesk-flyer.html` | **2026-08-23** | `/leafdesk-flyer` 印刷用 |
 | WEB-ZIP | ZipSearch | `zipsearch.html` | — | |
 | WEB-PICT | PictComp | `pictcomp.html` | — | |
@@ -42,6 +42,7 @@
 | 日付 | 内容 |
 |---|---|
 | 2026-08-23 | **WEB-PDFH-FLYER** — A4両面紹介チラシ `/leafdesk-flyer` |
+| 2026-08-24 | **WEB-GUIDES / G1〜G6** — `/leafdesk/guides/` へ移行。旧 `/guides/` は 301 |
 | 2026-08-23 | **WEB-GUIDES / G1〜G6** — `/guides/` 配下に用途ガイド一括。旧フラット URL は 301 |
 | 2026-08-23 | **WEB-PDFH-G1** — 用途ガイド「図面PDFを開かずに見分けるには」追加（P1） |
 | 2026-08-23 | **WEB-PDFH** — F2 リネーム／複数選択スクショ追加・機能文言更新（v1.3.10） |

@@ -12,37 +12,37 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://office-goplan.com/guides</loc>
+    <loc>https://office-goplan.com/leafdesk/guides</loc>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://office-goplan.com/guides/pdf-drawings-without-opening</loc>
+    <loc>https://office-goplan.com/leafdesk/guides/pdf-drawings-without-opening</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://office-goplan.com/guides/pdf-rename-while-preview</loc>
+    <loc>https://office-goplan.com/leafdesk/guides/pdf-rename-while-preview</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://office-goplan.com/guides/pdf-page-replace-by-insert</loc>
+    <loc>https://office-goplan.com/leafdesk/guides/pdf-page-replace-by-insert</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://office-goplan.com/guides/pdf-multiselect-pages</loc>
+    <loc>https://office-goplan.com/leafdesk/guides/pdf-multiselect-pages</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://office-goplan.com/guides/pdf-merge-split-on-server</loc>
+    <loc>https://office-goplan.com/leafdesk/guides/pdf-merge-split-on-server</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://office-goplan.com/guides/pdf-header-footer</loc>
+    <loc>https://office-goplan.com/leafdesk/guides/pdf-header-footer</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
