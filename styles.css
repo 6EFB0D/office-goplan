@@ -445,21 +445,27 @@ h2 {
   max-width: 560px;
 }
 
+/* セカンダリも塗りつぶし青に統一（枠線のみだと暗い背景で黒塗りに見える） */
 .cta-button-secondary {
   display: inline-block;
-  color: var(--color-text);
+  background: var(--color-cta);
+  color: white !important;
   text-decoration: none;
   font-weight: 600;
-  padding: 12px 20px;
+  padding: 14px 28px;
   border-radius: 8px;
-  border: 2px solid color-mix(in srgb, var(--color-cta) 45%, transparent);
-  background: transparent;
-  transition: background 0.2s, border-color 0.2s;
+  border: none;
+  transition: background 0.2s;
+}
+
+.cta-button-secondary:link,
+.cta-button-secondary:visited {
+  color: white !important;
 }
 
 .cta-button-secondary:hover {
-  background: color-mix(in srgb, var(--color-cta) 12%, transparent);
-  border-color: var(--color-cta);
+  background: var(--color-cta-hover);
+  color: white !important;
 }
 
 .enterprise-section .feature-list {
@@ -737,26 +743,25 @@ h2 {
 
 .platform-button {
   display: inline-block;
-  color: var(--color-text);
+  color: white !important;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  padding: 14px 24px;
-  background: var(--color-surface);
-  border: 2px solid color-mix(in srgb, var(--color-cta) 55%, transparent);
+  padding: 14px 28px;
+  background: var(--color-cta);
+  border: none;
   border-radius: 8px;
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  transition: background 0.2s;
 }
 
 .platform-button:link,
 .platform-button:visited {
-  color: var(--color-text);
+  color: white !important;
 }
 
 .platform-button:hover {
-  background: color-mix(in srgb, var(--color-cta) 22%, transparent);
-  border-color: var(--color-link);
-  color: var(--color-link);
+  background: var(--color-cta-hover);
+  color: white !important;
 }
 
 /* Comparison table */
