@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="../assets/logo/logo-tab.jpg">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/logo/apple-touch-icon-large.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="LeafDesk で文書タイトルやページ番号などのヘッダ・フッターを付ける手順。オフセットやページ編集後の再適用の考え方。">
+  <title>図面・書類 PDF にヘッダ・フッターを付ける｜LeafDesk</title>
+  <link rel="canonical" href="https://office-goplan.com/guides/pdf-header-footer">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="Office Go Plan">
+  <meta property="og:url" content="https://office-goplan.com/guides/pdf-header-footer">
+  <meta property="og:title" content="図面・書類 PDF にヘッダ・フッターを付ける">
+  <meta property="og:description" content="図面・書類 PDF にヘッダ・フッター。ページ番号や文書タイトルを。">
+  <meta property="og:image" content="https://office-goplan.com/assets/pdfhandler/header-footer.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="図面・書類 PDF にヘッダ・フッターを付ける">
+  <meta name="twitter:description" content="図面・書類 PDF にヘッダ・フッター。ページ番号や文書タイトルを。">
+  <meta name="twitter:image" content="https://office-goplan.com/assets/pdfhandler/header-footer.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "図面・書類 PDF にヘッダ・フッターを付ける",
+    "description": "LeafDesk のヘッダ・フッター機能で、文書タイトルやページ番号を付与する手順と注意点。",
+    "image": "https://office-goplan.com/assets/pdfhandler/header-footer.png",
+    "datePublished": "2026-08-23",
+    "dateModified": "2026-08-23",
+    "author": {
+      "@type": "Organization",
+      "name": "Office Go Plan",
+      "url": "https://office-goplan.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Office Go Plan",
+      "url": "https://office-goplan.com/"
+    },
+    "mainEntityOfPage": "https://office-goplan.com/guides/pdf-header-footer",
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "LeafDesk",
+      "url": "https://office-goplan.com/leafdesk"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../assets/js/legacy-redirect.js"></script>
+  <script defer src="../assets/js/ga4.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="../assets/logo/logo-a.jpg" alt="Office Go Plan" class="logo-img">
+      </a>
+      <nav class="nav">
+        <a href="/">ホーム</a>
+        <a href="/leafdesk">LeafDesk</a>
+        <a href="/guides">ガイド</a>
+        <a href="/#products">製品</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="guide-article">
+      <div class="container">
+        <p class="guide-kicker"><a href="/leafdesk">LeafDesk</a> · <a href="/guides">用途ガイド</a></p>
+        <h1>図面・書類 PDF にヘッダ・フッターを付ける</h1>
+        <p class="guide-lead">提出用にページ番号や文書タイトルを揃えたいとき、PDF ごとに別ツールを開かず、整理と同じ画面でヘッダ・フッターを付けられます。</p>
+
+        <figure class="guide-figure">
+          <img src="../assets/pdfhandler/header-footer.png" alt="LeafDesk のヘッダ・フッター設定画面の例" width="1024" height="596">
+          <figcaption>ヘッダ・フッター設定の例（画面は製品バージョンにより異なる場合があります）</figcaption>
+        </figure>
+
+        <h2>手順の概要</h2>
+        <ol class="guide-steps">
+          <li>対象 PDF を選択する</li>
+          <li>「ツール」→「ヘッダ・フッター」、またはツールバーから開く</li>
+          <li>ヘッダー（文書タイトル・配置・上オフセット）を設定する</li>
+          <li>フッター（任意文字列・ページ番号形式・下オフセット）を設定する</li>
+          <li>フォントを必要に応じて調整し、適用する</li>
+        </ol>
+
+        <h2>うまく載せるコツ</h2>
+        <ul class="guide-list">
+          <li>本文と重なるときは、上端／下端からの<strong>オフセット (pt)</strong> を大きくする（最大 200）</li>
+          <li>ページ番号は <code>1</code> / <code>1/10</code> / <code>-1-</code> など形式を選べます</li>
+          <li>ページの削除・挿入のあと、設定によりヘッダ・フッターが<strong>自動再適用</strong>される場合があります</li>
+        </ul>
+        <p class="pro-note">適用エラー時は、最新版か・他アプリで同じ PDF を開いていないかを確認し、必要ならログ（%LOCALAPPDATA%\LeafDesk\logs）をサポートへ共有してください（取説 FAQ Q13）。</p>
+
+        <h2>試してみる</h2>
+        <p>LeafDesk は初回起動から <strong>14日間</strong>全機能を試用できます。Standard 版は <strong>4,980円（税込・買い切り）</strong>です。</p>
+        <p class="guide-cta-row">
+          <a href="https://github.com/6EFB0D/pdf-handler/releases/latest" class="cta-button cta-button-primary">14日試用をはじめる（無料DL）</a>
+          <a href="/leafdesk" class="cta-button cta-button-secondary">製品ページへ</a>
+        </p>
+        <p class="pro-note">ほかの用途: <a href="/guides">ガイド一覧</a> · <a href="/leafdesk#faq">FAQ</a> · <a href="/leafdesk#enterprise">法人・まとめ購入</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <nav class="footer-nav">
+        <a href="/">ホーム</a>
+        <a href="/leafdesk">LeafDesk</a>
+        <a href="/guides">ガイド</a>
+        <a href="/privacy-policy">プライバシーポリシー</a>
+        <a href="/terms-of-service">利用規約</a>
+        <a href="/specified-commercial-transactions">特定商取引法に基づく表記</a>
+      </nav>
+      <p class="copyright">&copy; Office Go Plan. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

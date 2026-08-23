@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="../assets/logo/logo-tab.jpg">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/logo/apple-touch-icon-large.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="LeafDesk のページ挿入を使って、図面や添付の「差し替え」を行う方法。プレビューへのドロップや削除・挿入ダイアログの使い分け。">
+  <title>ページ挿入で PDF の差し替えをする｜LeafDesk</title>
+  <link rel="canonical" href="https://office-goplan.com/guides/pdf-page-replace-by-insert">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="Office Go Plan">
+  <meta property="og:url" content="https://office-goplan.com/guides/pdf-page-replace-by-insert">
+  <meta property="og:title" content="ページ挿入で PDF の差し替えをする">
+  <meta property="og:description" content="ページ挿入で差し替え。改訂図面や添付の入れ替えを LeafDesk で。">
+  <meta property="og:image" content="https://office-goplan.com/assets/pdfhandler/gui-multiselect.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ページ挿入で PDF の差し替えをする">
+  <meta name="twitter:description" content="ページ挿入で差し替え。改訂図面や添付の入れ替えを LeafDesk で。">
+  <meta name="twitter:image" content="https://office-goplan.com/assets/pdfhandler/gui-multiselect.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ページ挿入で PDF の差し替えをする",
+    "description": "LeafDesk のページ挿入機能を、PDF ページの差し替え用途で使う手順。ドロップ挿入と削除・挿入ダイアログ。",
+    "image": "https://office-goplan.com/assets/pdfhandler/gui-multiselect.png",
+    "datePublished": "2026-08-23",
+    "dateModified": "2026-08-23",
+    "author": {
+      "@type": "Organization",
+      "name": "Office Go Plan",
+      "url": "https://office-goplan.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Office Go Plan",
+      "url": "https://office-goplan.com/"
+    },
+    "mainEntityOfPage": "https://office-goplan.com/guides/pdf-page-replace-by-insert",
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "LeafDesk",
+      "url": "https://office-goplan.com/leafdesk"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../assets/js/legacy-redirect.js"></script>
+  <script defer src="../assets/js/ga4.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="../assets/logo/logo-a.jpg" alt="Office Go Plan" class="logo-img">
+      </a>
+      <nav class="nav">
+        <a href="/">ホーム</a>
+        <a href="/leafdesk">LeafDesk</a>
+        <a href="/guides">ガイド</a>
+        <a href="/#products">製品</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="guide-article">
+      <div class="container">
+        <p class="guide-kicker"><a href="/leafdesk">LeafDesk</a> · <a href="/guides">用途ガイド</a></p>
+        <h1>ページ挿入で PDF の差し替えをする</h1>
+        <p class="guide-lead">改訂図面や差し替え添付は、「古いページを除いて新しいページを入れる」作業です。LeafDesk ではページ<strong>挿入</strong>を軸に、実務では<strong>差し替え</strong>として使うケースが多くあります。</p>
+
+        <h2>差し替え＝削除＋挿入、という考え方</h2>
+        <p>PDF 全体を作り直さず、対象ページだけ入れ替える流れです。</p>
+        <ol class="guide-steps">
+          <li>差し替えたいページをプレビューまたはページストリップで特定する</li>
+          <li>不要なページを<strong>削除</strong>する（または後ろに残して後で整理）</li>
+          <li>新しい PDF／ページを<strong>挿入</strong>する</li>
+          <li>順序を確認し、必要ならストリップで並べ替えて保存する</li>
+        </ol>
+
+        <h2>挿入の主な方法</h2>
+        <ul class="guide-list">
+          <li><strong>プレビューへ PDF をドロップ</strong> — 表示中ページの<strong>前</strong>に、ドロップした PDF のページが入ります（有償のページ編集）</li>
+          <li><strong>削除・挿入ダイアログ</strong> — 全ページ／1ページ／ページ範囲を選んで挿入できます</li>
+          <li><strong>ストリップでの複製・移動</strong> — 同じ PDF 内の並び替えや複製と組み合わせると、差し替え後の体裁を整えやすいです</li>
+        </ul>
+
+        <h2>向いている例</h2>
+        <ul class="guide-list">
+          <li>図面セットのうち、改訂された1枚だけを入れ替える</li>
+          <li>注文書の添付ページを、最新版スキャンに差し替える</li>
+          <li>表紙や仕様書ページだけ差し替え、残りはそのまま残す</li>
+        </ul>
+        <p class="pro-note">操作の詳細はアプリ内取扱説明書のページ編集・FAQ Q8（ドラッグ&ドロップ）も参照してください。</p>
+
+        <h2>試してみる</h2>
+        <p>LeafDesk は初回起動から <strong>14日間</strong>全機能を試用できます。Standard 版は <strong>4,980円（税込・買い切り）</strong>です。</p>
+        <p class="guide-cta-row">
+          <a href="https://github.com/6EFB0D/pdf-handler/releases/latest" class="cta-button cta-button-primary">14日試用をはじめる（無料DL）</a>
+          <a href="/leafdesk" class="cta-button cta-button-secondary">製品ページへ</a>
+        </p>
+        <p class="pro-note">ほかの用途: <a href="/guides">ガイド一覧</a> · <a href="/leafdesk#faq">FAQ</a> · <a href="/leafdesk#enterprise">法人・まとめ購入</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <nav class="footer-nav">
+        <a href="/">ホーム</a>
+        <a href="/leafdesk">LeafDesk</a>
+        <a href="/guides">ガイド</a>
+        <a href="/privacy-policy">プライバシーポリシー</a>
+        <a href="/terms-of-service">利用規約</a>
+        <a href="/specified-commercial-transactions">特定商取引法に基づく表記</a>
+      </nav>
+      <p class="copyright">&copy; Office Go Plan. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

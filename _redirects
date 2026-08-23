@@ -2,3 +2,8 @@
 /pdfhandler /leafdesk 301
 /pdfhandler/ /leafdesk 301
 /pdfhandler.html /leafdesk 301
+
+# LeafDesk guides: flat URL → /guides/（再編成見越し）
+/pdf-drawings-without-opening /guides/pdf-drawings-without-opening 301
+/pdf-drawings-without-opening/ /guides/pdf-drawings-without-opening 301
+/pdf-drawings-without-opening.html /guides/pdf-drawings-without-opening 301

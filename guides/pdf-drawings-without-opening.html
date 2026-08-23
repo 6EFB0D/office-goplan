@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="../assets/logo/logo-tab.jpg">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/logo/apple-touch-icon-large.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="ファイルサーバ上の図面・注文書 PDF を、いちいち開かずにサムネイルで見分ける方法。Windows の限界と LeafDesk（旧 pdfHandler）での整理の考え方。">
+  <title>図面PDFを開かずに見分けるには｜LeafDesk</title>
+  <link rel="canonical" href="https://office-goplan.com/guides/pdf-drawings-without-opening">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="Office Go Plan">
+  <meta property="og:url" content="https://office-goplan.com/guides/pdf-drawings-without-opening">
+  <meta property="og:title" content="図面PDFを開かずに見分けるには">
+  <meta property="og:description" content="ファイルサーバ上の図面・注文書を、開かずにサムネイルで見分けて整理する考え方。">
+  <meta property="og:image" content="https://office-goplan.com/assets/pdfhandler/gui-drawings.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="図面PDFを開かずに見分けるには">
+  <meta name="twitter:description" content="ファイルサーバ上の図面・注文書を、開かずにサムネイルで見分けて整理する考え方。">
+  <meta name="twitter:image" content="https://office-goplan.com/assets/pdfhandler/gui-drawings.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "図面PDFを開かずに見分けるには",
+    "description": "ファイルサーバ上の図面・注文書 PDF を開かずにサムネイルで見分ける方法と、Windows アプリ LeafDesk の使いどころ。",
+    "image": "https://office-goplan.com/assets/pdfhandler/gui-drawings.png",
+    "datePublished": "2026-08-23",
+    "dateModified": "2026-08-23",
+    "author": {
+      "@type": "Organization",
+      "name": "Office Go Plan",
+      "url": "https://office-goplan.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Office Go Plan",
+      "url": "https://office-goplan.com/"
+    },
+    "mainEntityOfPage": "https://office-goplan.com/guides/pdf-drawings-without-opening",
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "LeafDesk",
+      "url": "https://office-goplan.com/leafdesk"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../assets/js/legacy-redirect.js"></script>
+  <script defer src="../assets/js/ga4.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="../assets/logo/logo-a.jpg" alt="Office Go Plan" class="logo-img">
+      </a>
+      <nav class="nav">
+        <a href="/">ホーム</a>
+        <a href="/leafdesk">LeafDesk</a>
+        <a href="/guides">ガイド</a>
+        <a href="/#products">製品</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="guide-article">
+      <div class="container">
+        <p class="guide-kicker"><a href="/leafdesk">LeafDesk</a> · <a href="/guides">用途ガイド</a></p>
+        <h1>図面PDFを開かずに見分けるには</h1>
+        <p class="guide-lead">ファイルサーバに並んだ図面・注文書・検査資料。目的の1枚を探すたびに PDF を開いて閉じる作業は、思った以上に時間を食います。ここでは「開かずに見分ける」考え方と、Windows アプリ <strong>LeafDesk</strong>（旧称 pdfHandler）での整理の仕方をまとめます。</p>
+
+        <figure class="guide-figure">
+          <img src="../assets/pdfhandler/gui-drawings.png" alt="LeafDesk で図面 PDF をサムネイル一覧とプレビューで確認している画面" width="1024" height="596">
+          <figcaption>図面フォルダを一覧し、右側プレビューとページストリップで内容を確認（説明用のダミー PDF）</figcaption>
+        </figure>
+
+        <h2>よくある困りごと</h2>
+        <ul class="guide-list">
+          <li>ファイル名だけでは図番・改訂・添付種別が分からない</li>
+          <li>エクスプローラーで1つずつ開くと、ビューアの起動待ちが続く</li>
+          <li>ネットワークドライブだと、開くたびに待ち時間が積み重なる</li>
+          <li>見つけたあと、そのままリネームや結合まで行きたい</li>
+        </ul>
+
+        <h2>Windows だけでもできること・限界</h2>
+        <p>エクスプローラーの「大きいアイコン」やプレビューウィンドウは第一歩です。ただしフォルダ横断での「見ながら名前を変える」、複数ページの抜き出し・並べ替えまでは別ツールになりがちです。</p>
+
+        <h2>開かずに見分ける、基本の流れ</h2>
+        <ol class="guide-steps">
+          <li><strong>フォルダを開く</strong> — 共有フォルダを左ペインで選ぶ</li>
+          <li><strong>サムネイルで見比べる</strong> — 枠・図番・レイアウトの違いを把握する</li>
+          <li><strong>必要ならプレビュー</strong> — 右側でページをめくり、ストリップで複数枚を確認する</li>
+          <li><strong>そのまま整理</strong> — F2 リネーム、結合・分割、ページ操作へ</li>
+        </ol>
+
+        <h2>向いている場面</h2>
+        <ul class="guide-list">
+          <li>見た目で種別が分かる図面・注文書が多い</li>
+          <li>ファイルサーバ上で探すことが多い</li>
+          <li>見分けたあと、同じ画面で整理まで済ませたい</li>
+        </ul>
+
+        <h2>試してみる</h2>
+        <p>LeafDesk は初回起動から <strong>14日間</strong>全機能を試用できます。Standard 版は <strong>4,980円（税込・買い切り）</strong>です。</p>
+        <p class="guide-cta-row">
+          <a href="https://github.com/6EFB0D/pdf-handler/releases/latest" class="cta-button cta-button-primary">14日試用をはじめる（無料DL）</a>
+          <a href="/leafdesk" class="cta-button cta-button-secondary">製品ページへ</a>
+        </p>
+        <p class="pro-note">ほかの用途: <a href="/guides">ガイド一覧</a> · <a href="/leafdesk#faq">FAQ</a> · <a href="/leafdesk#enterprise">法人・まとめ購入</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <nav class="footer-nav">
+        <a href="/">ホーム</a>
+        <a href="/leafdesk">LeafDesk</a>
+        <a href="/guides">ガイド</a>
+        <a href="/privacy-policy">プライバシーポリシー</a>
+        <a href="/terms-of-service">利用規約</a>
+        <a href="/specified-commercial-transactions">特定商取引法に基づく表記</a>
+      </nav>
+      <p class="copyright">&copy; Office Go Plan. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

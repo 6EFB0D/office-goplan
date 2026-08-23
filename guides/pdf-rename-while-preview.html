@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="../assets/logo/logo-tab.jpg">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/logo/apple-touch-icon-large.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="PDF を開き直さず、プレビュー表示のまま F2 でファイル名を変える方法。LeafDesk が元ファイルをロックしない仕組みと実務での使い方。">
+  <title>プレビューを見ながら F2 でリネームする｜LeafDesk</title>
+  <link rel="canonical" href="https://office-goplan.com/guides/pdf-rename-while-preview">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="Office Go Plan">
+  <meta property="og:url" content="https://office-goplan.com/guides/pdf-rename-while-preview">
+  <meta property="og:title" content="プレビューを見ながら F2 でリネームする">
+  <meta property="og:description" content="プレビューを見ながら F2 でリネーム。図面・注文書の名前付けをその場で。">
+  <meta property="og:image" content="https://office-goplan.com/assets/pdfhandler/gui-rename-f2.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="プレビューを見ながら F2 でリネームする">
+  <meta name="twitter:description" content="プレビューを見ながら F2 でリネーム。図面・注文書の名前付けをその場で。">
+  <meta name="twitter:image" content="https://office-goplan.com/assets/pdfhandler/gui-rename-f2.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "プレビューを見ながら F2 でリネームする",
+    "description": "LeafDesk で PDF プレビュー中に F2 リネームする方法。ファイルロックを避け、見分けと名付けを同時に行う。",
+    "image": "https://office-goplan.com/assets/pdfhandler/gui-rename-f2.png",
+    "datePublished": "2026-08-23",
+    "dateModified": "2026-08-23",
+    "author": {
+      "@type": "Organization",
+      "name": "Office Go Plan",
+      "url": "https://office-goplan.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Office Go Plan",
+      "url": "https://office-goplan.com/"
+    },
+    "mainEntityOfPage": "https://office-goplan.com/guides/pdf-rename-while-preview",
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "LeafDesk",
+      "url": "https://office-goplan.com/leafdesk"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../assets/js/legacy-redirect.js"></script>
+  <script defer src="../assets/js/ga4.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="../assets/logo/logo-a.jpg" alt="Office Go Plan" class="logo-img">
+      </a>
+      <nav class="nav">
+        <a href="/">ホーム</a>
+        <a href="/leafdesk">LeafDesk</a>
+        <a href="/guides">ガイド</a>
+        <a href="/#products">製品</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="guide-article">
+      <div class="container">
+        <p class="guide-kicker"><a href="/leafdesk">LeafDesk</a> · <a href="/guides">用途ガイド</a></p>
+        <h1>プレビューを見ながら F2 でリネームする</h1>
+        <p class="guide-lead">図面や注文書は「見てから正しいファイル名にする」ことが多いです。いったん閉じてエクスプローラーで改名、また開く、という往復を減らすのがこのガイドの目的です。</p>
+
+        <figure class="guide-figure">
+          <img src="../assets/pdfhandler/gui-rename-f2.png" alt="LeafDesk でプレビュー表示中に F2 でファイル名を編集している画面" width="1024" height="596">
+          <figcaption>右側プレビューを確認しながら、一覧側で F2 編集（説明用のダミー PDF）</figcaption>
+        </figure>
+
+        <h2>なぜプレビュー中に改名しにくいか</h2>
+        <p>多くのビューアは表示中の PDF をファイルロックします。その結果、「見た → 閉じた → エクスプローラーで改名 → また開く」が発生します。ネットワーク上だと待ち時間が特に長く感じられます。</p>
+
+        <h2>LeafDesk での手順</h2>
+        <ol class="guide-steps">
+          <li>フォルダ内の PDF を選び、右側プレビューで内容を確認する</li>
+          <li>中央一覧で対象を選択したまま <strong>F2</strong>（またはコンテキストメニューの名前変更）</li>
+          <li>図番・客先・日付など、見た内容に合わせて名前を確定する</li>
+          <li>続けて次のファイルへ。開き直しは不要</li>
+        </ol>
+        <p>LeafDesk は表示用にメモリへ読み込むため、<strong>元ファイルをロックしません</strong>。プレビュー中でもリネームできます（取説 FAQ Q1）。</p>
+
+        <h2>実務でのコツ</h2>
+        <ul class="guide-list">
+          <li>命名規則（例: 図番_改訂_客先）を先に決めておく</li>
+          <li>お気に入りフォルダに「今日の仕掛かり」を登録しておく</li>
+          <li>改名後に結合・ページ整理へ進む場合も、同じ画面のまま続けられる</li>
+        </ul>
+
+        <h2>試してみる</h2>
+        <p>LeafDesk は初回起動から <strong>14日間</strong>全機能を試用できます。Standard 版は <strong>4,980円（税込・買い切り）</strong>です。</p>
+        <p class="guide-cta-row">
+          <a href="https://github.com/6EFB0D/pdf-handler/releases/latest" class="cta-button cta-button-primary">14日試用をはじめる（無料DL）</a>
+          <a href="/leafdesk" class="cta-button cta-button-secondary">製品ページへ</a>
+        </p>
+        <p class="pro-note">ほかの用途: <a href="/guides">ガイド一覧</a> · <a href="/leafdesk#faq">FAQ</a> · <a href="/leafdesk#enterprise">法人・まとめ購入</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <nav class="footer-nav">
+        <a href="/">ホーム</a>
+        <a href="/leafdesk">LeafDesk</a>
+        <a href="/guides">ガイド</a>
+        <a href="/privacy-policy">プライバシーポリシー</a>
+        <a href="/terms-of-service">利用規約</a>
+        <a href="/specified-commercial-transactions">特定商取引法に基づく表記</a>
+      </nav>
+      <p class="copyright">&copy; Office Go Plan. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

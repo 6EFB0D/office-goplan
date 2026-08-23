@@ -22,14 +22,28 @@
 ## P1（進行中）
 
 - [x] 製品ページ FAQ + `FAQPage` / `featureList`
-- [x] 用途記事: https://office-goplan.com/pdf-drawings-without-opening （sitemap 掲載）
+- [x] 用途ガイドを `/guides/` 配下に統一（一覧 + 6 本）。旧 `/pdf-drawings-without-opening` は 301
+- [ ] Search Console: `/guides` および各ガイド URL の索引（**URL 確定後・任意のタイミング**）
 - [ ] 比較記事
 - [ ] 導入事例
+
+### 正規ガイド URL
+
+| パス | タイトル |
+|------|----------|
+| `/guides` | 一覧 |
+| `/guides/pdf-drawings-without-opening` | 図面PDFを開かずに見分ける |
+| `/guides/pdf-rename-while-preview` | F2 リネーム |
+| `/guides/pdf-page-replace-by-insert` | ページ挿入で差し替え |
+| `/guides/pdf-multiselect-pages` | 複数ページ選択 |
+| `/guides/pdf-merge-split-on-server` | 結合・分割 |
+| `/guides/pdf-header-footer` | ヘッダ・フッター |
+
+再生成: `python scripts/generate-leafdesk-guides.py`
 
 ## 確認コマンド（任意）
 
 ```powershell
-# OGP / JSON-LD が配信されているか
 (Invoke-WebRequest https://office-goplan.com/leafdesk -UseBasicParsing).Content |
   Select-String -Pattern 'og:title|SoftwareApplication|enterprise'
 ```

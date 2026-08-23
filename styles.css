@@ -906,6 +906,35 @@ h2 {
   margin: 20px 0 8px;
 }
 
+.guide-index-list {
+  list-style: none;
+  margin: 24px 0 8px;
+  padding: 0;
+}
+
+.guide-index-list li,
+.related-guides-list li {
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.guide-index-tags {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.related-guides {
+  margin-top: 16px;
+}
+
+.related-guides-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .contact-section p {
   color: var(--color-text-muted);
   margin-bottom: 16px;
