@@ -7,9 +7,51 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon-large.png">
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="LeafDesk（旧 pdfHandler）- 図面・注文書 PDF をサムネイルで見分け、プレビューしながら F2 リネーム、複数ページの選択・並べ替え・結合まで同じ画面で整理できる Windows デスクトップアプリ。">
+  <meta name="description" content="LeafDesk（旧称 pdfHandler / PDFハンドラ）は、ファイルサーバ上の図面・注文書 PDF を開かずにサムネイルで見分け、F2 リネーム・結合・ページ整理まで同じ画面で行える Windows アプリ。14日間試用・買い切り 4,980円。">
+  <meta name="keywords" content="LeafDesk,pdfHandler,PDFハンドラ,PDF サムネイル,図面 PDF,注文書 PDF,PDF リネーム,PDF 結合,PDF 分割,ファイルサーバ">
   <title>LeafDesk — pdf Handler for Windows | Office Go Plan</title>
   <link rel="canonical" href="https://office-goplan.com/leafdesk">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="Office Go Plan">
+  <meta property="og:url" content="https://office-goplan.com/leafdesk">
+  <meta property="og:title" content="LeafDesk — 図面・注文書 PDF を開かずに見分ける Windows アプリ">
+  <meta property="og:description" content="旧称 pdfHandler。サムネイル判別・F2リネーム・結合／分割・複数ページ操作。14日試用のあと買い切り 4,980円（税込）。法人のまとめ購入も相談可。">
+  <meta property="og:image" content="https://office-goplan.com/assets/pdfhandler/gui-drawings.png">
+  <meta property="og:image:alt" content="LeafDesk の画面 — 図面 PDF のサムネイルとプレビュー">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LeafDesk — 図面・注文書 PDF を開かずに見分ける">
+  <meta name="twitter:description" content="旧称 pdfHandler。ファイルサーバ上の PDF をサムネイルで見分け、そのまま整理。14日試用／買い切り。">
+  <meta name="twitter:image" content="https://office-goplan.com/assets/pdfhandler/gui-drawings.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "LeafDesk",
+    "alternateName": ["pdfHandler", "PDFハンドラ", "pdf Handler for Windows"],
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Windows 10, Windows 11",
+    "url": "https://office-goplan.com/leafdesk",
+    "downloadUrl": "https://github.com/6EFB0D/pdf-handler/releases/latest",
+    "image": "https://office-goplan.com/assets/pdfhandler/gui-drawings.png",
+    "description": "ファイルサーバ上の図面・注文書 PDF を開かずにサムネイルで見分け、リネーム・結合・ページ整理まで行える Windows デスクトップアプリ。旧称 pdfHandler。",
+    "offers": {
+      "@type": "Offer",
+      "price": "4980",
+      "priceCurrency": "JPY",
+      "availability": "https://schema.org/InStock",
+      "description": "Standard版（買い切り・税込）。14日間の試用あり。法人向け複数ライセンスは別途見積。"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Office Go Plan",
+      "url": "https://office-goplan.com/"
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -45,6 +87,13 @@
           </div>
         </div>
         <p class="hero-desc">ファイルサーバ上の図面・注文書 PDF を、開かずにサムネイルで見分け、そのまま並べ替え・結合・整理できる Windows デスクトップアプリです。</p>
+        <p class="hero-alias">旧称 <strong>pdfHandler</strong>（PDFハンドラ）。製品名・インストーラ表示は <strong>LeafDesk</strong> に統一しています。</p>
+        <div class="hero-cta-row">
+          <a href="https://github.com/6EFB0D/pdf-handler/releases/latest" class="cta-button cta-button-primary">14日試用をはじめる（無料DL）</a>
+          <a href="#license" class="cta-button cta-button-secondary">価格・購入</a>
+          <a href="#enterprise" class="cta-button cta-button-secondary">法人・まとめ購入</a>
+        </div>
+        <p class="hero-cta-note">Standard版は <strong>4,980円（税込・買い切り）</strong>。複数台・部署展開は見積対応します。</p>
       </div>
     </section>
 
@@ -162,17 +211,17 @@
     </section>
 
     <!-- 6. ダウンロード -->
-    <section class="section download-section">
+    <section class="section download-section" id="download">
       <div class="container">
         <h2>ダウンロード</h2>
-        <p class="version-badge">最新版は GitHub Releases で公開</p>
+        <p class="version-badge">最新版は GitHub Releases で公開 · 初回起動から14日間は全機能を試用可能</p>
         <p class="download-intro">GitHub Releases の <strong>ページ下部「Assets」</strong> から Windows 版インストーラ（setup.exe）をダウンロードしてください。上部の「Source code (zip)」はインストーラではありません。版番号や変更内容は Releases の各ページをご覧ください。</p>
         <div class="pro-note download-trouble-note">
           <p><strong>うまくいかないとき（セキュリティでブロックされる場合）</strong></p>
           <p>ブラウザや Windows のセキュリティ警告（SmartScreen 等）で <strong>.exe のダウンロードや実行ができない</strong> 場合は、Assets の <code>LeafDesk-*-prod-setup.zip</code>（旧版は <code>PdfHandler-*-prod-setup.zip</code>）をダウンロードし、解凍後の setup.exe を実行してください。</p>
         </div>
         <div class="download-buttons">
-          <a href="https://github.com/6EFB0D/pdf-handler/releases/latest" class="cta-button cta-button-primary">最新リリースを開く</a>
+          <a href="https://github.com/6EFB0D/pdf-handler/releases/latest" class="cta-button cta-button-primary">最新リリースを開く（試用開始）</a>
         </div>
         <div class="platform-links">
           <a href="https://github.com/6EFB0D/pdf-handler/releases/latest" class="platform-button">Windows (setup.exe)</a>
@@ -181,7 +230,7 @@
     </section>
 
     <!-- 7. ライセンス -->
-    <section class="section comparison-section">
+    <section class="section comparison-section" id="license">
       <div class="container">
         <h2>ライセンス</h2>
         <div class="comparison-table-wrapper">
@@ -217,14 +266,32 @@
             </tbody>
           </table>
         </div>
-        <p class="pro-note">※当方は消費税法上の免税事業者のため、表示価格はお支払い総額（税込）であり、消費税を別途請求することはありません。法人向けの複数ライセンスは、サポート窓口へお問い合わせください。</p>
+        <p class="pro-note">※当方は消費税法上の免税事業者のため、表示価格はお支払い総額（税込）であり、消費税を別途請求することはありません。</p>
         <p class="pro-note">※有償ライセンスの直接販売は<strong>日本国内</strong>の個人・法人向けです。国外のお客様への直接販売は行っておりません。国外拠点でのご利用は個別確認が必要です（詳細は利用規約）。</p>
         <p class="pro-note"><a href="/terms-of-service">利用規約</a>・<a href="/privacy-policy">プライバシーポリシー</a>（当社製品に共通。アプリ内にも表示します。必要に応じてブラウザの印刷で保存できます）</p>
       </div>
     </section>
 
+    <!-- 7b. 法人・まとめ購入 -->
+    <section class="section enterprise-section" id="enterprise">
+      <div class="container">
+        <h2>法人・まとめ購入</h2>
+        <p class="overview-desc">部署・拠点単位での一括導入が最も効果的です。近隣企業での導入実績を起点に、同業・取引先への横展開をご相談いただけます。</p>
+        <ul class="feature-list">
+          <li><strong>複数ライセンス</strong>: 台数に応じた見積・ライセンスキー一括発行</li>
+          <li><strong>請求書払い</strong>: 法人向け後払い（銀行振込）に対応可能な場合があります</li>
+          <li><strong>社内展開の手伝い</strong>: 試用手順・1枚チラシ相当の説明文をご用意できます</li>
+          <li><strong>紹介</strong>: 既存ご利用企業からの同業紹介も歓迎します</li>
+        </ul>
+        <p style="margin: 1.25rem 0 0;">
+          <a href="https://docs.google.com/forms/d/1NpXzk1kyUn2LhUzQhhMHq_tnT1oOGAsv561L-7nMfos/viewform" class="cta-button cta-button-primary">法人・まとめ購入の相談</a>
+          <a href="mailto:support@office-goplan.com?subject=LeafDesk%20%E6%B3%95%E4%BA%BA%E3%83%BB%E3%81%BE%E3%81%A8%E3%82%81%E8%B3%BC%E5%85%A5%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" class="cta-button cta-button-secondary">メールで相談</a>
+        </p>
+      </div>
+    </section>
+
     <!-- 8. お問い合わせ -->
-    <section class="section contact-section">
+    <section class="section contact-section" id="contact">
       <div class="container">
         <h2>お問い合わせ</h2>
         <p>ご質問やサポートのご要望は、お問い合わせフォームまたはメールまでご連絡ください。</p>

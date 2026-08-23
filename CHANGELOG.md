@@ -1,5 +1,12 @@
 # CHANGELOG — Office Go Plan サイト（office-goplan）
 
+## 2026-08-23（LeafDesk P0 SEO・法人導線）
+
+- **WEB-PDFH** — OGP / Twitter Card / JSON-LD（SoftwareApplication・旧称 alternateName）
+- ヒーローに試用 DL・価格・法人まとめ CTA。`#enterprise` セクション追加
+- トップカード文言を用途・試用・法人に合わせて更新
+- チェックリスト: `docs/leafdesk-seo-p0-checklist.md`
+
 ## 2026-08-23（LeafDesk — 複数ページ選択・F2 リネーム）
 
 - **WEB-PDFH** — 「画面で見る」に **プレビューしながらリネーム**（`gui-rename-f2.png`）と **複数ページの操作**（`gui-multiselect.png`・左右に未選択ページ）を追加
