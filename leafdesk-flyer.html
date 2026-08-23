@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeafDesk 紹介チラシ（A4両面）｜Office Go Plan</title>
+  <meta name="description" content="LeafDesk 紹介用 A4 両面チラシ。印刷または PDF 保存してご利用ください。">
+  <link rel="canonical" href="https://office-goplan.com/leafdesk-flyer">
+  <link rel="icon" type="image/jpeg" href="assets/logo/logo-tab.jpg">
+  <style>
+    :root {
+      --ink: #1e293b;
+      --muted: #475569;
+      --line: #cbd5e1;
+      --blue: #2563eb;
+      --blue-soft: #eff6ff;
+      --paper: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic UI", Meiryo, sans-serif;
+      background: #e2e8f0;
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    .screen-bar {
+      max-width: 210mm;
+      margin: 16px auto;
+      padding: 12px 16px;
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+    .screen-bar a { color: #93c5fd; }
+    .screen-bar .actions { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .screen-bar button, .screen-bar .btn {
+      display: inline-block;
+      border: none;
+      background: var(--blue);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .sheet {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 12px auto;
+      padding: 14mm 16mm;
+      background: var(--paper);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+      display: flex;
+      flex-direction: column;
+      page-break-after: always;
+    }
+    .sheet:last-of-type { page-break-after: auto; }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 3px solid var(--blue);
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand img.app {
+      width: 40px;
+      height: 40px;
+    }
+    .brand h1 {
+      font-size: 1.55rem;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+    }
+    .brand .sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .org-logo {
+      height: 36px;
+      width: auto;
+    }
+
+    .headline {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+    .lead {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 14px;
+    }
+
+    .cols {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 14px;
+      flex: 1;
+    }
+
+    .points {
+      list-style: none;
+    }
+    .points li {
+      position: relative;
+      padding: 8px 0 8px 18px;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.88rem;
+    }
+    .points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+    .points strong { color: var(--ink); }
+
+    .shot {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+      background: #f8fafc;
+    }
+    .shot img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .shot figcaption {
+      font-size: 0.72rem;
+      color: var(--muted);
+      padding: 6px 8px;
+    }
+
+    .price-box {
+      margin-top: 14px;
+      background: var(--blue-soft);
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 12px 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 16px;
+    }
+    .price-box .label {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .price-box .value {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--blue);
+    }
+    .price-box .note {
+      grid-column: 1 / -1;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .urls {
+      margin-top: 12px;
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+      font-size: 0.82rem;
+    }
+    .urls dt {
+      font-weight: 700;
+      color: var(--blue);
+      margin-top: 6px;
+    }
+    .urls dd {
+      word-break: break-all;
+      color: var(--ink);
+    }
+
+    .footer-line {
+      margin-top: auto;
+      padding-top: 10px;
+      font-size: 0.72rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      font-size: 1.05rem;
+      color: var(--blue);
+      border-left: 4px solid var(--blue);
+      padding-left: 8px;
+      margin: 0 0 10px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .flow .step {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 8px;
+      font-size: 0.78rem;
+    }
+    .flow .n {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 1px 7px;
+      margin-bottom: 4px;
+    }
+
+    .guides {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      margin-bottom: 14px;
+    }
+    .guides th, .guides td {
+      border: 1px solid var(--line);
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .guides th {
+      background: var(--blue-soft);
+      width: 38%;
+    }
+
+    .two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 0.82rem;
+    }
+    .card h3 {
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+    .card ul {
+      margin-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .contact {
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 0.85rem;
+    }
+    .contact a { color: #93c5fd; }
+    .contact .big {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 4px 0 8px;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .screen-bar { display: none !important; }
+      .sheet {
+        margin: 0;
+        box-shadow: none;
+        width: 210mm;
+        min-height: 297mm;
+        height: 297mm;
+        overflow: hidden;
+      }
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      .sheet { width: auto; min-height: auto; margin: 12px; padding: 20px; }
+      .cols, .flow, .two, .price-box { grid-template-columns: 1fr; }
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="screen-bar">
+    <strong>LeafDesk 紹介チラシ（A4 両面）</strong>
+    — ブラウザの印刷から「PDFに保存」または両面印刷してください（余白なし／背景グラフィック ON 推奨）。
+    <div class="actions">
+      <button type="button" onclick="window.print()">印刷 / PDF 保存</button>
+      <a class="btn" href="/leafdesk">製品ページへ</a>
+      <a class="btn" href="/guides">用途ガイドへ</a>
+    </div>
+  </div>
+
+  <!-- ===== 表面 ===== -->
+  <section class="sheet" aria-label="表面">
+    <header class="top">
+      <div class="brand">
+        <img class="app" src="assets/pdfhandler/PdfHandler.png" alt="">
+        <div>
+          <h1>LeafDesk</h1>
+          <p class="sub">pdf Handler for Windows（旧称 pdfHandler）</p>
+        </div>
+      </div>
+      <img class="org-logo" src="assets/logo/logo-a.jpg" alt="Office Go Plan">
+    </header>
+
+    <p class="headline">図面・注文書 PDF を、開かずに見分け、<br>そのまま整理する Windows アプリ</p>
+    <p class="lead">ファイルサーバ上の PDF をサムネイルで判別し、プレビューを見ながらリネーム・結合・ページ整理まで同じ画面で行えます。紹介・社内展開用の1枚です。</p>
+
+    <div class="cols">
+      <div>
+        <ul class="points">
+          <li><strong>開かずに見分ける</strong><br>図面枠・レイアウトの違いをサムネイルとページストリップで把握</li>
+          <li><strong>見ながら F2 リネーム</strong><br>プレビュー中もファイルをロックせず、その場で名前変更</li>
+          <li><strong>見つけたあとすぐ整理</strong><br>結合・分割、複数ページの抜き出し・並べ替え、差し替え（挿入）</li>
+          <li><strong>共有フォルダ向き</strong><br>ネットワークドライブ上の図面・注文書・添付の仕分けに</li>
+        </ul>
+        <div class="price-box">
+          <div>
+            <div class="label">試用</div>
+            <div class="value">14日間・全機能</div>
+          </div>
+          <div>
+            <div class="label">Standard（買い切り）</div>
+            <div class="value">4,980円（税込）</div>
+          </div>
+          <p class="note">日本国内向け。法人のまとめ購入・請求書払い（可能な場合）はご相談ください。免税事業者のため表示価格がお支払い総額です。</p>
+        </div>
+      </div>
+      <figure class="shot">
+        <img src="assets/pdfhandler/gui-drawings.png" alt="LeafDesk 画面：図面 PDF のサムネイルとプレビュー">
+        <figcaption>図面フォルダの一覧例（説明用ダミー PDF）</figcaption>
+      </figure>
+    </div>
+
+    <dl class="urls">
+      <dt>製品ページ（詳細・ダウンロード）</dt>
+      <dd>https://office-goplan.com/leafdesk</dd>
+      <dt>用途ガイド（見分け／リネーム／差し替えなど）</dt>
+      <dd>https://office-goplan.com/guides</dd>
+    </dl>
+
+    <div class="footer-line">
+      <span>表面 · 紹介用（無断転載・改変での再配布はご遠慮ください）</span>
+      <span>Office Go Plan</span>
+    </div>
+  </section>
+
+  <!-- ===== 裏面 ===== -->
+  <section class="sheet" aria-label="裏面">
+    <header class="top">
+      <div class="brand">
+        <img class="app" src="assets/pdfhandler/PdfHandler.png" alt="">
+        <div>
+          <h1>LeafDesk</h1>
+          <p class="sub">使い方の要点 · 法人展開 · お問い合わせ</p>
+        </div>
+      </div>
+      <img class="org-logo" src="assets/logo/logo-a.jpg" alt="Office Go Plan">
+    </header>
+
+    <h2>基本の流れ</h2>
+    <div class="flow">
+      <div class="step"><span class="n">1</span><br>共有フォルダを開く</div>
+      <div class="step"><span class="n">2</span><br>サムネイルで見分ける</div>
+      <div class="step"><span class="n">3</span><br>プレビューで確認・F2</div>
+      <div class="step"><span class="n">4</span><br>結合・ページ整理へ</div>
+    </div>
+
+    <h2>用途ガイド（Web）</h2>
+    <table class="guides">
+      <tr><th>図面PDFを開かずに見分ける</th><td>https://office-goplan.com/guides/pdf-drawings-without-opening</td></tr>
+      <tr><th>プレビューを見ながら F2 リネーム</th><td>https://office-goplan.com/guides/pdf-rename-while-preview</td></tr>
+      <tr><th>ページ挿入で差し替え</th><td>https://office-goplan.com/guides/pdf-page-replace-by-insert</td></tr>
+      <tr><th>複数ページの抜き出し・並べ替え</th><td>https://office-goplan.com/guides/pdf-multiselect-pages</td></tr>
+      <tr><th>ファイルサーバ上で結合・分割</th><td>https://office-goplan.com/guides/pdf-merge-split-on-server</td></tr>
+      <tr><th>ヘッダ・フッター</th><td>https://office-goplan.com/guides/pdf-header-footer</td></tr>
+    </table>
+
+    <div class="two">
+      <div class="card">
+        <h3>向いている場面</h3>
+        <ul>
+          <li>図面・注文書・検査資料がフォルダに多い</li>
+          <li>開いて探す／名前を付け直す往復が多い</li>
+          <li>部署で同じ整理の仕方を揃えたい</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>法人・まとめ購入</h3>
+        <ul>
+          <li>複数ライセンスの見積・一括発行</li>
+          <li>請求書払い（可能な場合）</li>
+          <li>試用手順・社内説明の支援</li>
+        </ul>
+        <p style="margin-top:8px;font-size:0.78rem;color:var(--muted);">詳細は製品ページ内「法人・まとめ購入」へ</p>
+      </div>
+    </div>
+
+    <div class="contact">
+      <div>お問い合わせ・ご紹介のご連絡</div>
+      <div class="big">support@office-goplan.com</div>
+      <div>フォーム: https://office-goplan.com/leafdesk （ページ内の相談ボタン）</div>
+      <div style="margin-top:8px;font-size:0.8rem;opacity:0.9;">製品ページ https://office-goplan.com/leafdesk ／ ガイド一覧 https://office-goplan.com/guides</div>
+    </div>
+
+    <div class="footer-line">
+      <span>裏面 · Windows 10/11（64bit）· 最新版は GitHub Releases</span>
+      <span>© Office Go Plan</span>
+    </div>
+  </section>
+</body>
+</html>

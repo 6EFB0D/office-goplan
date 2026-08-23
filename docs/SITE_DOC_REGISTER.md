@@ -23,6 +23,7 @@
 | WEB-PDFH-G4 | 複数ページ選択 | `guides/pdf-multiselect-pages.html` | **2026-08-23** | |
 | WEB-PDFH-G5 | 結合・分割 | `guides/pdf-merge-split-on-server.html` | **2026-08-23** | |
 | WEB-PDFH-G6 | ヘッダ・フッター | `guides/pdf-header-footer.html` | **2026-08-23** | |
+| WEB-PDFH-FLYER | 紹介チラシ A4両面 | `leafdesk-flyer.html` | **2026-08-23** | `/leafdesk-flyer` 印刷用 |
 | WEB-ZIP | ZipSearch | `zipsearch.html` | — | |
 | WEB-PICT | PictComp | `pictcomp.html` | — | |
 | **WEB-TERMS** | **利用規約（全製品）** | `terms-of-service.html` | **2026-08-01** | 正本 `docs/legal/TERMS_OF_SERVICE.txt`（LeafDesk 表記） |
@@ -40,6 +41,7 @@
 
 | 日付 | 内容 |
 |---|---|
+| 2026-08-23 | **WEB-PDFH-FLYER** — A4両面紹介チラシ `/leafdesk-flyer` |
 | 2026-08-23 | **WEB-GUIDES / G1〜G6** — `/guides/` 配下に用途ガイド一括。旧フラット URL は 301 |
 | 2026-08-23 | **WEB-PDFH-G1** — 用途ガイド「図面PDFを開かずに見分けるには」追加（P1） |
 | 2026-08-23 | **WEB-PDFH** — F2 リネーム／複数選択スクショ追加・機能文言更新（v1.3.10） |
