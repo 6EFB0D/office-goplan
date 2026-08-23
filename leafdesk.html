@@ -38,6 +38,7 @@
     "downloadUrl": "https://github.com/6EFB0D/pdf-handler/releases/latest",
     "image": "https://office-goplan.com/assets/pdfhandler/gui-drawings.png",
     "description": "ファイルサーバ上の図面・注文書 PDF を開かずにサムネイルで見分け、リネーム・結合・ページ整理まで行える Windows デスクトップアプリ。旧称 pdfHandler。",
+    "featureList": "PDFサムネイル一覧, ページストリップ, F2リネーム（プレビュー中も可）, PDF結合・分割, 複数ページの選択・並べ替え, ヘッダ・フッター, ネットワークドライブ対応, 14日間試用",
     "offers": {
       "@type": "Offer",
       "price": "4980",
@@ -50,6 +51,78 @@
       "name": "Office Go Plan",
       "url": "https://office-goplan.com/"
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LeafDesk とは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "LeafDesk は、ファイルサーバ上の図面・注文書などの PDF を開かずにサムネイルで見分け、そのままリネーム・結合・ページ整理できる Windows デスクトップアプリです。旧称は pdfHandler（PDFハンドラ）です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "無料で試せますか？価格はいくらですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "初回起動から14日間は全機能を試用できます。その後の Standard 版は 4,980円（税込・買い切り）です。アプリ内購入またはライセンスキーで利用できます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "PDF をプレビュー表示中にファイル名を変更できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい。LeafDesk は PDF をメモリに読み込んで表示するため元ファイルをロックしません。プレビュー表示中でも F2 などでファイル名を変更できます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ネットワークドライブ上の PDF も扱えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい。ネットワークドライブ上の PDF も扱えます。未接続のドライブはツリーに表示され、エクスプローラーで一度開いてからアプリ側を更新すると展開しやすくなります。回線速度により動作が遅くなる場合があります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "パスワード付き PDF や注釈には対応していますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "パスワード付き PDF はプレビューは表示されませんが、名前変更などのファイル操作は可能です。Acrobat 等で付けた注釈の表示には対応しています。LeafDesk 自体での注釈作成は現バージョンでは未対応です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "法人・まとめ購入はできますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい。複数ライセンスの見積・一括発行、場合により請求書払い（銀行振込）に対応できます。製品ページの法人・まとめ購入セクションまたはお問い合わせフォームからご相談ください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Windows 以外の OS や国外向け販売はありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "対応 OS は Windows 10 / 11（64bit）です。有償ライセンスの直接販売は日本国内の個人・法人向けです。国外への直接販売は行っていません。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "問い合わせ先はどこですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "お問い合わせフォーム、または support@office-goplan.com までご連絡ください。操作の詳細はアプリ内の取扱説明書（よくある質問）も参照できます。"
+        }
+      }
+    ]
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -266,6 +339,39 @@
         <p class="pro-note">※当方は消費税法上の免税事業者のため、表示価格はお支払い総額（税込）であり、消費税を別途請求することはありません。</p>
         <p class="pro-note">※有償ライセンスの直接販売は<strong>日本国内</strong>の個人・法人向けです。国外のお客様への直接販売は行っておりません。国外拠点でのご利用は個別確認が必要です（詳細は利用規約）。</p>
         <p class="pro-note"><a href="/terms-of-service">利用規約</a>・<a href="/privacy-policy">プライバシーポリシー</a>（当社製品に共通。アプリ内にも表示します。必要に応じてブラウザの印刷で保存できます）</p>
+      </div>
+    </section>
+
+    <!-- 7a. FAQ（検索・AI向け／取説FAQを要約） -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <h2>よくある質問</h2>
+        <p class="overview-desc">購入前によく聞かれる点をまとめました。操作の詳細・トラブル切り分けはアプリ内の取扱説明書「よくある質問」もご参照ください。</p>
+        <dl class="faq-list">
+          <dt>Q. LeafDesk とは何ですか？</dt>
+          <dd>A. ファイルサーバ上の図面・注文書などの PDF を、開かずにサムネイルで見分け、そのままリネーム・結合・ページ整理できる Windows アプリです。旧称は <strong>pdfHandler</strong>（PDFハンドラ）です。</dd>
+
+          <dt>Q. 無料で試せますか？価格はいくらですか？</dt>
+          <dd>A. 初回起動から<strong>14日間</strong>は全機能を試用できます。Standard 版は<strong>4,980円（税込・買い切り）</strong>です。アプリ内購入またはライセンスキーで利用できます。</dd>
+
+          <dt>Q. PDF をプレビュー表示中にファイル名を変更できますか？</dt>
+          <dd>A. はい。PDF をメモリに読み込んで表示するため元ファイルをロックしません。プレビュー中でも <strong>F2</strong> などでリネームできます。（取説 FAQ Q1）</dd>
+
+          <dt>Q. ネットワークドライブ上の PDF も扱えますか？</dt>
+          <dd>A. はい。未接続のドライブもツリーに表示されます。展開できないときはエクスプローラーで一度開き、アプリ側で「更新」してください。回線により遅くなる場合があります。（取説 FAQ Q4）</dd>
+
+          <dt>Q. パスワード付き PDF や注釈には対応していますか？</dt>
+          <dd>A. パスワード付きはプレビュー非表示ですが、名前変更などのファイル操作は可能です。Acrobat 等で付けた注釈の<strong>表示</strong>には対応しています。LeafDesk での注釈<strong>作成</strong>は現バージョンでは未対応です。</dd>
+
+          <dt>Q. 法人・まとめ購入はできますか？</dt>
+          <dd>A. はい。複数ライセンスの見積・一括発行、場合により請求書払い（銀行振込）に対応できます。<a href="#enterprise">法人・まとめ購入</a>またはお問い合わせフォームからご相談ください。</dd>
+
+          <dt>Q. Windows 以外の OS や国外向け販売はありますか？</dt>
+          <dd>A. 対応は <strong>Windows 10 / 11（64bit）</strong>です。有償ライセンスの直接販売は<strong>日本国内</strong>向けです。国外への直接販売は行っていません。</dd>
+
+          <dt>Q. 問い合わせ先はどこですか？</dt>
+          <dd>A. <a href="#contact">お問い合わせフォームまたはメール（support@office-goplan.com）</a>まで。操作の詳細はアプリ内取扱説明書をご覧ください。</dd>
+        </dl>
       </div>
     </section>
 
