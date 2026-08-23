@@ -1,9 +1,10 @@
 # CHANGELOG — Office Go Plan サイト（office-goplan）
 
-## 2026-08-23（LeafDesk — 複数ページ選択スクショ）
+## 2026-08-23（LeafDesk — 複数ページ選択・F2 リネーム）
 
-- **WEB-PDFH** — 「画面で見る」に **複数ページの操作**（`gui-multiselect.png`）を追加（既存 4 枚は維持）
-- 概要キーワード・機能リストのページ編集説明を v1.3.10（複数選択・複製・別ファイル出力）に合わせて更新
+- **WEB-PDFH** — 「画面で見る」に **プレビューしながらリネーム**（`gui-rename-f2.png`）と **複数ページの操作**（`gui-multiselect.png`・左右に未選択ページ）を追加
+- 概要・機能リストを F2 リネーム／複数選択に合わせて更新
+- 生成: `scripts/make-leafdesk-feature-screenshots.py`
 
 ## 2026-08-08（LeafDesk URL `/leafdesk`）
 
