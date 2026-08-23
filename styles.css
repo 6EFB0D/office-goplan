@@ -834,6 +834,78 @@ h2 {
   margin: 0 0 24px 0;
 }
 
+/* 用途ガイド記事 */
+.guide-article {
+  padding: 48px 0 72px;
+}
+
+.guide-article h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 16px;
+  color: var(--color-text);
+}
+
+.guide-article h2 {
+  margin-top: 36px;
+}
+
+.guide-kicker {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: 12px;
+}
+
+.guide-lead {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.guide-article > .container > p {
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
+
+.guide-list,
+.guide-steps {
+  color: var(--color-text-muted);
+  margin: 0 0 20px 1.25rem;
+  line-height: 1.75;
+}
+
+.guide-list li,
+.guide-steps li {
+  margin-bottom: 8px;
+}
+
+.guide-figure {
+  margin: 28px 0;
+}
+
+.guide-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: block;
+}
+
+.guide-figure figcaption {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.guide-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+
 .contact-section p {
   color: var(--color-text-muted);
   margin-bottom: 16px;

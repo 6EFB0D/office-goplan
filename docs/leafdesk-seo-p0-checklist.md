@@ -1,9 +1,9 @@
-# LeafDesk SEO / 索引チェックリスト（P0）
+# LeafDesk SEO / 索引チェックリスト（P0〜P1）
 
 **対象**: https://office-goplan.com/leafdesk  
 **更新**: 2026-08-23
 
-## 実装済み（サイト側）
+## 実装済み（サイト側・P0）
 
 - [x] `canonical` / meta description（旧称 pdfHandler 併記）
 - [x] Open Graph / Twitter Card
@@ -12,12 +12,19 @@
 - [x] `#enterprise` 法人・まとめ購入セクション
 - [x] sitemap.xml に `/leafdesk` 掲載済み
 
-## 人手で実施（Search Console）
+## 人手で実施（Search Console）— P0 完了
 
-1. [Google Search Console](https://search.google.com/search-console) でプロパティ `https://office-goplan.com/` を開く
-2. **sitemap.xml** を送信（未送信なら）または再読み込み
-3. URL 検査で `https://office-goplan.com/leafdesk` を「インデックス登録をリクエスト」
-4. 1〜2 週間後、「LeafDesk」「pdfHandler」「PDF 図面 サムネイル」の表示回数を確認
+1. [x] Search Console でプロパティ確認
+2. [x] sitemap.xml 送信／確認
+3. [x] `/leafdesk` インデックス登録リクエスト（登録済みでも再リクエスト済・2026-08-23）
+4. [ ] 1〜2 週間後、「LeafDesk」「pdfHandler」「PDF 図面 サムネイル」の表示回数を確認
+
+## P1（進行中）
+
+- [x] 製品ページ FAQ + `FAQPage` / `featureList`
+- [x] 用途記事: https://office-goplan.com/pdf-drawings-without-opening （sitemap 掲載）
+- [ ] 比較記事
+- [ ] 導入事例
 
 ## 確認コマンド（任意）
 
