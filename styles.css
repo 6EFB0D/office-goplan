@@ -386,6 +386,36 @@ h2 {
   text-decoration: underline;
 }
 
+.product-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 14px;
+}
+
+.product-link-primary {
+  font-weight: 600;
+}
+
+.product-card-links-sub {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.product-card-links-sub .product-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.product-card-links-sep {
+  color: var(--color-text-muted);
+  opacity: 0.65;
+  user-select: none;
+}
+
 /* ZipSearch product page */
 .hero-product {
   background: var(--product-hero-bg, transparent);
