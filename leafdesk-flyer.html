@@ -14,18 +14,18 @@
     :root {
       --ink: #0f172a;
       --muted: #334155;
-      --soft: #64748b;
+      --soft: #475569;
       --line: #e2e8f0;
-      --blue: #1d4ed8;
+      --blue: #1e40af;
       --blue-deep: #1e3a8a;
-      --tint: #eff6ff;
+      --tint: #bfdbfe;
       --paper: #ffffff;
       --warm-deep: #7c2d12;
-      --warm: #c2410c;
-      --warm-solid: #c2410c;
-      --warm-tint: #fff7ed;
-      --warm-border: #fdba74;
-      --warm-muted: #78716c;
+      --warm: #9a3412;
+      --warm-solid: #9a3412;
+      --warm-tint: #fed7aa;
+      --warm-border: #fb923c;
+      --warm-muted: #7c2d12;
       --flyer-min: 0.7rem;
       --flyer-sm: 0.75rem;
     }
@@ -35,6 +35,9 @@
       background: #cbd5e1;
       color: var(--ink);
       line-height: 1.55;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      color-adjust: exact;
     }
 
     .sheet {
@@ -47,8 +50,55 @@
       flex-direction: column;
       page-break-after: always;
       overflow: hidden;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      color-adjust: exact;
     }
     .sheet:last-of-type { page-break-after: auto; }
+
+    /* 印刷で CSS 背景は省略されやすい。塗りは img で重ねる（画面では非表示・印刷のみ） */
+    .fill-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      display: none;
+      object-fit: fill;
+      border: 0;
+    }
+    .fill-fg {
+      position: relative;
+      z-index: 1;
+    }
+    .front-hero,
+    .flow-step,
+    .front-cta,
+    .before-bundle,
+    .before-bundle-head,
+    .after-bundle,
+    .after-bundle-head,
+    .before-note,
+    .action-pill,
+    .summary-item,
+    .contact-bar {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+    }
+    .front-hero > *:not(.fill-layer),
+    .flow-step > *:not(.fill-layer),
+    .front-cta > *:not(.fill-layer),
+    .before-bundle > *:not(.fill-layer),
+    .after-bundle > *:not(.fill-layer),
+    .before-bundle-head > *:not(.fill-layer),
+    .after-bundle-head > *:not(.fill-layer),
+    .summary-item > *:not(.fill-layer),
+    .contact-bar > *:not(.fill-layer) {
+      position: relative;
+      z-index: 1;
+    }
 
     /* —— 表面 —— */
     .front-hero {
@@ -165,7 +215,7 @@
       font-weight: 700;
       color: var(--blue-deep);
       background: var(--tint);
-      border: 1px solid #bfdbfe;
+      border: 2px solid #3b82f6;
       border-radius: 8px;
       padding: 8px 5px 7px;
       line-height: 1.3;
@@ -206,8 +256,8 @@
       gap: 16px;
       align-items: center;
       margin-top: auto;
-      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-      border: 2px solid #93c5fd;
+      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+      border: 2px solid #2563eb;
       border-radius: 12px;
       padding: 12px 14px;
     }
@@ -331,7 +381,7 @@
     }
 
     .before-bundle {
-      border: 2px solid var(--warm-solid);
+      border: 3px solid var(--warm-solid);
       background: var(--warm-tint);
     }
 
@@ -413,7 +463,7 @@
       font-size: var(--flyer-min);
       font-weight: 600;
       color: var(--warm-deep);
-      background: #ffedd5;
+      background: #fdba74;
       border-radius: 999px;
       padding: 1px 7px;
     }
@@ -430,7 +480,7 @@
 
     .before-row .chain-arrow {
       font-size: var(--flyer-min);
-      color: #fb923c;
+      color: #c2410c;
       margin: 0 1px;
       flex-shrink: 0;
     }
@@ -485,6 +535,7 @@
     }
 
     .action-pill {
+      display: inline-block;
       font-size: var(--flyer-min);
       line-height: 1.25;
       padding: 3px 5px;
@@ -502,7 +553,7 @@
     }
 
     .after-bundle {
-      border: 2px solid var(--blue);
+      border: 3px solid var(--blue);
       background: var(--tint);
     }
 
@@ -511,7 +562,7 @@
       color: #fff;
     }
 
-    .after-bundle-head img {
+    .after-bundle-head img:not(.fill-layer) {
       width: 32px;
       height: 32px;
       background: #fff;
@@ -534,7 +585,7 @@
 
     .after-row {
       padding: 6px 10px;
-      border-bottom: 1px solid #bfdbfe;
+      border-bottom: 1px solid #60a5fa;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -578,15 +629,15 @@
     }
 
     .after-bundle .chain-arrow {
-      color: #93c5fd;
+      color: #1d4ed8;
     }
 
     .after-bundle-foot {
       font-size: var(--flyer-min);
-      color: var(--muted);
+      color: var(--blue-deep);
       line-height: 1.4;
       padding: 6px 10px 8px;
-      border-top: 1px solid #bfdbfe;
+      border-top: 1px solid #60a5fa;
       background: #fff;
       flex-shrink: 0;
       min-height: 40px;
@@ -605,7 +656,7 @@
     }
 
     .summary-item {
-      border: 1px solid #bfdbfe;
+      border: 2px solid #2563eb;
       background: var(--tint);
       border-radius: 8px;
       padding: 8px 10px;
@@ -711,6 +762,11 @@
     }
 
     @media print {
+      html, body, .sheet, .sheet * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+      }
       body { background: #fff; }
       .sheet {
         margin: 0;
@@ -720,6 +776,118 @@
         height: 297mm;
       }
       @page { size: A4 portrait; margin: 0; }
+      .fill-layer {
+        z-index: 0 !important;
+        display: block !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .fill-fg { z-index: 1 !important; }
+
+      /* プリンタは薄い色を飛ばすため、画面相当の見え方になるよう一段濃くする */
+      .front-hero {
+        background: #1e3a8a !important;
+        box-shadow: inset 0 0 0 2000px #1e3a8a;
+        color: #fff !important;
+      }
+      .flow-step {
+        background: #bfdbfe !important;
+        border-color: #3b82f6 !important;
+        box-shadow: inset 0 0 0 2000px #bfdbfe;
+        color: #1e3a8a !important;
+      }
+      .front-cta {
+        background: #bfdbfe !important;
+        border-color: #2563eb !important;
+        box-shadow: inset 0 0 0 2000px #bfdbfe;
+      }
+      .contact-bar {
+        background: #0f172a !important;
+        box-shadow: inset 0 0 0 2000px #0f172a;
+        color: #e2e8f0 !important;
+      }
+      .contact-bar strong { color: #fff !important; }
+
+      .before-bundle {
+        background: #fed7aa !important;
+        border: 3px solid #9a3412 !important;
+      }
+      .before-bundle-rows {
+        background: #fed7aa !important;
+        box-shadow: inset 0 0 0 2000px #fed7aa;
+      }
+      .before-bundle-head {
+        background: #9a3412 !important;
+        box-shadow: inset 0 0 0 2000px #9a3412;
+        color: #fff !important;
+      }
+      .before-row {
+        border-bottom-color: #fb923c !important;
+      }
+      .before-row .row-label-row .label,
+      .before-row .row-label-row .step-ref {
+        color: #9a3412 !important;
+      }
+      .before-note {
+        background: #fdba74 !important;
+        color: #7c2d12 !important;
+        box-shadow: inset 0 0 0 2000px #fdba74;
+      }
+      .before-row .action-pill {
+        background: #9a3412 !important;
+        box-shadow: inset 0 0 0 2000px #9a3412;
+        color: #fff !important;
+      }
+      .before-row .chain-arrow { color: #c2410c !important; }
+      .before-bundle-foot {
+        color: #7c2d12 !important;
+        background: #fff !important;
+        box-shadow: inset 0 0 0 2000px #fff;
+        border-top-color: #fb923c !important;
+      }
+
+      .after-bundle {
+        background: #bfdbfe !important;
+        border: 3px solid #1e40af !important;
+      }
+      .after-bundle-rows {
+        background: #bfdbfe !important;
+        box-shadow: inset 0 0 0 2000px #bfdbfe;
+      }
+      .after-bundle-head {
+        background: #1e3a8a !important;
+        box-shadow: inset 0 0 0 2000px #1e3a8a;
+        color: #fff !important;
+      }
+      .after-row {
+        border-bottom-color: #60a5fa !important;
+      }
+      .after-label-row .label,
+      .after-label-row .step-ref {
+        color: #1e3a8a !important;
+      }
+      .action-pill.after {
+        background: #1e40af !important;
+        box-shadow: inset 0 0 0 2000px #1e40af;
+        color: #fff !important;
+      }
+      .after-bundle .chain-arrow { color: #1d4ed8 !important; }
+      .after-bundle-foot {
+        color: #1e3a8a !important;
+        background: #fff !important;
+        box-shadow: inset 0 0 0 2000px #fff;
+        border-top-color: #60a5fa !important;
+      }
+      .compare-arrow {
+        color: #1e40af !important;
+      }
+      .summary-item {
+        background: #bfdbfe !important;
+        border-color: #2563eb !important;
+        box-shadow: inset 0 0 0 2000px #bfdbfe;
+      }
+      .summary-item .val { color: #1e40af !important; }
+      .back-head { border-bottom-width: 4px; }
     }
 
     @media screen and (max-width: 900px) {
@@ -1024,5 +1192,49 @@
     </div>
   </section>
 
+  <script>
+    (function () {
+      /* 極小 PNG（実画像）を埋め込み。CSS 背景は印刷で落ちやすい */
+      var FILL = {
+        navy: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAI0lEQVR4nGOUs+piIAUwkaSaYVQDcYCJSHVwMKqBGEByKAEA5h4BApJwQhsAAAAASUVORK5CYII=",
+        blueTint: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAI0lEQVR4nGPcf/sfAymAiSTVDKMaiANMRKqDg1ENxACSQwkAIJkCuLEeCCgAAAAASUVORK5CYII=",
+        blue: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAI0lEQVR4nGOUc1jPQApgIkk1w6gG4gATkergYFQDMYDkUAIAaWIBLQrtg1EAAAAASUVORK5CYII=",
+        orange: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAI0lEQVR4nGOcZSLEQApgIkk1w6gG4gATkergYFQDMYDkUAIA4PYBAMzVOYsAAAAASUVORK5CYII=",
+        peach: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAI0lEQVR4nGP8d30VAymAiSTVDKMaiANMRKqDg1ENxACSQwkA1L8Cn7xPTPMAAAAASUVORK5CYII=",
+        amber: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAI0lEQVR4nGP8u6uEgRTARJJqhlENxAEmItXBwagGYgDJoQQA1E0CS69TKH0AAAAASUVORK5CYII=",
+        ink: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAI0lEQVR4nGPkF9diIAUwkaSaYVQDcYCJSHVwMKqBGEByKAEAKGQAcO6Y5OgAAAAASUVORK5CYII="
+      };
+      function paint(selector, src, wrapText) {
+        document.querySelectorAll(selector).forEach(function (el) {
+          if (el.querySelector(":scope > .fill-layer")) return;
+          var img = document.createElement("img");
+          img.className = "fill-layer";
+          img.alt = "";
+          img.src = src;
+          if (wrapText) {
+            var fg = document.createElement("span");
+            fg.className = "fill-fg";
+            while (el.firstChild) fg.appendChild(el.firstChild);
+            el.appendChild(img);
+            el.appendChild(fg);
+          } else {
+            el.insertBefore(img, el.firstChild);
+          }
+        });
+      }
+      paint(".front-hero", FILL.navy);
+      paint(".flow-step", FILL.blueTint);
+      paint(".front-cta", FILL.blueTint);
+      paint(".before-bundle", FILL.peach);
+      paint(".before-bundle-head", FILL.orange);
+      paint(".after-bundle", FILL.blueTint);
+      paint(".after-bundle-head", FILL.navy);
+      paint(".before-note", FILL.amber, true);
+      paint(".before-row .action-pill", FILL.orange, true);
+      paint(".action-pill.after", FILL.blue, true);
+      paint(".summary-item", FILL.blueTint);
+      paint(".contact-bar", FILL.ink);
+    })();
+  </script>
 </body>
 </html>
