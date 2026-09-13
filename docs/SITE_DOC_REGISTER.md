@@ -6,7 +6,7 @@
 | **種別** | 動的台帳 |
 | **上位手順** | QP-DOC-001 §7 / `terms-embedded-vs-website.md` v3 |
 | **サイト** | https://office-goplan.com/ |
-| **最終更新** | 2026-08-23 |
+| **最終更新** | 2026-09-13 |
 
 ---
 
@@ -15,10 +15,10 @@
 | WEB ID | 名称 | 主ファイル | 版／日付 | 備考 |
 |---|---|---|---|---|
 | WEB-INDEX | トップ | `index.html` | — | |
-| WEB-PDFH | LeafDesk（旧 pdfHandler） | `leafdesk.html` | **2026-08-23** | 正規 URL `/leafdesk`。FAQ・`/leafdesk/guides` 導線 |
+| WEB-PDFH | LeafDesk（旧 pdfHandler） | `leafdesk.html` | **2026-09-13** | 正規 URL `/leafdesk`。FAQ・`/leafdesk/guides` 導線。お気に入り／ファイル名フィルタ用途例 |
 | WEB-GUIDES | LeafDesk 用途ガイド一覧 | `leafdesk/guides/index.html` | **2026-08-23** | `/leafdesk/guides` |
-| WEB-PDFH-G1 | 図面を開かずに見分ける | `leafdesk/guides/pdf-drawings-without-opening.html` | **2026-08-23** | 旧 `/guides/…`・`/pdf-drawings-without-opening` は 301 |
-| WEB-PDFH-G2 | F2 リネーム | `leafdesk/guides/pdf-rename-while-preview.html` | **2026-08-23** | |
+| WEB-PDFH-G1 | 図面を開かずに見分ける | `leafdesk/guides/pdf-drawings-without-opening.html` | **2026-09-13** | 旧 `/guides/…`・`/pdf-drawings-without-opening` は 301。お気に入り／フィルタ追記 |
+| WEB-PDFH-G2 | F2 リネーム | `leafdesk/guides/pdf-rename-while-preview.html` | **2026-09-13** | フィルタ用途例を追記 |
 | WEB-PDFH-G3 | ページ挿入で差し替え | `leafdesk/guides/pdf-page-replace-by-insert.html` | **2026-08-23** | |
 | WEB-PDFH-G4 | 複数ページ選択 | `leafdesk/guides/pdf-multiselect-pages.html` | **2026-08-23** | |
 | WEB-PDFH-G5 | 結合・分割 | `leafdesk/guides/pdf-merge-split-on-server.html` | **2026-08-23** | |
@@ -41,6 +41,7 @@
 
 | 日付 | 内容 |
 |---|---|
+| 2026-09-13 | **WEB-PDFH / G1 / G2** — お気に入り短縮・ファイル名フィルタの用途例（IMP-guide-fav-filter-1） |
 | 2026-08-23 | **WEB-PDFH-FLYER** — A4両面紹介チラシ `/leafdesk-flyer` |
 | 2026-08-24 | **WEB-GUIDES / G1〜G6** — `/leafdesk/guides/` へ移行。旧 `/guides/` は 301 |
 | 2026-08-23 | **WEB-GUIDES / G1〜G6** — `/guides/` 配下に用途ガイド一括。旧フラット URL は 301 |
