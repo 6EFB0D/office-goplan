@@ -1,5 +1,9 @@
 # CHANGELOG — Office Go Plan サイト（office-goplan）
 
+## 2026-11-08（LeafDesk — N-up 面付けの動画）
+
+- **WEB-PDFH** — 「画面で見る / N-up 面付け」に、クリック再生の解説動画（音声あり）を追加
+
 ## 2026-11-08（LeafDesk — 対比図と注文書動画）
 
 - **WEB-PDFH** — ヒーロー先頭の15秒動画を外し、現状と LeafDesk の左右対比を掲載
