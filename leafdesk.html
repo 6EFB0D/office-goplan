@@ -128,7 +128,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261101-compare">
   <script src="assets/js/legacy-redirect.js"></script>
   <script defer src="assets/js/ga4.js"></script>
 </head>
@@ -150,7 +150,7 @@
 
   <main>
     <!-- 1. ヒーロー・キャッチ -->
-    <section class="hero hero-product product-theme-pdfhandler">
+    <section class="hero hero-product product-theme-pdfhandler hero-with-compare">
       <div class="container">
         <div class="hero-product-layout">
           <img src="assets/pdfhandler/PdfHandler.png" alt="LeafDesk" class="product-logo">
@@ -160,14 +160,96 @@
           </div>
         </div>
         <p class="hero-desc">ファイルサーバ上の図面・注文書 PDF を、開かずにサムネイルで見分け、そのまま並べ替え・結合・整理できる Windows デスクトップアプリです。</p>
-        <p class="hero-alias">旧称 <strong>pdfHandler</strong>（PDFハンドラ）。製品名・インストーラ表示は <strong>LeafDesk</strong> に統一しています。</p>
+        <p class="hero-alias">旧称は <strong>pdfHandler</strong>（PDFハンドラ）です。</p>
+      </div>
+
+      <figure class="ba-compare">
+        <figcaption>左が従来の手順、右が LeafDesk の同じ画面です。</figcaption>
+        <div class="ba-board">
+          <div class="ba-head ba-head-before">
+            <p class="ba-kicker">Before</p>
+            <p class="ba-name">現状</p>
+            <p class="ba-tag">別ツールと、画面の往復</p>
+          </div>
+          <div class="ba-arrow ba-arrow-head" aria-hidden="true"></div>
+          <div class="ba-head ba-head-after">
+            <img src="assets/pdfhandler/PdfHandler.png" alt="">
+            <div>
+              <p class="ba-kicker">After</p>
+              <p class="ba-name">LeafDesk</p>
+              <p class="ba-tag">1つの画面に集約</p>
+            </div>
+          </div>
+
+          <div class="ba-cell ba-cell-before">
+            <p class="ba-step"><span>① 判別</span><span class="ba-note">1件ごとに開いて確認</span></p>
+            <p class="ba-chain"><span class="ba-pill">開く</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">起動待ち</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">内容確認</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">閉じる</span></p>
+          </div>
+          <div class="ba-arrow" aria-hidden="true">⇒</div>
+          <div class="ba-cell ba-cell-after">
+            <p class="ba-step"><span>① 判別</span></p>
+            <p class="ba-chain"><span class="ba-pill">サムネイル一覧で識別</span></p>
+          </div>
+
+          <div class="ba-cell ba-cell-before">
+            <p class="ba-step"><span>② リネーム</span><span class="ba-note">ビューアとエクスプローラー</span></p>
+            <p class="ba-chain"><span class="ba-pill">PDF を開く</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">内容確認</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">ビューア終了</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">エクスプローラー</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">名称変更</span></p>
+          </div>
+          <div class="ba-arrow" aria-hidden="true">⇒</div>
+          <div class="ba-cell ba-cell-after">
+            <p class="ba-step"><span>② リネーム</span></p>
+            <p class="ba-chain"><span class="ba-pill">プレビュー確認</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">F2 で命名</span></p>
+          </div>
+
+          <div class="ba-cell ba-cell-before">
+            <p class="ba-step"><span>③ 結合・分割・回転</span><span class="ba-note">別ツール・別工程</span></p>
+            <p class="ba-chain"><span class="ba-pill">個別に確認</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">別ツール起動</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">並べ替え・回転</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">保存</span></p>
+          </div>
+          <div class="ba-arrow" aria-hidden="true">⇒</div>
+          <div class="ba-cell ba-cell-after">
+            <p class="ba-step"><span>③ 結合・分割・回転</span></p>
+            <p class="ba-chain"><span class="ba-pill">一覧で選択</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">結合 / 分割 / 回転</span></p>
+          </div>
+
+          <div class="ba-cell ba-cell-before">
+            <p class="ba-step"><span>④ ページ差し替え</span><span class="ba-note">再取得から手作業</span></p>
+            <p class="ba-chain"><span class="ba-pill">新版を探索</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">再取得</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">該当ページ差込</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">保存</span></p>
+          </div>
+          <div class="ba-arrow" aria-hidden="true">⇒</div>
+          <div class="ba-cell ba-cell-after">
+            <p class="ba-step"><span>④ ページ差し替え</span></p>
+            <p class="ba-chain"><span class="ba-pill">差し替えページ指定</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">実行</span></p>
+          </div>
+
+          <div class="ba-cell ba-cell-before">
+            <p class="ba-step"><span>⑤ N-up 面付け</span><span class="ba-note">印刷用の縮小・配置</span></p>
+            <p class="ba-chain"><span class="ba-pill">別アプリ起動</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">縮小・並べ替え</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">用紙合わせ</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">保存</span></p>
+          </div>
+          <div class="ba-arrow" aria-hidden="true">⇒</div>
+          <div class="ba-cell ba-cell-after">
+            <p class="ba-step"><span>⑤ N-up 面付け</span></p>
+            <p class="ba-chain"><span class="ba-pill">用紙・向きを選択</span><span class="ba-to" aria-hidden="true">→</span><span class="ba-pill">N-up 面付け</span></p>
+          </div>
+        </div>
+        <ul class="ba-summary">
+          <li><strong>画面切替なし</strong><span>画面の往復を減らす</span></li>
+          <li><strong>ツール統合</strong><span>判別と編集を別アプリに分けない</span></li>
+          <li><strong>一連作業を1つのアプリで</strong><span>判別から面付けまで、同じ画面で</span></li>
+        </ul>
+        <p class="ba-footnote">左の手順は、お使いの環境により異なります。</p>
+      </figure>
+
+      <div class="container hero-cta-block">
         <div class="hero-cta-row">
-          <a href="https://github.com/6EFB0D/pdf-handler/releases/latest" class="cta-button cta-button-primary">14日試用をはじめる（無料DL）</a>
           <a href="#license" class="cta-button cta-button-secondary">価格・購入</a>
           <a href="/leafdesk-flyer" class="cta-button cta-button-secondary">紹介チラシ（A4）</a>
           <a href="#enterprise" class="cta-button cta-button-secondary">法人・まとめ購入</a>
         </div>
-        <p class="hero-cta-note">Standard版は <strong>4,980円（税込・買い切り）</strong>。複数台・部署展開は見積対応します。</p>
+        <p class="product-demo-trial">
+          <a href="https://github.com/6EFB0D/pdf-handler/releases/latest" class="cta-button cta-button-primary">14日試用をはじめる（無料DL）</a>
+        </p>
+        <p class="hero-cta-note">Standard版は <strong>4,980円（税込・買い切り）</strong>。月額はありません。複数台・部署展開は見積対応します。</p>
+        <p class="hero-cta-note">PDF の中身は、利用者の端末の中だけで処理します。</p>
       </div>
     </section>
 
@@ -237,7 +319,6 @@
     <section class="section screenshots-section">
       <div class="container container-wide">
         <h2>画面で見る</h2>
-        <p class="screenshot-note">掲載画像は説明用のダミー PDF です。実在の顧客・図面ではありません。</p>
         <div class="screenshots-grid">
           <div class="screenshot-item">
             <div class="screenshot-caption">
@@ -256,9 +337,11 @@
           <div class="screenshot-item">
             <div class="screenshot-caption">
               <h3 class="screenshot-title">顧客注文書</h3>
-              <p class="screenshot-desc">レイアウトの異なる注文書を一覧し、開かずに見分けながら整理</p>
+              <p class="screenshot-desc">仕入先ごとの注文書が、1つのスキャンに混ざっています。離れたA社様の2枚を、一度に切り出せます。再生すると音声が出ます。</p>
             </div>
-            <img src="assets/pdfhandler/gui-po.png" alt="LeafDesk 顧客注文書の一覧とプレビュー" width="1019" height="596">
+            <video class="screenshot-video" width="1280" height="720" controls playsinline preload="metadata" poster="assets/pdfhandler/leafdesk-po-poster.jpg">
+              <source src="assets/pdfhandler/leafdesk-po.mp4" type="video/mp4">
+            </video>
           </div>
           <div class="screenshot-item">
             <div class="screenshot-caption">
