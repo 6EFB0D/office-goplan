@@ -1,5 +1,9 @@
 # CHANGELOG — Office Go Plan サイト（office-goplan）
 
+## 2026-11-13（LeafDesk — 紹介チラシの文言）
+
+- **WEB-PDFH-FLYER** — 裏面の見出し・締め・見出し高さを直し、「5 工程／5 機能」表現をやめた
+
 ## 2026-11-08（LeafDesk — N-up 面付けの動画）
 
 - **WEB-PDFH** — 「画面で見る / N-up 面付け」に、クリック再生の解説動画（音声あり）を追加

@@ -23,7 +23,7 @@
 | WEB-PDFH-G4 | 複数ページ選択 | `leafdesk/guides/pdf-multiselect-pages.html` | **2026-08-23** | |
 | WEB-PDFH-G5 | 結合・分割 | `leafdesk/guides/pdf-merge-split-on-server.html` | **2026-08-23** | |
 | WEB-PDFH-G6 | ヘッダ・フッター | `leafdesk/guides/pdf-header-footer.html` | **2026-08-23** | |
-| WEB-PDFH-FLYER | 紹介チラシ A4両面 | `leafdesk-flyer.html` | **2026-08-23** | `/leafdesk-flyer` 印刷用 |
+| WEB-PDFH-FLYER | 紹介チラシ A4両面 | `leafdesk-flyer.html` | **2026-11-13** | `/leafdesk-flyer` 印刷用。裏面の見出し・締めを更新 |
 | WEB-ZIP | ZipSearch | `zipsearch.html` | — | |
 | WEB-PICT | PictComp | `pictcomp.html` | — | |
 | **WEB-TERMS** | **利用規約（全製品）** | `terms-of-service.html` | **2026-08-01** | 正本 `docs/legal/TERMS_OF_SERVICE.txt`（LeafDesk 表記） |
@@ -41,6 +41,7 @@
 
 | 日付 | 内容 |
 |---|---|
+| 2026-11-13 | **WEB-PDFH-FLYER** — 裏面の見出し・締めを更新。「5 工程／5 機能」を削除 |
 | 2026-11-08 | **WEB-PDFH** — 「画面で見る」に N-up 面付けの解説動画 |
 | 2026-11-08 | **WEB-PDFH** — 15秒動画を外し左右対比を掲載。試用ボタンを3ボタンの下へ。顧客注文書に解説動画 |
 | 2026-09-13 | **WEB-PDFH / G1 / G2** — お気に入り短縮・ファイル名フィルタの用途例（IMP-guide-fav-filter-1） |

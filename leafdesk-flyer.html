@@ -367,7 +367,7 @@
 
     .compare-matrix {
       display: grid;
-      grid-template-columns: 1fr 22px 0.78fr;
+      grid-template-columns: 1fr 22px 0.95fr;
       gap: 0 8px;
       flex: 1;
       align-items: stretch;
@@ -393,8 +393,11 @@
       align-items: center;
       gap: 8px;
       padding: 8px 10px;
-      min-height: 52px;
+      height: 58px;
+      min-height: 58px;
+      box-sizing: border-box;
       flex-shrink: 0;
+      overflow: hidden;
     }
 
     .before-bundle-head {
@@ -409,10 +412,12 @@
       line-height: 1.2;
     }
 
-    .before-bundle-head .tagline {
+    .before-bundle-head .tagline,
+    .after-bundle-head .tagline {
       font-size: var(--flyer-min);
       opacity: 0.92;
       margin-top: 1px;
+      line-height: 1.25;
     }
 
     .before-bundle-rows,
@@ -425,7 +430,7 @@
 
     .before-row,
     .after-row {
-      padding: 4px 9px;
+      padding: 5px 9px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -496,15 +501,24 @@
       flex-shrink: 0;
     }
 
-    .before-bundle-foot {
+    .before-bundle-foot,
+    .after-bundle-foot {
       font-size: var(--flyer-min);
-      color: var(--warm-muted);
-      line-height: 1.4;
-      padding: 6px 10px 8px;
-      border-top: 1px solid var(--warm-border);
+      line-height: 1.35;
+      padding: 6px 10px;
       background: #fff;
       flex-shrink: 0;
-      min-height: 40px;
+      height: 48px;
+      min-height: 48px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .before-bundle-foot {
+      color: var(--warm-muted);
+      border-top: 1px solid var(--warm-border);
     }
 
     .compare-arrows {
@@ -514,7 +528,8 @@
     }
 
     .compare-arrows-head {
-      min-height: 52px;
+      min-height: 58px;
+      height: 58px;
       flex-shrink: 0;
     }
 
@@ -534,7 +549,8 @@
     }
 
     .compare-arrows-foot {
-      min-height: 40px;
+      height: 48px;
+      min-height: 48px;
       flex-shrink: 0;
     }
 
@@ -573,12 +589,17 @@
       color: #fff;
     }
 
+    .after-bundle-head > div {
+      min-width: 0;
+      flex: 1;
+    }
+
     .after-bundle-head img:not(.fill-layer) {
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
       background: #fff;
       border-radius: 7px;
-      padding: 3px;
+      padding: 2px;
       flex-shrink: 0;
     }
 
@@ -589,18 +610,17 @@
     }
 
     .after-bundle-head .tagline {
-      font-size: var(--flyer-min);
-      opacity: 0.92;
-      margin-top: 1px;
+      font-size: 0.62rem;
+      letter-spacing: -0.01em;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
     }
 
     .after-row {
-      padding: 6px 10px;
+      padding: 5px 9px;
       border-bottom: 1px solid #60a5fa;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-height: 0;
     }
 
     .after-row:last-child {
@@ -647,14 +667,8 @@
     }
 
     .after-bundle-foot {
-      font-size: var(--flyer-min);
       color: var(--blue-deep);
-      line-height: 1.4;
-      padding: 6px 10px 8px;
       border-top: 1px solid #60a5fa;
-      background: #fff;
-      flex-shrink: 0;
-      min-height: 40px;
     }
 
     .compare-note {
@@ -1002,7 +1016,7 @@
     <header class="back-head">
       <div>
         <h1>作業の簡略化</h1>
-        <p class="sub">操作が短くなる — 判別・リネーム・結合・回転・ページ差し替え・N-up 面付けを LeafDesk 1 アプリで</p>
+        <p class="sub">判別・リネーム・結合・回転・ページ差し替え・N-up 面付け － LeafDesk一つで完結</p>
       </div>
       <div class="org-badge">
         <img src="assets/logo/logo-a.jpg" alt="Office Go Plan">
@@ -1015,7 +1029,7 @@
           <div class="before-bundle-head">
             <div>
               <div class="name">現状</div>
-              <div class="tagline">従来 — 別ツール・画面の往復</div>
+              <div class="tagline">別ツール・画面の往復</div>
             </div>
           </div>
           <div class="before-bundle-rows">
@@ -1086,7 +1100,7 @@
               </div>
             </div>
           </div>
-          <p class="before-bundle-foot">工程ごとにツールや画面が分かれる運用</p>
+          <p class="before-bundle-foot">開いて、閉じて、また開く —— 工程ごとにツールや画面を変えています</p>
         </div>
 
         <div class="compare-arrows" aria-hidden="true">
@@ -1106,7 +1120,7 @@
             <img src="assets/pdfhandler/PdfHandler.png" alt="">
             <div>
               <div class="name">LeafDesk</div>
-              <div class="tagline">1 アプリ · 同一画面 — 5 機能をここに集約</div>
+              <div class="tagline">ツールや画面を切り替えずに、LeafDesk 内で一連の整理として行えます。</div>
             </div>
           </div>
           <div class="after-bundle-rows">
@@ -1160,7 +1174,7 @@
               </div>
             </div>
           </div>
-          <p class="after-bundle-foot">左の 5 工程を、別ツールに分けず LeafDesk 内で一連の整理として行えます。</p>
+          <p class="after-bundle-foot">LeafDeskなら、サクサク作業でタイパアップ</p>
         </div>
       </div>
 
