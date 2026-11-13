@@ -48,18 +48,21 @@ def trim_shadows(arr: np.ndarray) -> tuple[int, int, int, int]:
 
 
 def find_splitter_x(arr: np.ndarray) -> int:
+    """Find gray splitter; never spill into center list pane (~19.5% width)."""
     h, w = arr.shape[:2]
     y0, y1 = int(h * 0.18), int(h * 0.65)
-    best_x, best_score = int(w * 0.21), 1e9
-    for x in range(int(w * 0.16), int(w * 0.30)):
+    hard_cap = max(170, int(w * 0.195))
+    cands: list[int] = []
+    for x in range(int(w * 0.14), hard_cap):
         strip = arr[y0:y1, x].astype(np.float32)
         mean = float(strip.mean())
         std = float(strip.std())
         if 165 <= mean <= 225 and std < 22:
-            score = std + abs(mean - 195) * 0.05
-            if score < best_score:
-                best_score, best_x = score, x
-    return best_x
+            cands.append(x)
+    if not cands:
+        return hard_cap - 2
+    # Prefer rightmost solid gray (actual pane edge), not an early false positive.
+    return min(cands[-1], hard_cap - 1)
 
 
 def mask_tree(im: Image.Image) -> None:
@@ -70,13 +73,12 @@ def mask_tree(im: Image.Image) -> None:
     arr = np.asarray(im)
     h, w = arr.shape[:2]
     split = find_splitter_x(arr)
-    # scale from reference height 598
+    # scale from reference height 598 — keep mask inside tree only (tx1 <= split).
     sy = h / 598.0
-    sys_y0 = int(105 * sy)
-    sys_y1 = int(170 * sy)
-    # C:/D:/X: sit just under 04_見積依頼 (~y266 on 598px captures)
+    sys_y0 = int(100 * sy)
+    sys_y1 = int(168 * sy)
+    # C:/D:/X: (and stray folders) sit just under 04_見積依頼
     drives_y0 = int(266 * sy)
-    # stop above status bar
     drives_y1 = int(h * 0.92)
 
     draw = ImageDraw.Draw(im)

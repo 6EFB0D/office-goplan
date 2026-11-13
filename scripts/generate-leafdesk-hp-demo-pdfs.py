@@ -80,44 +80,41 @@ def draw_title_block(
 
 
 def pdf_drawing_bracket(path: Path) -> None:
-    """L-bracket style — distinctive silhouette."""
-    c = canvas.Canvas(str(path), pagesize=landscape(A4))
-    w, h = landscape(A4)
+    """L-bracket style — portrait A4 (縦) for orientation contrast."""
+    c = canvas.Canvas(str(path), pagesize=A4)
+    w, h = A4
     margin = 12 * mm
     c.setStrokeColor(HexColor("#1a365d"))
     c.setLineWidth(2)
     c.rect(margin, margin, w - 2 * margin, h - 2 * margin)
 
-    # Outer frame line (drawing border look)
     c.setStrokeColor(HexColor("#2b6cb0"))
     c.setLineWidth(0.8)
     c.rect(margin + 4 * mm, margin + 4 * mm, w - 2 * margin - 8 * mm, h - 2 * margin - 8 * mm)
 
-    # L shape
-    ox, oy = 55 * mm, 40 * mm
+    # L shape (taller portrait layout)
+    ox, oy = 40 * mm, 55 * mm
     c.setFillColor(HexColor("#ebf8ff"))
     c.setStrokeColor(HexColor("#2c5282"))
     c.setLineWidth(1.5)
     path_l = c.beginPath()
     path_l.moveTo(ox, oy)
-    path_l.lineTo(ox + 90 * mm, oy)
-    path_l.lineTo(ox + 90 * mm, oy + 25 * mm)
-    path_l.lineTo(ox + 30 * mm, oy + 25 * mm)
-    path_l.lineTo(ox + 30 * mm, oy + 70 * mm)
-    path_l.lineTo(ox, oy + 70 * mm)
+    path_l.lineTo(ox + 95 * mm, oy)
+    path_l.lineTo(ox + 95 * mm, oy + 28 * mm)
+    path_l.lineTo(ox + 32 * mm, oy + 28 * mm)
+    path_l.lineTo(ox + 32 * mm, oy + 120 * mm)
+    path_l.lineTo(ox, oy + 120 * mm)
     path_l.close()
     c.drawPath(path_l, fill=1, stroke=1)
 
-    # holes
     c.setFillColor(HexColor("#90cdf4"))
-    for hx, hy in [(ox + 12 * mm, oy + 12 * mm), (ox + 70 * mm, oy + 12 * mm), (ox + 12 * mm, oy + 55 * mm)]:
+    for hx, hy in [(ox + 12 * mm, oy + 12 * mm), (ox + 75 * mm, oy + 12 * mm), (ox + 12 * mm, oy + 100 * mm)]:
         c.circle(hx, hy, 4 * mm, fill=1, stroke=1)
 
-    # dimension-ish labels
     c.setFillColor(HexColor("#2d3748"))
     c.setFont(FONT, 9)
-    c.drawCentredString(ox + 45 * mm, oy - 8 * mm, "90")
-    c.drawString(ox - 12 * mm, oy + 30 * mm, "70")
+    c.drawCentredString(ox + 47 * mm, oy - 8 * mm, "95")
+    c.drawString(ox - 12 * mm, oy + 55 * mm, "120")
 
     draw_title_block(
         c,
@@ -141,7 +138,7 @@ def pdf_drawing_bracket(path: Path) -> None:
 
 
 def pdf_drawing_shaft(path: Path) -> None:
-    """Round shaft — different visual from bracket."""
+    """Round shaft — landscape A4 (横) for orientation contrast."""
     c = canvas.Canvas(str(path), pagesize=landscape(A4))
     w, h = landscape(A4)
     margin = 12 * mm
@@ -197,15 +194,15 @@ def pdf_drawing_shaft(path: Path) -> None:
 
 
 def pdf_drawing_housing(path: Path) -> None:
-    """Rectangular housing with hole pattern — third silhouette."""
-    c = canvas.Canvas(str(path), pagesize=landscape(A4))
-    w, h = landscape(A4)
+    """Rectangular housing with hole pattern — portrait A4 (縦)."""
+    c = canvas.Canvas(str(path), pagesize=A4)
+    w, h = A4
     margin = 12 * mm
     c.setStrokeColor(HexColor("#744210"))
     c.setLineWidth(2)
     c.rect(margin, margin, w - 2 * margin, h - 2 * margin)
 
-    bx, by, bw, bh = 45 * mm, 45 * mm, 130 * mm, 95 * mm
+    bx, by, bw, bh = 35 * mm, 70 * mm, 120 * mm, 140 * mm
     c.setFillColor(HexColor("#fefcbf"))
     c.setStrokeColor(HexColor("#975a16"))
     c.setLineWidth(1.5)
@@ -215,8 +212,8 @@ def pdf_drawing_housing(path: Path) -> None:
 
     c.setFillColor(HexColor("#d69e2e"))
     for i in range(3):
-        for j in range(2):
-            c.circle(bx + 35 * mm + i * 30 * mm, by + 35 * mm + j * 30 * mm, 5 * mm, fill=1, stroke=1)
+        for j in range(3):
+            c.circle(bx + 30 * mm + i * 30 * mm, by + 35 * mm + j * 35 * mm, 5 * mm, fill=1, stroke=1)
 
     c.setFillColor(HexColor("#744210"))
     c.setFont(FONT_B, 11)
@@ -477,7 +474,7 @@ def write_readme(root: Path) -> None:
 
 フォルダ構成
 ------------
-01_図面管理/     … 見た目の違う図面 3 点（◎図面管理）
+01_図面管理/     … 縦2＋横1の図面 3 点＋merged（◎図面管理）
 02_顧客注文書/   … レイアウト差のある注文書 2 点（◎顧客注文書）
 03_添付混在/     … 図面＋検査基準＋見積依頼＋注文書（◎添付の見分け）
 04_見積依頼/     … 見積依頼・要求仕様＋関連図面（◎RFQ）

@@ -1061,11 +1061,44 @@ h2 {
   background: #111;
 }
 
+.screenshot-item-featured {
+  margin-bottom: 40px;
+}
+
+.youtube-embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  margin-bottom: 12px;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #111;
+}
+
+.youtube-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .screenshot-note {
   font-size: 0.85rem;
   color: var(--color-text-muted);
   opacity: 0.8;
   margin: 0 0 24px;
+}
+
+.screenshot-video-links a {
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.screenshot-video-links a:hover {
+  color: var(--color-text);
 }
 
 /* PictComp 概要 */
