@@ -15,7 +15,7 @@
 | WEB ID | 名称 | 主ファイル | 版／日付 | 備考 |
 |---|---|---|---|---|
 | WEB-INDEX | トップ | `index.html` | — | |
-| WEB-PDFH | LeafDesk（旧 pdfHandler） | `leafdesk.html` | **2026-11-08** | 正規 URL `/leafdesk`。ヒーローは左右対比。顧客注文書と N-up 面付けはクリック再生の動画 |
+| WEB-PDFH | LeafDesk（旧 pdfHandler） | `leafdesk.html` | **2026-11-13** | 正規 URL `/leafdesk`。ヒーロー対比は紹介チラシと揃え。顧客注文書と N-up 面付けはクリック再生の動画 |
 | WEB-GUIDES | LeafDesk 用途ガイド一覧 | `leafdesk/guides/index.html` | **2026-08-23** | `/leafdesk/guides` |
 | WEB-PDFH-G1 | 図面を開かずに見分ける | `leafdesk/guides/pdf-drawings-without-opening.html` | **2026-09-13** | 旧 `/guides/…`・`/pdf-drawings-without-opening` は 301。お気に入り／フィルタ追記 |
 | WEB-PDFH-G2 | F2 リネーム | `leafdesk/guides/pdf-rename-while-preview.html` | **2026-09-13** | フィルタ用途例を追記 |
@@ -41,6 +41,7 @@
 
 | 日付 | 内容 |
 |---|---|
+| 2026-11-13 | **WEB-PDFH** — ヒーロー対比の見出し・締めを紹介チラシと揃え |
 | 2026-11-13 | **WEB-PDFH-FLYER** — 裏面の見出し・締めを更新。「5 工程／5 機能」を削除 |
 | 2026-11-08 | **WEB-PDFH** — 「画面で見る」に N-up 面付けの解説動画 |
 | 2026-11-08 | **WEB-PDFH** — 15秒動画を外し左右対比を掲載。試用ボタンを3ボタンの下へ。顧客注文書に解説動画 |

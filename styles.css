@@ -511,10 +511,11 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 72px;
+  min-height: 88px;
   padding: 10px 14px;
   border-radius: 10px;
   color: #fff;
+  box-sizing: border-box;
 }
 
 .ba-head-before {
@@ -528,9 +529,13 @@ h2 {
   background: linear-gradient(145deg, #1e3a8a 0%, #1d4ed8 100%);
 }
 
+.ba-head-after > div {
+  min-width: 0;
+}
+
 .ba-head-after img {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
   background: #fff;
   border-radius: 8px;
@@ -555,9 +560,41 @@ h2 {
 
 .ba-tag {
   margin: 2px 0 0;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   line-height: 1.35;
   opacity: 0.92;
+}
+
+.ba-feet {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) 32px minmax(0, 0.95fr);
+  gap: 8px 6px;
+  margin-top: 8px;
+  align-items: stretch;
+}
+
+.ba-foot {
+  margin: 0;
+  padding: 10px 12px;
+  min-height: 48px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.ba-foot-before {
+  color: #9a3412;
+  border: 1px solid #fdba74;
+}
+
+.ba-foot-after {
+  color: #1e3a8a;
+  border: 1px solid #93c5fd;
+  font-weight: 700;
 }
 
 .ba-cell {
@@ -691,7 +728,8 @@ h2 {
     padding: 14px 10px 12px;
   }
 
-  .ba-board {
+  .ba-board,
+  .ba-feet {
     grid-template-columns: minmax(0, 1fr) 18px minmax(0, 1fr);
     gap: 6px 2px;
   }
@@ -699,6 +737,12 @@ h2 {
   .ba-head {
     min-height: 0;
     padding: 8px;
+  }
+
+  .ba-foot {
+    font-size: 0.7rem;
+    padding: 8px;
+    min-height: 44px;
   }
 
   .ba-head-after img {
