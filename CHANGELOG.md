@@ -1,5 +1,9 @@
 # CHANGELOG — Office Go Plan サイト（office-goplan）
 
+## 2026-11-14（LeafDesk — 回転・拡大縮小の解説動画）
+
+- **WEB-PDFH** — 「画面で見る」に YouTube 解説動画「回転と拡大縮小表示」（YT-02）を追加
+
 ## 2026-11-13（LeafDesk — 製品ページ対比をチラシに揃える）
 
 - **WEB-PDFH** — ヒーロー対比の見出し・締めを紹介チラシと揃え、「5」表現をやめた
