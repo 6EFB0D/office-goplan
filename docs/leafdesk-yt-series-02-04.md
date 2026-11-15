@@ -8,7 +8,7 @@
 | 番号 | 主題 | 本編目安 | 状態 |
 |------|------|----------|------|
 | YT-02 | 表示（サムネ・ストリップ・プレビュー）＋回転 | 約78秒（本編+tail） | [公開済](https://youtu.be/tKceoA_jQsE)／HP「画面で見る」掲載 |
-| YT-03 | 結合（順序・しおり・ファイル名） | 約85秒（本編+tail） | [公開済](https://youtu.be/clyd3a2FEfw)／HP「画面で見る」掲載 |
+| YT-03 | 結合（順序・しおり・ファイル名） | 約85秒（本編+tail） | [公開済](https://youtu.be/cIyd3a2FEfw)／HP「画面で見る」掲載 |
 | YT-04 | 分割（範囲／1ページずつ／等分割） | 80〜95秒 | 台本草案 |
 
 再生リスト: [LeafDesk](https://www.youtube.com/playlist?list=PLLnK5Yczx64g)  
@@ -101,7 +101,7 @@
 ## YT-03｜結合（公開済）
 
 更新: 2026-11-15  
-公開: [https://youtu.be/clyd3a2FEfw](https://youtu.be/clyd3a2FEfw)（Office Go Plan／LeafDesk 再生リスト）  
+公開: [https://youtu.be/cIyd3a2FEfw](https://youtu.be/cIyd3a2FEfw)（Office Go Plan／LeafDesk 再生リスト）  
 形式: YT-02 と同型（Nanami → Keita → `leafdesk-po-tail`）。  
 成果物: `assets/pdfhandler/leafdesk-yt03.mp4` / `leafdesk-yt03-poster.jpg` / `leafdesk-yt03-narration.wav`  
 ビルド: `%TEMP%\leafdesk-yt03-build.py`（ショット `%TEMP%\leafdesk-yt03-shots`）
@@ -231,7 +231,7 @@
 
 ## 変更履歴
 
-- 2026-11-15: YT-03 公開（https://youtu.be/clyd3a2FEfw）。HP「画面で見る」に埋め込み
+- 2026-11-15: YT-03 公開（https://youtu.be/cIyd3a2FEfw）。HP「画面で見る」に埋め込み
 - 2026-11-15: YT-03 に「先頭上書き／新しいファイル名」の説明を追加して再ビルド
 - 2026-11-15: YT-03 動画生成。台本どおり Nanami→Keita→tail
 - 2026-11-15: YT-03 を台本確定（ナレ全文・ショット・デモ素材）
