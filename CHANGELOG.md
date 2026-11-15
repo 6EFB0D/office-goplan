@@ -1,5 +1,9 @@
 # CHANGELOG — Office Go Plan サイト（office-goplan）
 
+## 2026-11-15（LeafDesk — PDF結合の解説動画）
+
+- **WEB-PDFH** — 「画面で見る」に YouTube 解説動画「PDFファイルの結合」（YT-03）を追加
+
 ## 2026-11-14（LeafDesk — 回転・拡大縮小の解説動画）
 
 - **WEB-PDFH** — 「画面で見る」に YouTube 解説動画「回転と拡大縮小表示」（YT-02）を追加
