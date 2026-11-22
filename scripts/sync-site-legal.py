@@ -91,7 +91,9 @@ def is_heading(line: str) -> bool:
     t = line.strip()
     if t.startswith("第") and "条" in t:
         return True
-    if t in ("附則", "お問い合わせ", "要約", "制定・改訂"):
+    if t == "附則" or t.startswith("附則（"):
+        return True
+    if t in ("お問い合わせ", "要約", "制定・改訂"):
         return True
     return False
 
@@ -134,7 +136,10 @@ def txt_to_body(path: Path):
             continue
         if is_heading(t):
             flush_para()
-            parts.append(f"<h2>{escape(t)}</h2>")
+            if "販売対象地域" in t:
+                parts.append(f'<h2 id="export-control">{escape(t)}</h2>')
+            else:
+                parts.append(f"<h2>{escape(t)}</h2>")
             continue
         if t.startswith("•"):
             flush_para()
