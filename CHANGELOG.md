@@ -1,5 +1,13 @@
 # CHANGELOG — Office Go Plan サイト（office-goplan）
 
+## 2026-11-22（ArkLidFind — 製品表示名）
+
+- **WEB-ZIP / H2・E3** — `zipsearch.html`・トップ製品カードの表示名を **ArkLidFind** に変更（旧称併記なし）
+- ロゴを `assets/zipsearch/arklidfind_blue.png` に差し替え
+- URL `/zipsearch`・GitHub `6EFB0D/ZipSearch`・asset フォルダ名は据え置き
+- setup 案内ファイル名を `ArkLidFind-*-prod-setup.zip` に合わせた
+- 利用規約／PP の附則転記は **T1b／PPb**（別タスク）
+
 ## 2026-11-17（LeafDesk — PDF分割の解説動画）
 
 - **WEB-PDFH** — 「画面で見る」に YouTube 解説動画「PDFファイルの分割」（YT-04）を追加

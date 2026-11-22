@@ -24,7 +24,7 @@
 | WEB-PDFH-G5 | 結合・分割 | `leafdesk/guides/pdf-merge-split-on-server.html` | **2026-08-23** | |
 | WEB-PDFH-G6 | ヘッダ・フッター | `leafdesk/guides/pdf-header-footer.html` | **2026-08-23** | |
 | WEB-PDFH-FLYER | 紹介チラシ A4両面 | `leafdesk-flyer.html` | **2026-11-13** | `/leafdesk-flyer` 印刷用。裏面の見出し・締めを更新 |
-| WEB-ZIP | ZipSearch | `zipsearch.html` | — | |
+| WEB-ZIP | ArkLidFind | `zipsearch.html`（URL `/zipsearch` 据え置き） | H2 2026-11-22 | |
 | WEB-PICT | PictComp | `pictcomp.html` | — | |
 | **WEB-TERMS** | **利用規約（全製品）** | `terms-of-service.html` | **2026-08-01** | 正本 `docs/legal/TERMS_OF_SERVICE.txt`（LeafDesk 表記） |
 | **WEB-PP** | **プライバシー（全製品）** | `privacy-policy.html` | **2026-08-01** | 同上 |
