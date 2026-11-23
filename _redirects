@@ -3,6 +3,11 @@
 /pdfhandler/ /leafdesk 301
 /pdfhandler.html /leafdesk 301
 
+# ArkLidFind: 旧製品スラッグ
+/zipsearch /arklidfind 301
+/zipsearch/ /arklidfind 301
+/zipsearch.html /arklidfind 301
+
 # LeafDesk guides: 製品配下へ移行（将来の他製品ガイドと衝突しない）
 /guides /leafdesk/guides 301
 /guides/ /leafdesk/guides 301

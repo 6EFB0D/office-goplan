@@ -6,7 +6,7 @@
 | **種別** | 動的台帳 |
 | **上位手順** | QP-DOC-001 §7 / `terms-embedded-vs-website.md` v3 |
 | **サイト** | https://office-goplan.com/ |
-| **最終更新** | 2026-11-17 |
+| **最終更新** | 2026-11-23 |
 
 ---
 
@@ -24,7 +24,7 @@
 | WEB-PDFH-G5 | 結合・分割 | `leafdesk/guides/pdf-merge-split-on-server.html` | **2026-08-23** | |
 | WEB-PDFH-G6 | ヘッダ・フッター | `leafdesk/guides/pdf-header-footer.html` | **2026-08-23** | |
 | WEB-PDFH-FLYER | 紹介チラシ A4両面 | `leafdesk-flyer.html` | **2026-11-13** | `/leafdesk-flyer` 印刷用。裏面の見出し・締めを更新 |
-| WEB-ZIP | ArkLidFind | `zipsearch.html`（URL `/zipsearch` 据え置き） | H2 2026-11-22 | |
+| WEB-ZIP | ArkLidFind | `arklidfind.html` | **2026-11-23** | 正規 URL `/arklidfind`。旧 `/zipsearch` は 301 |
 | WEB-PICT | PictComp | `pictcomp.html` | — | |
 | **WEB-TERMS** | **利用規約（全製品）** | `terms-of-service.html` | **2026-08-01** | 正本 `docs/legal/TERMS_OF_SERVICE.txt`（LeafDesk 表記） |
 | **WEB-PP** | **プライバシー（全製品）** | `privacy-policy.html` | **2026-08-01** | 同上 |
@@ -41,6 +41,7 @@
 
 | 日付 | 内容 |
 |---|---|
+| 2026-11-23 | **WEB-ZIP** — 正規 URL を `/arklidfind` へ。旧 `/zipsearch` は 301 |
 | 2026-11-15 | **WEB-PDFH** — 「画面で見る」に YT-03（PDFファイルの結合）を追加 |
 | 2026-11-14 | **WEB-PDFH** — 「画面で見る」に YT-02（回転・拡大縮小表示）を追加 |
 | 2026-11-13 | **WEB-PDFH** — ヒーロー対比の見出し・締めを紹介チラシと揃え |

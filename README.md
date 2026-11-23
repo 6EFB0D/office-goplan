@@ -12,7 +12,8 @@ office-goplan/
 ├── index.html          # ホームページ
 ├── leafdesk.html       # LeafDesk 製品ページ（旧 pdfhandler.html）
 ├── pdfhandler.html     # /pdfhandler → /leafdesk リダイレクト
-├── zipsearch.html      # ZipSearch 製品ページ
+├── arklidfind.html     # ArkLidFind 製品ページ（旧 zipsearch.html）
+├── zipsearch.html      # /zipsearch → /arklidfind リダイレクト
 ├── pictcomp.html      # PictComp 製品ページ
 ├── privacy-policy.html # プライバシーポリシー
 ├── terms-of-service.html # 利用規約
@@ -28,7 +29,7 @@ office-goplan/
     │   ├── logo-a.jpg  # ヘッダー用（暗色背景向けフィルター適用）
     │   ├── logo-b.jpg
     │   └── logo-c.jpg
-    ├── zipsearch/      # ZipSearch 製品用アセット
+    ├── zipsearch/      # ArkLidFind 製品用アセット（フォルダ名は据え置き）
     │   ├── zipsearch_blue.png
     │   ├── zipsearch_gray.png
     │   ├── gui-main.png
@@ -70,7 +71,7 @@ office-goplan/
 
 ### Search Console（インデックス）
 
-Cloudflare Pages は `*.html` を拡張子なし URL へ **308** します。サイト内リンクと `sitemap.xml`・`rel=canonical` は拡張子なし（例: `/zipsearch`）に揃えています。
+Cloudflare Pages は `*.html` を拡張子なし URL へ **308** します。サイト内リンクと `sitemap.xml`・`rel=canonical` は拡張子なし（例: `/arklidfind`）に揃えています。旧 `/zipsearch` は `_redirects` で `/arklidfind` へ 301 します。
 
 Search Console の「ページにリダイレクトがあります」は、旧 `.html` URL や GitHub Pages URL が **転送先を正とする除外**として出ることが多いです。次を確認してください。
 

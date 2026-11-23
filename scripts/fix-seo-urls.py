@@ -8,7 +8,8 @@ ROOT = Path(__file__).resolve().parents[1]
 
 CANONICALS = {
     "index.html": "https://office-goplan.com/",
-    "zipsearch.html": "https://office-goplan.com/zipsearch",
+    "arklidfind.html": "https://office-goplan.com/arklidfind",
+    "zipsearch.html": "https://office-goplan.com/arklidfind",
     "leafdesk.html": "https://office-goplan.com/leafdesk",
     "pdfhandler.html": "https://office-goplan.com/leafdesk",
     "pictcomp.html": "https://office-goplan.com/pictcomp",
@@ -29,7 +30,8 @@ HREF_MAP = [
     ("privacy-policy.html", "/privacy-policy"),
     ("leafdesk.html", "/leafdesk"),
     ("pdfhandler.html", "/leafdesk"),
-    ("zipsearch.html", "/zipsearch"),
+    ("arklidfind.html", "/arklidfind"),
+    ("zipsearch.html", "/arklidfind"),
     ("pictcomp.html", "/pictcomp"),
 ]
 

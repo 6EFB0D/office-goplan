@@ -1,5 +1,13 @@
 # CHANGELOG — Office Go Plan サイト（office-goplan）
 
+## 2026-11-23（ArkLidFind — 正規 URL `/arklidfind`）
+
+- **WEB-ZIP** — 正規 URL を `/zipsearch` から **`/arklidfind`** へ変更（`arklidfind.html`）
+- 旧 `/zipsearch` は Cloudflare `_redirects`（301）と `zipsearch.html` スタブで転送
+- `sitemap.xml` / トップカード / canonical を同期
+- ヒーローのキャッチを「ZIP内の複数テキストファイルを一括検索。log4netやjson,KV形式ファイルの分析にも。」へ変更
+- 画像は `assets/zipsearch/` のまま。GitHub `6EFB0D/ZipSearch` も据え置き
+
 ## 2026-11-22（ArkLidFind — 製品表示名・法務附則）
 
 - **WEB-ZIP / H2・E3** — `zipsearch.html`・トップ製品カードの表示名を **ArkLidFind** に変更（旧称併記なし）
